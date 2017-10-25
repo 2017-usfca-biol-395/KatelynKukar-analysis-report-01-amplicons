@@ -297,16 +297,23 @@ pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
 plot_bar(pruned_phyloseq, 
          x="sex_s", 
          y="Abundance", 
-         fill="Phylum",
-         title="Abundance of Male and Female Samples", 
-         facet_grid=NULL) + 
+         # fill="Phylum",
+         title="Abundance of Male and Female Samples") + 
+      geom_boxplot() +
   scale_fill_brewer(palette = "Blues")
 ```
 
  
 **Figure 2**: Richness Measure for Male versus Female sample types
-```{r Richness}
+```{r Richness-plot}
 #abundance, boxplot, table of values
+plot_richness(pruned_phyloseq,
+              x = "sex_s",
+              measures = c("Observed")) +
+  xlab("Sample origin") +
+  geom_boxplot(width = 0.2) +
+  theme_bw() +
+  labs(title = "Males Versus Females Richness Metric")
 ```
 
 **Richness Table**:
@@ -316,28 +323,29 @@ plot_bar(pruned_phyloseq,
 
 
 **Figure 3**: Alpha diversity measures of the two sample types, colored by gender.
-```{r example-phyloseq-plot-1}
+```{r Shannon Diversity Plot}
 # alpha diversity metrics
 plot_richness(pruned_phyloseq,
-              x = "env_material_s",
-              measures = c("Shannon"),
-              color = "sex_s") +
+              x = "sex_s",
+              measures = c("Shannon")) +
   xlab("Sample origin") +
-  geom_jitter(width = 0.2) +
+  geom_boxplot(width = 0.2) +
   theme_bw() +
   labs(title = "Males Versus Females Diversity Metric")
-#remove NA
 ```
 
-**Figure 4**: Scatter Plot of Abundance vs. Diversity
-```{r Scatter Plot of Abundance vs. Diversity}
-#r Scatter Plot of Abundance vs. Diversity
+**
+```{r Abundance Table}
+plot_bar(pruned_phyloseq, 
+         x="sex_s", 
+         y="Abundance", 
+         fill="Phylum",
+         title="Abundance of Male and Female Samples", 
+         facet_grid=NULL) + 
+  scale_fill_brewer(palette = "Blues")
 ```
 
-**Figure 5**: Scatter Plot of Richness vs. Diversity
-```{r Scatter Plot of Richness vs. Diversity}
-#r Scatter Plot of Richness vs. Diversity
-```
+
 
 **Figure 6**: Inferred phylogeny of sequences, with points on tips representing samples within which each particular taxa occurred. Tree represents maximum likelihood phylogeny inferred using RAxML.
 
