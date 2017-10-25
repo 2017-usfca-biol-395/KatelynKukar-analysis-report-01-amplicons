@@ -73,6 +73,9 @@ library("mctoolsr")
 # And this to visualize our results
 # it also needs to be installed from bioconductor
 library("phyloseq")
+
+# Add colors
+library("RColorBrewer")
 ```
 
 ```{r extract-sample-and-file-names}
@@ -286,17 +289,20 @@ pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
 ```
 
 
+
+
+
 **Figure 1**: Abundance Measure for Male versus Female sample types
-```{r Abundance}
-#abundance, boxplot, table of values
-
-
-```
-
-**Abundance Table**:
 ```{r Abundance Table}
-
+plot_bar(pruned_phyloseq, 
+         x="sex_s", 
+         y="Abundance", 
+         fill="Phylum",
+         title="Abundance of Male and Female Samples", 
+         facet_grid=NULL) + 
+  scale_fill_brewer(palette = "Blues")
 ```
+
  
 **Figure 2**: Richness Measure for Male versus Female sample types
 ```{r Richness}
@@ -318,8 +324,8 @@ plot_richness(pruned_phyloseq,
               color = "sex_s") +
   xlab("Sample origin") +
   geom_jitter(width = 0.2) +
-  theme_bw()
-  title("Diversity Metric for Males versus Females")
+  theme_bw() +
+  labs(title = "Males Versus Females Diversity Metric")
 #remove NA
 ```
 
@@ -337,19 +343,20 @@ plot_richness(pruned_phyloseq,
 
 ```{r example-phyloseq-plot-2}
 # phylogeny, yay!
+# use ladderize to make branches equal
 plot_tree(pruned_phyloseq,
           color = "sex_s",
-          ladderize = TRUE) # this arranges the tree branches from short to long
+          ladderize = TRUE) +
+          labs(title = "Phylogeny of Males and Females")
+
 ```
 
 **Figure 7**: Ordination to order species along presumed ecological gradient to identify patterns of species distribution and abundance for male versus female samples
 ```{r Ordination Male vs. Female}
 # Ordination of Male and Female species distribution
-GP.ord <- ordinate(phyloseq_obj, "NMDS", "bray")
-p1 = plot_ordination(phyloseq_obj, GP.ord, type="samples", color="sex_s", title="Ordination of Male versus Female Sequences")
-print(p1)
 # apply pruned data set 
 pruned_phyloseq <- subset_samples(phyloseq_obj, sex_s != "Not applicable")
+set.seed(28)
 pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
 # plot ordination without NA
 p1 = plot_ordination(pruned_phyloseq, pruned_ord, type="samples", color="sex_s", title="Ordination of Male versus Female Sequences")
