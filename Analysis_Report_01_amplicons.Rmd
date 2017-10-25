@@ -9,17 +9,35 @@ csl: bioinformatics.csl
 
 # Introduction
 
-Add about 1.5-2 pages here. Must cite at least 5 peer reviewed articles.
+  Methodology to estimate microbial diversity has significantly increased with an effort to understand the distribution and diversity of microbes in their natural environments. Cultivation-dependent methodology work to mimic the natural environment of microbes in a laboratory setting, with enrichment cultures being particularly important for visualizing species that favor the selected media for growth (Swanson, 2016). Different ecological metrics have been used to categorize these cultivated colonies in order to deduce community data about known bacterial species and potentially deduce information about unknown species (Birtel, 2015). Understanding the cultivation methodology to successfully grow microbial species lends information about the requirements imperative for biodiverse communities that can be beneficial in studying niche environments like the human gut which interact with pathogens and probiotics (Wu, 2012). Beyond healthcare importances, general dispersal of bacterial communities increases biodiversity in water sources, soils, and all microenvironments that effect the wellbeing of the larger ecosystem, with this assumption also holding true for bacterial organisms which reside on a human host or human host environment (Fuhrman, 1999).
+
+  Fierer et al paper 
+  Difference between females and males community bacterial inhabitants
+  
+  Within this study we utilize data collected from Fierer et al. with reported male and female sample sets to create a community analysis of the bacterial communites that reside within each sex-based grouping. We extrapolate specific data into subsets to guide the hypothesis that there will be a predominant difference in bacterial communities from male and female sample sets. We assume that because hygiene patterns more routinely repeated by females, due to social constructs, we will find less abundant and less rich colonies from female samples.
+
 
 # Methods
 
 ## Sample origin and sequencing
 
-Add about half a page here. In this section instead of first person (I/we), use Fierer et al., since you'll just be describing what they did, based on the methods in their paper.
+###Sample collection
+All analysis was done using Fierer et al. as a reference source for sequence data and sample origins. Within the paper it is stated that samples were taken from nine healthy adults (four female, five male) who worked within the same building at the University of Colorado between ages 18-40. The samples taken included computer mouse swabs touched by the owner 12h before swabbing and the palm of the individual's dominant hand used to operate the mouse. Individuals were required to maintain normal hygiene habits prior to the swab as to not increase variation. The swabs were taken using autoclave cotton-tipped swabs that were autoclave and pre-moistened with a sterile solution. The swabbing took place for 10s per sample taken with all samples being kept at -80C for less than a week before DNA extraction (Fierer et al).
+
+###DNA and Pyrosequencing
+
+Fierer et al. explains that for each sample the 16s rRNA genes were amplified using the MO BIO PowerSoil DNA Isolation kit with the broken, frozen cotton swabs. These tubes were then horizontally shaken and kit procedures were followed for extraction. PCR reactions were carried out in triplicate repeats using HotMAsterMic with thermal cycling at 94C for 3min followed by 35 cycles of denaturation, annealing for 30s, and extension and final extension procedures. Replicate amplicons were pooled in agarose gel using SYBR Safe DNA gel stain from Invitrogen. Amplicon DNA concentrations were then measured with the final pool of DNA being precipitated, centrifuged, and centrifuged to create a pellet that was re-suspended in nuclease-free water. Pyrosequencing was then carried out on a 454 Life Sciences Genome Sequencer FLX instrument at the University of South Carolina (Fierer et al).
+
 
 ## Computational
 
-These are the methods you used. Should probably be at least a half of a page. At a very minimum should include citations for DADA2 [@callahan2016] and phyloseq [@mcmurdie2013]. Note that these don't count towards the five references you need to cite in the introduction.
+In order to analyze the sequences received we used computational programs to evaluate variables of interest. The variables we want to analyze more specifically include participant sex and commonly found bacterial community strains within the metadata set.
+
+To create a meta data set with all of the vectors of interest we initially utilized the raw data sets collected from the 454 Sequencer and published by Fierer et al. This was done using a remote server and fastq-dump to download the list of files in the run table to the raw directory. QC reports were then created for each of the runs utilizing fastqc and outputted as HTML to be readable. The fastqc files were trimmed (Trimmomatic Tool) based on their quality scores to discard sequences under 150 base pairs and cut off reads when the base score drops below 25. Fastqc files were then converted to fasta files to be used as BLAST queries (Bioawk). These files were then run against NCBI database (nt), using BLAST (blastn) to output csv file which was based on the name output and included all of the sequence data, plus the bacterial communities each sequence matched to with their quality scores and additional information.
+
+Then the Blast results were further formatted to create an output dataframe with proper column headers that denote each variable of interest from the results (qseqid). After this, the query sequence ID was split into Sample and Number components to group the files into columns (tidyr and separate) to make a vector of all the BLAST output file names, including the names of the directories. An empty matrix was created to join the data back and read in the meta data (rbind).
+
+We than use dplyr piping syntax to select a subset of row matching each vector we want to filter (categorically) and pipe out (numerically) to create histograms. We also used ggplot syntax as a comparative feature to plot multiple categorical variables against one another using one primary numerical variable. Tables were created with kable to tabularize quantified data sets and visualize the most common bacterial communities found for singular categorical vectors (males and females).
 
 # Results
 
@@ -267,6 +285,38 @@ phyloseq_obj <- phyloseq(otu_table(sequence_table_nochim,
                          phy_tree(tree_in)) # phylogeny from sequence variants
 ```
 
+
+**Figure 1**: Abundance Measure for Male versus Female sample types
+```{r Abundance}
+#abundance, boxplot, table of values
+```
+
+**Abundance Table**:
+```{r Abundance Table}
+
+```
+ 
+**Figure 2**: Richness Measure for Male versus Female sample types
+```{r Richness}
+#abundance, boxplot, table of values
+```
+
+**Richness Table**:
+```{r Richness Table}
+
+```
+
+**Statistical Test 1**
+```{r t.test Abundance}
+#t-test for differences in abundance based on male and female samples
+```
+
+**Statistical Test 2**
+```{r t.test Richness}
+#t-test for differences in richness based on male and female samples
+```
+
+**Figure 3**: Alpha diversity measures of the two sample types, colored by gender.
 ```{r example-phyloseq-plot-1}
 # alpha diversity metrics
 plot_richness(phyloseq_obj,
@@ -278,7 +328,17 @@ plot_richness(phyloseq_obj,
   theme_bw()
 ```
 
-**Figure 1**: Alpha diversity measures of the two sample types, colored by gender.
+**Figure 4**: Scatter Plot of Abundance vs. Diversity
+```{r Scatter Plot of Abundance vs. Diversity}
+#r Scatter Plot of Abundance vs. Diversity
+```
+
+**Figure 5**: Scatter Plot of Richness vs. Diversity
+```{r Scatter Plot of Richness vs. Diversity}
+#r Scatter Plot of Richness vs. Diversity
+```
+
+**Figure 6**: Inferred phylogeny of sequences, with points on tips representing samples within which each particular taxa occurred. Tree represents maximum likelihood phylogeny inferred using RAxML.
 
 ```{r example-phyloseq-plot-2}
 # phylogeny, yay!
@@ -287,12 +347,39 @@ plot_tree(phyloseq_obj,
           ladderize = TRUE) # this arranges the tree branches from short to long
 ```
 
-**Figure 2**: Inferred phylogeny of sequences, with points on tips representing samples within which each particular taxa occurred. Tree represents maximum likelihood phylogeny inferred using RAxML.
+**Figure 7**: Ordination to order species along presumed ecological gradient to identify patterns of species distribution and abundance for male versus female samples
+```{r Ordination Male vs. Female}
+#Ordination of Male and Female species distribution
+```
+
 
 
 # Discussion
 
-Add around 2-3 pages interpreting your results and considering future directions one might take in analyzing these data.
+###Intro-recap
+
+###Abundance
+	Abundance is a measure of the total number of individuals residing within the same niche environment to statistically observe how consecrated the region is. If a high abundance occurs in one environment it can be observed as having more resources, or less environmentally de-stabling associations.
+
+###Richness
+	Richness is a measure of different morphotypes within a bacterial community. Calculations of richness within a community are imperative to showcase if only one species is present or many within the same niche environment. Biodiversity is measured through both richness and diversity factors. By observing biodiversity within communities conservation of certain species can occur through the creation of more favorable niches. In the observation between male and female resident sample populations like richness is observed in the overlap of some varying morphotypes, however, due to the ability for potential mutation or nutritional needs of the bacteria, some morphotypes favored the males over the females environment and vice versa.
+
+###Diversity
+	Diversity is a measure of the relative variability among organisms from all sources or morphologies. Shannon Diversity offers a statistical means of categorizing the diversity of individuals within a community
+
+####Abundance versus Diversity
+	Male:
+	Female
+
+####Richness Versus Diversity	
+	Male:
+	Female:
+
+###Ordination
+	Ordination can be used as a exploratory measure for data clustering of similar and different multivariable types
+
+###Conclusion
+
 
 # Sources Cited
 
