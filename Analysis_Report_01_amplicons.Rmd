@@ -33,11 +33,7 @@ Fierer et al. explains that for each sample the 16s rRNA genes were amplified us
 
 In order to analyze the sequences received we used computational programs to evaluate variables of interest. The variables we want to analyze more specifically include participant sex and commonly found bacterial community strains within the metadata set.
 
-To create a meta data set with all of the vectors of interest we initially utilized the raw data sets collected from the 454 Sequencer and published by Fierer et al. This was done using a remote server and fastq-dump to download the list of files in the run table to the raw directory. QC reports were then created for each of the runs utilizing fastqc and outputted as HTML to be readable. The fastqc files were trimmed (Trimmomatic Tool) based on their quality scores to discard sequences under 150 base pairs and cut off reads when the base score drops below 25. Fastqc files were then converted to fasta files to be used as BLAST queries (Bioawk). These files were then run against NCBI database (nt), using BLAST (blastn) to output csv file which was based on the name output and included all of the sequence data, plus the bacterial communities each sequence matched to with their quality scores and additional information.
-
-Then the Blast results were further formatted to create an output dataframe with proper column headers that denote each variable of interest from the results (qseqid). After this, the query sequence ID was split into Sample and Number components to group the files into columns (tidyr and separate) to make a vector of all the BLAST output file names, including the names of the directories. An empty matrix was created to join the data back and read in the meta data (rbind).
-
-We than use dplyr piping syntax to select a subset of row matching each vector we want to filter (categorically) and pipe out (numerically) to create histograms. We also used ggplot syntax as a comparative feature to plot multiple categorical variables against one another using one primary numerical variable. Tables were created with kable to tabularize quantified data sets and visualize the most common bacterial communities found for singular categorical vectors (males and females).
+To create a meta data set with all of the vectors of interest we initially utilized the raw data sets collected from the 454 Sequencer and published by Fierer et al. This was done using a dada pipeline within R. 
 
 # Results
 
@@ -283,12 +279,18 @@ phyloseq_obj <- phyloseq(otu_table(sequence_table_nochim,
                          sample_data(metadata_in), # metadata for each sample
                          tax_table(taxa), # taxonomy for each sequence variant
                          phy_tree(tree_in)) # phylogeny from sequence variants
+
+# Pruning Data to remove Nona applicable
+pruned_phyloseq <- subset_samples(phyloseq_obj, sex_s != "Not applicable")
+pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
 ```
 
 
 **Figure 1**: Abundance Measure for Male versus Female sample types
 ```{r Abundance}
 #abundance, boxplot, table of values
+
+
 ```
 
 **Abundance Table**:
@@ -306,26 +308,19 @@ phyloseq_obj <- phyloseq(otu_table(sequence_table_nochim,
 
 ```
 
-**Statistical Test 1**
-```{r t.test Abundance}
-#t-test for differences in abundance based on male and female samples
-```
-
-**Statistical Test 2**
-```{r t.test Richness}
-#t-test for differences in richness based on male and female samples
-```
 
 **Figure 3**: Alpha diversity measures of the two sample types, colored by gender.
 ```{r example-phyloseq-plot-1}
 # alpha diversity metrics
-plot_richness(phyloseq_obj,
+plot_richness(pruned_phyloseq,
               x = "env_material_s",
-              measures = c("Shannon", "Simpson"),
+              measures = c("Shannon"),
               color = "sex_s") +
   xlab("Sample origin") +
   geom_jitter(width = 0.2) +
   theme_bw()
+  title("Diversity Metric for Males versus Females")
+#remove NA
 ```
 
 **Figure 4**: Scatter Plot of Abundance vs. Diversity
@@ -342,14 +337,23 @@ plot_richness(phyloseq_obj,
 
 ```{r example-phyloseq-plot-2}
 # phylogeny, yay!
-plot_tree(phyloseq_obj,
+plot_tree(pruned_phyloseq,
           color = "sex_s",
           ladderize = TRUE) # this arranges the tree branches from short to long
 ```
 
 **Figure 7**: Ordination to order species along presumed ecological gradient to identify patterns of species distribution and abundance for male versus female samples
 ```{r Ordination Male vs. Female}
-#Ordination of Male and Female species distribution
+# Ordination of Male and Female species distribution
+GP.ord <- ordinate(phyloseq_obj, "NMDS", "bray")
+p1 = plot_ordination(phyloseq_obj, GP.ord, type="samples", color="sex_s", title="Ordination of Male versus Female Sequences")
+print(p1)
+# apply pruned data set 
+pruned_phyloseq <- subset_samples(phyloseq_obj, sex_s != "Not applicable")
+pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
+# plot ordination without NA
+p1 = plot_ordination(pruned_phyloseq, pruned_ord, type="samples", color="sex_s", title="Ordination of Male versus Female Sequences")
+print(p1)
 ```
 
 
