@@ -23,10 +23,10 @@ csl: bioinformatics.csl
 
 ## Sample origin and sequencing
 
-###Sample collection
+### Sample collection
   All analysis was done using Fierer et al. as a reference source for sequence data and sample origins. Within the paper it is stated that samples were taken from nine healthy adults (four female, five male) who worked within the same building at the University of Colorado between ages 18-40. The samples taken included computer mouse swabs touched by the owner 12h before swabbing and the palm of the individual's dominant hand used to operate the mouse. Individuals were required to maintain normal hygiene habits prior to the swab as to not increase variation. The swabs were taken using autoclave cotton-tipped swabs that were autoclave and pre-moistened with a sterile solution. The swabbing took place for 10s per sample taken with all samples being kept at -80C for less than a week before DNA extraction (Fierer et al).
 
-###DNA and Pyrosequencing
+### DNA and Pyrosequencing
 
   Fierer et al. explains that for each sample the 16s rRNA genes were amplified using the MO BIO PowerSoil DNA Isolation kit with the broken, frozen cotton swabs. These tubes were then horizontally shaken and kit procedures were followed for extraction. PCR reactions were carried out in triplicate repeats using HotMAsterMic with thermal cycling at 94C for 3min followed by 35 cycles of denaturation, annealing for 30s, and extension and final extension procedures. Replicate amplicons were pooled in agarose gel using SYBR Safe DNA gel stain from Invitrogen. Amplicon DNA concentrations were then measured with the final pool of DNA being precipitated, centrifuged, and centrifuged to create a pellet that was re-suspended in nuclease-free water. Pyrosequencing was then carried out on a 454 Life Sciences Genome Sequencer FLX instrument at the University of South Carolina (Fierer et al).
 
@@ -41,6 +41,8 @@ csl: bioinformatics.csl
 
 
 # Results
+
+## Parsing Data
 
   To divulge significant evidence towards our hypothesis on the differences between sexually unique bacterial communities computational metrics were applied to the 2010 Fierer et al study in order to parse the data to uniquely address male and female samples alone. 
     The primary step for this analysis included analyzing the 454 sequenced samples to be trimmed in order to reduce errors and then compiled into an easy to read spreadsheet where sequence identifiers, sequence length, read errors, taxonomy, and sex-based sample type were listed for imperative analytical usage.
@@ -308,6 +310,7 @@ Phyloseq was used to create a compiled data set with sequenced MetaData and taxo
 
 After the data was parsed and filtered the "melted" data set is now applicable for analytical research regarding the community analysis of male and female participants and their corresponding bacterial communities.
 
+##Analyiti
 **Figure 2**: Abundance Measure for Male versus Female sample types
 ```{r Abundance }
 # use dplyr to add in data as a boxplot and use tally function to quantify all counts 
@@ -388,30 +391,30 @@ print(p1)
 
 # Discussion
 
-###Intro-recap
+### Intro-recap
 
-###Abundance
+### Abundance
 	Abundance is a measure of the total number of individuals residing within the same niche environment to statistically observe how consecrated the region is. If a high abundance occurs in one environment it can be observed as having more resources, or less environmentally de-stabling associations. Abundance therefore is the relative representation of a species in a particular ecological niche, which in this case is the human hand skin for both male and female particpants.
 	 Evaluation of Figure 2 expresses an abundance of differing amounts due to 
 
-###Richness
+### Richness
 	Richness is a measure of different morphotypes within a bacterial community. Calculations of richness within a community are imperative to showcase if only one species is present or many within the same niche environment. Biodiversity is measured through both richness and diversity factors. By observing biodiversity within communities conservation of certain species can occur through the creation of more favorable niches. In the observation between male and female resident sample populations like richness is observed in the overlap of some varying morphotypes, however, due to the ability for potential mutation or nutritional needs of the bacteria, some morphotypes favored the males over the females environment and vice versa.
 
-###Diversity
+### Diversity
 	Diversity is a measure of the relative variability among organisms from all sources or morphologies. Shannon Diversity offers a statistical means of categorizing the diversity of individuals within a community
 
-####Abundance versus Diversity
+#### Abundance versus Diversity
 	Male:
 	Female
 
-####Richness Versus Diversity	
+#### Richness Versus Diversity	
 	Male:
 	Female:
 
-###Ordination
+### Ordination
 Ordination can be used as a exploratory measure for data clustering of similar and different multivariable types
 
-###Conclusion
+### Conclusion
 
 
 # Sources Cited
