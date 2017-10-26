@@ -314,7 +314,7 @@ After the data was parsed and filtered the "melted" data set is now applicable f
 ggplot(melted_obj,
        aes(x = sex_s,
            y = Abundance)) +
-  geom_boxplot(alpha = 0.05) +
+  geom_boxplot(alpha = 1) +
   ggtitle("Abundance for Male Verus Female Participants") +
   xlab("Sex") +
   ylab("Abundance") +
@@ -392,7 +392,7 @@ print(p1)
 
 ###Abundance
 	Abundance is a measure of the total number of individuals residing within the same niche environment to statistically observe how consecrated the region is. If a high abundance occurs in one environment it can be observed as having more resources, or less environmentally de-stabling associations. Abundance therefore is the relative representation of a species in a particular ecological niche, which in this case is the human hand skin for both male and female particpants.
-	 Evaluation of Figure 2 expresses an abundance of differing 
+	 Evaluation of Figure 2 expresses an abundance of differing amounts due to 
 
 ###Richness
 	Richness is a measure of different morphotypes within a bacterial community. Calculations of richness within a community are imperative to showcase if only one species is present or many within the same niche environment. Biodiversity is measured through both richness and diversity factors. By observing biodiversity within communities conservation of certain species can occur through the creation of more favorable niches. In the observation between male and female resident sample populations like richness is observed in the overlap of some varying morphotypes, however, due to the ability for potential mutation or nutritional needs of the bacteria, some morphotypes favored the males over the females environment and vice versa.
