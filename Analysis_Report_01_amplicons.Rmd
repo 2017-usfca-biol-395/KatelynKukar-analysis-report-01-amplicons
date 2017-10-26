@@ -1,5 +1,5 @@
 ---
-title: "Analysis Report 1: Your Title Here"
+title: "Analysis Report 1: Human Skin Microbiota Sexually Induced Differences"
 author: "Katelyn Kukar"
 date: "November 01, 2017"
 output: github_document
@@ -11,11 +11,11 @@ csl: bioinformatics.csl
 
   Methodology to estimate microbial diversity has significantly increased with an effort to understand the distribution and diversity of microbes in their natural environments. Cultivation-dependent methodology work to mimic the natural environment of microbes in a laboratory setting, with enrichment cultures being particularly important for visualizing species that favor the selected media for growth (Swanson, 2016). Different ecological metrics have been used to categorize these cultivated colonies in order to deduce community data about known bacterial species and potentially deduce information about unknown species (Birtel, 2015). Understanding the cultivation methodology to successfully grow microbial species lends information about the requirements imperative for biodiverse communities that can be beneficial in studying niche environments like the human gut which interact with pathogens and probiotics (Wu, 2012). Beyond healthcare, general dispersal of bacterial communities increases biodiversity in water sources, soils, and all microenvironments that effect the wellbeing of the larger ecosystem, with this assumption also holding true for bacterial organisms which reside on a human host or human host environment (Fuhrman, 1999).
   
-Within the paper Forensic identification using skin bacterial communities, published in 2010 by Noah Fierer the diversity in human skin bacterial communities is explained to be “far higher than previously recognized, with a high degree of inter-individual variability in the composition of bacterial communities.” This discovery leads the paper to discuss that these individualized communities can be utilized as personal identifiers for criminal cases as forensic evidence. Fierer et al. specifically claims that “these skin bacteria may persist on touched surfaces for prolonged periods because many are highly resistant to environ- mental stresses, including moisture, temperature, and UV radiation,” meaning the community samples can be collected long after the host has left. Though the implications for forensic research are still under scrutiny, the data can be more broadly analyzed to deduce if there are specific differences in bacterial communities between female and male participants. By analytically evaluating these communities separately to find patterns in abundance, richness, and diversity we deduce information about the specific community composition, which can yield information about the overall biodiversity of the niche the bacteria are a part of. The inference that human hosts hold their own unique sets of bacteria helps foster the notion of unique microenvironments that endosymbiotically regulate the human body.
+  Within the paper, **Forensic identification using skin bacterial communities**, published in 2010 by Noah Fierer the diversity in human skin bacterial communities is explained to be “far higher than previously recognized, with a high degree of inter-individual variability in the composition of bacterial communities.” This discovery leads the paper to discuss that these individualized communities can be utilized as personal identifiers for criminal cases as forensic evidence. Fierer et al. specifically claims that “these skin bacteria may persist on touched surfaces for prolonged periods because many are highly resistant to environ- mental stresses, including moisture, temperature, and UV radiation,” meaning the community samples can be collected long after the host has left. Though the implications for forensic research are still under scrutiny, the data can be more broadly analyzed to deduce if there are specific differences in bacterial communities between female and male participants. By analytically evaluating these communities separately to find patterns in abundance, richness, and diversity we deduce information about the specific community composition, which can yield information about the overall biodiversity of the niche the bacteria are a part of. The inference that human hosts hold their own unique sets of bacteria helps foster the notion of unique microenvironments that endosymbiotically regulate the human body.
 
-By explicitly looking at community differences between male and female participants information can be gathered about the overall health and well-being of each participant sex in regard to the surrounding environment. In a study published in Science in 2013, it was discovered that the gut microbiota is extremely relevant in determining autoimmune disease susceptibility (Markle, 2013). Markle et al. stated that when male cecal contents were transferred to female mice these mice received a higher level of protection against “pancreatic islet inflammation, autoantibody production, and the development of diabetes,” meaning this difference within the sexes microbiota was translational to inhibit the spread of disease (Markle et al). Therefore, understanding the differences in the skin microbiota could also potentially pose interesting medical questions that could yield insight on diseases current to specific, sexually biased traits.
+  By explicitly looking at community differences between male and female participants, information can be gathered about the overall health and well-being of each participant sex in regard to the surrounding environment. In a study published in Science in 2013, it was discovered that the gut microbiota is extremely relevant in determining autoimmune disease susceptibility (Markle, 2013). Markle et al. stated that when male cecal contents were transferred to female mice these mice received a higher level of protection against “pancreatic islet inflammation, autoantibody production, and the development of diabetes,” meaning this difference within the sexes microbiota was translational to inhibit the spread of disease (Markle et al). Therefore, understanding the differences in the skin microbiota could also potentially pose interesting medical questions that could yield insight on diseases current to specific, sexually biased traits.
 
-Overall, divulging community data analysis from female and male participants, from the sequenced data sets from the Fierer et. al paper, can provide useful information about the resident skin microbiota of sexually diverse humans. By using sex as the means of a comparison further hypotheses can be made that explain differences based on hormonal differences and social differences since the presiding environment remains constant for both sample sets. We can thereby infer that because of these differences a community the female and male sex of humans house a community of bacteria that are significantly different in regard to diversity, richness, and abundance on human hands. We test this hypothesis utilizing computational amplicon sequencing analyses that parse data particular to the bacterial communities found within the Fierer et al paper. 
+  Overall, divulging community data analysis from female and male participants, from the sequenced data sets from the Fierer et. al paper, can provide useful information about the resident skin microbiota of sexually diverse humans. By using sex as the means of a comparison further hypotheses can be made that explain differences based on hormonal differences and social differences since the presiding environment remains constant for both sample sets. We can thereby infer that because of these differences a community the female and male sex of humans house a community of bacteria that are significantly different in regard to diversity, richness, and abundance on human hands. We test this hypothesis utilizing computational amplicon sequencing analyses that parse data particular to the bacterial communities found within the Fierer et al paper. 
 
 
 
@@ -24,25 +24,26 @@ Overall, divulging community data analysis from female and male participants, fr
 ## Sample origin and sequencing
 
 ###Sample collection
-All analysis was done using Fierer et al. as a reference source for sequence data and sample origins. Within the paper it is stated that samples were taken from nine healthy adults (four female, five male) who worked within the same building at the University of Colorado between ages 18-40. The samples taken included computer mouse swabs touched by the owner 12h before swabbing and the palm of the individual's dominant hand used to operate the mouse. Individuals were required to maintain normal hygiene habits prior to the swab as to not increase variation. The swabs were taken using autoclave cotton-tipped swabs that were autoclave and pre-moistened with a sterile solution. The swabbing took place for 10s per sample taken with all samples being kept at -80C for less than a week before DNA extraction (Fierer et al).
+  All analysis was done using Fierer et al. as a reference source for sequence data and sample origins. Within the paper it is stated that samples were taken from nine healthy adults (four female, five male) who worked within the same building at the University of Colorado between ages 18-40. The samples taken included computer mouse swabs touched by the owner 12h before swabbing and the palm of the individual's dominant hand used to operate the mouse. Individuals were required to maintain normal hygiene habits prior to the swab as to not increase variation. The swabs were taken using autoclave cotton-tipped swabs that were autoclave and pre-moistened with a sterile solution. The swabbing took place for 10s per sample taken with all samples being kept at -80C for less than a week before DNA extraction (Fierer et al).
 
 ###DNA and Pyrosequencing
 
-Fierer et al. explains that for each sample the 16s rRNA genes were amplified using the MO BIO PowerSoil DNA Isolation kit with the broken, frozen cotton swabs. These tubes were then horizontally shaken and kit procedures were followed for extraction. PCR reactions were carried out in triplicate repeats using HotMAsterMic with thermal cycling at 94C for 3min followed by 35 cycles of denaturation, annealing for 30s, and extension and final extension procedures. Replicate amplicons were pooled in agarose gel using SYBR Safe DNA gel stain from Invitrogen. Amplicon DNA concentrations were then measured with the final pool of DNA being precipitated, centrifuged, and centrifuged to create a pellet that was re-suspended in nuclease-free water. Pyrosequencing was then carried out on a 454 Life Sciences Genome Sequencer FLX instrument at the University of South Carolina (Fierer et al).
+  Fierer et al. explains that for each sample the 16s rRNA genes were amplified using the MO BIO PowerSoil DNA Isolation kit with the broken, frozen cotton swabs. These tubes were then horizontally shaken and kit procedures were followed for extraction. PCR reactions were carried out in triplicate repeats using HotMAsterMic with thermal cycling at 94C for 3min followed by 35 cycles of denaturation, annealing for 30s, and extension and final extension procedures. Replicate amplicons were pooled in agarose gel using SYBR Safe DNA gel stain from Invitrogen. Amplicon DNA concentrations were then measured with the final pool of DNA being precipitated, centrifuged, and centrifuged to create a pellet that was re-suspended in nuclease-free water. Pyrosequencing was then carried out on a 454 Life Sciences Genome Sequencer FLX instrument at the University of South Carolina (Fierer et al).
 
 
 ## Computational
 
-To create a meta data set with all of the vectors of interest we initially utilized the raw data sets collected from the 454 Sequencer and published by Fierer et al. This was done using a dada pipeline within R. We ordered the samples first, then extracted the sample names from their fastq format, which was initially done using a remote server and fastq-dump to download the list of files in the run table to the raw directory. QC reports were then created for each of the runs utilizing fastqc and outputted as HTML to be readable. We  then plotted the quality of each of the twenty samples of interest into a readable format in order to deduce the length to trim. It was found that quality is reduced after 200 bases, so the maximum acceptable length was made to be 225 bases. Using the dada pipeline the sequences were filtered, trimmed, into a new output folder and allowed to have 3 expected errors. A table of read counts was formatted to visualize the reads before and after filters and then again to visualize error trends. Duplicated sequences were then removed and dada was run on the reads based on 454 data recommendations. The sequences were aligned to craft a site by species matrix and a histogram representation of sequence lengths from all samples. Chimeras were removed and a singular table to give all pipeline information of the sequences trimmed and edited was created. A taxa code was initiated to yield a table with the taxonomy of each individual sequence to create a phylogeny that expresses the overall relatedness of each sequence. All of these tables were crafted in the dada pipeline through the sex of both male and female sample sets to visualize relatedness among all samples tested.
+  To create a meta data set with all of the vectors of interest we initially utilized the raw data sets collected from the 454 Sequencer and published by Fierer et al. This was done using a dada pipeline within R. We ordered the samples first, then extracted the sample names from their fastq format, which was initially done using a remote server and fastq-dump to download the list of files in the run table to the raw directory. QC reports were then created for each of the runs utilizing fastqc and outputted as HTML to be readable. We  then plotted the quality of each of the twenty samples of interest into a readable format in order to deduce the length to trim. It was found that quality is reduced after 200 bases, so the maximum acceptable length was made to be 225 bases. Using the dada pipeline the sequences were filtered, trimmed, into a new output folder and allowed to have 3 expected errors. A table of read counts was formatted to visualize the reads before and after filters and then again to visualize error trends. Duplicated sequences were then removed and dada was run on the reads based on 454 data recommendations. The sequences were aligned to craft a site by species matrix and a histogram representation of sequence lengths from all samples. Chimeras were removed and a singular table to give all pipeline information of the sequences trimmed and edited was created. A taxa code was initiated to yield a table with the taxonomy of each individual sequence to create a phylogeny that expresses the overall relatedness of each sequence. All of these tables were crafted in the dada pipeline through the sex of both male and female sample sets to visualize relatedness among all samples tested.
 
-Once the data set was compiled by relatedness pyroseq organized all aspects of the data into a merged meta data set. This data set was parsed to remove any non-applicable data regarding the sex of participants (i.e. all samples which included swabs from electronic devices). The data was then melted to include all taxonomically related data sets that were coded for under the taxa file, separate from the metadata that was read in. This allowed for analysis via tables, figures, and ggplot graphs.
+  Once the data set was compiled by relatedness pyroseq organized all aspects of the data into a merged meta data set. This data set was parsed to remove any non-applicable data regarding the sex of participants (i.e. all samples which included swabs from electronic devices). The data was then melted to include all taxonomically related data sets that were coded for under the taxa file, separate from the metadata that was read in. This allowed for analysis via tables, figures, and ggplot graphs.
 
-Dplyr and ggplot packages were used to analyze the data through representative figures and tables. The figures used look at abundance, richness, diversity metrics (applied through Shannon diversity), a phylogeny of the entire community set, and an ordination all of which are separated by the respective sex to divulge sex based community analysis on the bacterial species present. 
+  Dplyr and ggplot packages were used to analyze the data through representative figures and tables. The figures used look at abundance, richness, diversity metrics (applied through Shannon diversity), a phylogeny of the entire community set, and an ordination all of which are separated by the respective sex to divulge sex based community analysis on the bacterial species present. 
 
 
 # Results
 
-To divulge significant evidence towards our hypothesis on the differences between sexually unique bacterial communities 
+  To divulge significant evidence towards our hypothesis on the differences between sexually unique bacterial communities computational metrics were applied to the 2010 Fierer et al study in order to parse the data to uniquely address male and female samples alone. 
+    The primary step for this analysis included analyzing the 454 sequenced samples to be trimmed in order to reduce errors and then compiled into an easy to read spreadsheet where sequence identifiers, sequence length, read errors, taxonomy, and sex-based sample type were listed for imperative analytical usage.
 
 ```{r load-libraries, message = FALSE}
 # Be sure to install these packages before running this script
@@ -83,6 +84,7 @@ library("phyloseq")
 library("RColorBrewer")
 ```
 
+  The primary graphs represent each of 20 samples original sequence error margins.
 ```{r extract-sample-and-file-names}
 # NOTE: Much of the following follows the DADA2 tutorials available here:
 # https://benjjneb.github.io/dada2/tutorial.html
@@ -106,7 +108,7 @@ filenames_forward_reads <- file.path(path, filenames_forward_reads)
 plotQualityProfile(filenames_forward_reads[1:20])
 ```
 
-We can see from the quality profiles that most reads tend to get pretty bad in quality after around 200 bases. Therefore, we decided to set a maximum acceptable sequence length of 225 bases.
+  We can see from the quality profiles that most reads tend to get pretty bad in quality after around 200 bases. Therefore, we decided to set a maximum acceptable sequence length of 225 bases.
 
 ```{r filter-reads}
 # Place filtered files in filtered/ subdirectory
@@ -131,6 +133,7 @@ filtered_output <- filterAndTrim(fwd = filenames_forward_reads,
                                  multithread = FALSE)
 ```
 
+  
 ```{r filtered-read-counts-table}
 # produce nicely-formatted markdown table of read counts
 # before/after trimming
@@ -145,6 +148,7 @@ errors_forward_reads <- learnErrors(filtered_reads_path,
                                     multithread = FALSE)
 ```
 
+  This table and corresponding error models were built to showcase theread errors from the sequencing data and the corresponding trimming profile and alignment that needed to be accounted for to allow for reproducible and unbiased analysis (removing repeats, trimming, accounting for error bias, and chimeric regions with all sequences being parsed with 454 acceptable protocols through a dada pipeline).
 ```{r visualize-errors-with-plots}
 # quick check to see if error models match data
 # (black lines match black points) and are generally decresing left to right
@@ -174,19 +178,20 @@ dada_forward_reads <- dada(dereplicated_forward_reads,
 dada_forward_reads
 ```
 
-```{r make-sequence-table}
+```{r}
 # produce the 'site by species matrix'
 sequence_table <- makeSequenceTable(dada_forward_reads)
 ```
 
-The output table has `r nrow(sequence_table)` rows (samples) and `r ncol(sequence_table)` columns (sequence variants). Notice how we can embed R code directly in our markdown text.
 
+**Figure 1**: Sequence Length Histogram
 ```{r histogram-of-sequence-lengths}
 # Quick check to look at distribution of trimmed and denoised sequences
 hist(nchar(getSequences(sequence_table)),
      main = "Histogram of fingal sequence variant lengths",
      xlab = "Sequence length in bp")
 ```
+This table explicitly represents the sequence lengths of the trimmed dataset to show they are all correctly anlayzed beneath the given range of 225 bases.
 
 ```{r remove-chimeras}
 # Check for and remove chimeras
@@ -224,6 +229,7 @@ rownames(track) <- sample_names
 kable(track)
 ```
 
+This markdown table showcases the edited data and the reads given out after each step of filtering for the corrected data set to be used in figure based computational analysis.
 ```{r assign-taxonomy}
 # assigns taxonomy to each sequence variant based on a supplied training set
 # made up of known sequences
@@ -236,6 +242,7 @@ taxa <- assignTaxonomy(sequence_table_nochim,
 unname(taxa)
 ```
 
+Taxonomy was assigned for each sequence to describe which bacterial community was present within the samples tested for.
 ```{r extract-sequences-to-fasta}
 # we want to export the cleaned, trimmed, filtered, denoised sequence variants
 # so that we can build a phylogeny - we'll build the phylogeny outside of R
@@ -262,6 +269,7 @@ export_taxa_table_and_seqs(sequence_table_nochim,
                            "output/sequence_variants_seqs.fa")
 ```
 
+This taxa table showcases information from each given sequence with the apropriate Phylum to Genus information. 
 
 ```{r read-in-metadata-and-create-phyloseq}
 # Next we want to read in the metadata file so we can add that in too
@@ -296,17 +304,26 @@ pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
 melted_obj <- psmelt(phyloseq_obj)
 ```
 
+Phyloseq was used to create a compiled data set with sequenced MetaData and taxonomy. This was parsed to remove Non-applicable sex based data (i.e. from electronic device swabs.)nThe data was also melted together to form a larger data set applicable for computational analyses of sexual data chaaracteristics and taxonomical characteristics.
 
+After the data was parsed and filtered the "melted" data set is now applicable for analytical research regarding the community analysis of male and female participants and their corresponding bacterial communities.
 
-
-
-**Figure 1**: Abundance Measure for Male versus Female sample types
+**Figure 2**: Abundance Measure for Male versus Female sample types
 ```{r Abundance }
 # use dplyr to add in data as a boxplot and use tally function to quantify all counts 
+ggplot(melted_obj,
+       aes(x = sex_s,
+           y = Abundance)) +
+  geom_boxplot(alpha = 0.05) +
+  ggtitle("Abundance for Male Verus Female Participants") +
+  xlab("Sex") +
+  ylab("Abundance") +
+  theme_light()
+
 ```
 
- 
-**Figure 2**: Richness Measure for Male versus Female sample types
+
+**Figure 3**: Richness Measure for Male versus Female sample types
 ```{r Richness-plot}
 #abundance, boxplot, table of values
 plot_richness(pruned_phyloseq,
@@ -318,13 +335,8 @@ plot_richness(pruned_phyloseq,
   labs(title = "Males Versus Females Richness Metric")
 ```
 
-**Richness Table**:
-```{r Richness Table}
 
-```
-
-
-**Figure 3**: Alpha diversity measures of the two sample types, colored by gender.
+**Figure 4**: Alpha diversity measures of the two sample types 
 ```{r Shannon Diversity Plot}
 # alpha diversity metrics
 plot_richness(pruned_phyloseq,
@@ -336,8 +348,8 @@ plot_richness(pruned_phyloseq,
   labs(title = "Males Versus Females Diversity Metric")
 ```
 
-**Figure 5**: 
-```{r Abundance Table}
+**Figure 5**: Male versus Female bar graph showcasing the phylums present within each bacterial community
+```{r Abundance Taxonomy Graph}
 plot_bar(pruned_phyloseq, 
          x="sex_s", 
          y="Abundance", 
@@ -346,7 +358,6 @@ plot_bar(pruned_phyloseq,
          facet_grid=NULL) + 
   scale_fill_brewer(palette = "Blues")
 ```
-
 
 
 **Figure 6**: Inferred phylogeny of sequences, with points on tips representing samples within which each particular taxa occurred. Tree represents maximum likelihood phylogeny inferred using RAxML.
@@ -380,7 +391,8 @@ print(p1)
 ###Intro-recap
 
 ###Abundance
-	Abundance is a measure of the total number of individuals residing within the same niche environment to statistically observe how consecrated the region is. If a high abundance occurs in one environment it can be observed as having more resources, or less environmentally de-stabling associations.
+	Abundance is a measure of the total number of individuals residing within the same niche environment to statistically observe how consecrated the region is. If a high abundance occurs in one environment it can be observed as having more resources, or less environmentally de-stabling associations. Abundance therefore is the relative representation of a species in a particular ecological niche, which in this case is the human hand skin for both male and female particpants.
+	 Evaluation of Figure 2 expresses an abundance of differing 
 
 ###Richness
 	Richness is a measure of different morphotypes within a bacterial community. Calculations of richness within a community are imperative to showcase if only one species is present or many within the same niche environment. Biodiversity is measured through both richness and diversity factors. By observing biodiversity within communities conservation of certain species can occur through the creation of more favorable niches. In the observation between male and female resident sample populations like richness is observed in the overlap of some varying morphotypes, however, due to the ability for potential mutation or nutritional needs of the bacteria, some morphotypes favored the males over the females environment and vice versa.
@@ -397,7 +409,7 @@ print(p1)
 	Female:
 
 ###Ordination
-	Ordination can be used as a exploratory measure for data clustering of similar and different multivariable types
+Ordination can be used as a exploratory measure for data clustering of similar and different multivariable types
 
 ###Conclusion
 
