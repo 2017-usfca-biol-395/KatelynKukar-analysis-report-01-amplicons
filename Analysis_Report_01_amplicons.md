@@ -1,4 +1,4 @@
-Analysis Report 1: Your Title Here
+Analysis Report 1: Human Skin Microbiota Sexually Induced Differences
 ================
 Katelyn Kukar
 November 01, 2017
@@ -6,11 +6,11 @@ November 01, 2017
 Introduction
 ============
 
-Methodology to estimate microbial diversity has significantly increased with an effort to understand the distribution and diversity of microbes in their natural environments. Cultivation-dependent methodology work to mimic the natural environment of microbes in a laboratory setting, with enrichment cultures being particularly important for visualizing species that favor the selected media for growth (Swanson, 2016). Different ecological metrics have been used to categorize these cultivated colonies in order to deduce community data about known bacterial species and potentially deduce information about unknown species (Birtel, 2015). Understanding the cultivation methodology to successfully grow microbial species lends information about the requirements imperative for biodiverse communities that can be beneficial in studying niche environments like the human gut which interact with pathogens and probiotics (Wu, 2012). Beyond healthcare, general dispersal of bacterial communities increases biodiversity in water sources, soils, and all microenvironments that effect the wellbeing of the larger ecosystem, with this assumption also holding true for bacterial organisms which reside on a human host or human host environment (Fuhrman, 1999).
+Methodology to estimate microbial diversity has significantly increased with an effort to understand the distribution and diversity of microbes in their natural environments. Cultivation-dependent methodology work to mimic the natural environment of microbes in a laboratory setting, with enrichment cultures being particularly important for visualizing species that favor the selected media for growth (Nichols, 2007). Different ecological metrics have been used to categorize these cultivated colonies in order to deduce community data about known bacterial species and potentially deduce information about unknown species (Birtel *et al.*, 2015). Understanding the cultivation methodology to successfully grow microbial species lends information about the requirements imperative for biodiverse communities that can be beneficial in studying niche environments like the human gut which interact with pathogens and probiotics (Wu *et al.*, 2012). Beyond healthcare, general dispersal of bacterial communities increases biodiversity in water sources, soils, and all microenvironments that effect the wellbeing of the larger ecosystem, with this assumption also holding true for bacterial organisms which reside on a human host or human host environment (Fuhrman, 1999).
 
-Within the paper Forensic identification using skin bacterial communities, published in 2010 by Noah Fierer the diversity in human skin bacterial communities is explained to be “far higher than previously recognized, with a high degree of inter-individual variability in the composition of bacterial communities.” This discovery leads the paper to discuss that these individualized communities can be utilized as personal identifiers for criminal cases as forensic evidence. Fierer et al. specifically claims that “these skin bacteria may persist on touched surfaces for prolonged periods because many are highly resistant to environ- mental stresses, including moisture, temperature, and UV radiation,” meaning the community samples can be collected long after the host has left. Though the implications for forensic research are still under scrutiny, the data can be more broadly analyzed to deduce if there are specific differences in bacterial communities between female and male participants. By analytically evaluating these communities separately to find patterns in abundance, richness, and diversity we deduce information about the specific community composition, which can yield information about the overall biodiversity of the niche the bacteria are a part of. The inference that human hosts hold their own unique sets of bacteria helps foster the notion of unique microenvironments that endosymbiotically regulate the human body.
+Within the paper, **Forensic identification using skin bacterial communities**, published in 2010 by Noah Fierer the diversity in human skin bacterial communities is explained to be “far higher than previously recognized, with a high degree of inter-individual variability in the composition of bacterial communities.” This discovery leads the paper to discuss that these individualized communities can be utilized as personal identifiers for criminal cases as forensic evidence. Fierer et al. specifically claims that “these skin bacteria may persist on touched surfaces for prolonged periods because many are highly resistant to environ- mental stresses, including moisture, temperature, and UV radiation,” meaning the community samples can be collected long after the host has left (Fierer *et al.*, 2010). Though the implications for forensic research are still under scrutiny, the data can be more broadly analyzed to deduce if there are specific differences in bacterial communities between female and male participants. By analytically evaluating these communities separately to find patterns in abundance, richness, and diversity we deduce information about the specific community composition, which can yield information about the overall biodiversity of the niche the bacteria are a part of. The inference that human hosts hold their own unique sets of bacteria helps foster the notion of unique microenvironments that endosymbiotically regulate the human body.
 
-By explicitly looking at community differences between male and female participants information can be gathered about the overall health and well-being of each participant sex in regard to the surrounding environment. In a study published in Science in 2013, it was discovered that the gut microbiota is extremely relevant in determining autoimmune disease susceptibility (Markle, 2013). Markle et al. stated that when male cecal contents were transferred to female mice these mice received a higher level of protection against “pancreatic islet inflammation, autoantibody production, and the development of diabetes,” meaning this difference within the sexes microbiota was translational to inhibit the spread of disease (Markle et al). Therefore, understanding the differences in the skin microbiota could also potentially pose interesting medical questions that could yield insight on diseases current to specific, sexually biased traits.
+By explicitly looking at community differences between male and female participants, information can be gathered about the overall health and well-being of each participant sex in regard to the surrounding environment. In a study published in Science in 2013, it was discovered that the gut microbiota is extremely relevant in determining autoimmune disease susceptibility (Markle *et al.*, 2013). Markle et al. stated that when male cecal contents were transferred to female mice these mice received a higher level of protection against “pancreatic islet inflammation, autoantibody production, and the development of diabetes,” meaning this difference within the sexes microbiota was translational to inhibit the spread of disease (Markle *et al.*, 2013). Therefore, understanding the differences in the skin microbiota could also potentially pose interesting medical questions that could yield insight on diseases current to specific, sexually biased traits.
 
 Overall, divulging community data analysis from female and male participants, from the sequenced data sets from the Fierer et. al paper, can provide useful information about the resident skin microbiota of sexually diverse humans. By using sex as the means of a comparison further hypotheses can be made that explain differences based on hormonal differences and social differences since the presiding environment remains constant for both sample sets. We can thereby infer that because of these differences a community the female and male sex of humans house a community of bacteria that are significantly different in regard to diversity, richness, and abundance on human hands. We test this hypothesis utilizing computational amplicon sequencing analyses that parse data particular to the bacterial communities found within the Fierer et al paper.
 
@@ -35,12 +35,15 @@ To create a meta data set with all of the vectors of interest we initially utili
 
 Once the data set was compiled by relatedness pyroseq organized all aspects of the data into a merged meta data set. This data set was parsed to remove any non-applicable data regarding the sex of participants (i.e. all samples which included swabs from electronic devices). The data was then melted to include all taxonomically related data sets that were coded for under the taxa file, separate from the metadata that was read in. This allowed for analysis via tables, figures, and ggplot graphs.
 
-Dplyr and ggplot packages were used to analyze the data through representative figures and tables. The figures used look at abundance, richness, diversity metrics (applied through Shannon diversity), a phylogeny of the entire community set, and an ordination all of which are separated by the respective sex to divulge sex based community analysis on the bacterial species present.
+Dplyr and ggplot packages were used to analyze the data through representative figures and tables for the melted figure which was a compilation of the taxonomical data and pyrosequenced data. The pyrosequenced data set was also pruned in order to use pyroseq plot format on samples whuch include only males and females. The figures used look at abundance, richness, diversity metrics (applied through Shannon diversity), a phylogeny of the entire community set, and an ordination all of which are separated by the respective sex to divulge sex based community analysis on the bacterial species present.
 
 Results
 =======
 
-To divulge significant evidence towards our hypothesis on the differences between sexually unique bacterial communities
+Parsing Data
+------------
+
+To divulge significant evidence towards our hypothesis on the differences between sexually unique bacterial communities computational metrics were applied to the 2010 Fierer et al study in order to parse the data to uniquely address male and female samples alone. The primary step for this analysis included analyzing the 454 sequenced samples to be trimmed in order to reduce errors and then compiled into an easy to read spreadsheet where sequence identifiers, sequence length, read errors, taxonomy, and sex-based sample type were listed for imperative analytical usage.
 
 ``` r
 # Be sure to install these packages before running this script
@@ -80,6 +83,8 @@ library("phyloseq")
 # Add colors
 library("RColorBrewer")
 ```
+
+The primary graphs represent each of 20 samples original sequence error margins.
 
 ``` r
 # NOTE: Much of the following follows the DADA2 tutorials available here:
@@ -215,6 +220,8 @@ errors_forward_reads <- learnErrors(filtered_reads_path,
     ## 
     ## Convergence after  3  rounds.
     ## Total reads used:  9127
+
+This table and corresponding error models were built to showcase theread errors from the sequencing data and the corresponding trimming profile and alignment that needed to be accounted for to allow for reproducible and unbiased analysis (removing repeats, trimming, accounting for error bias, and chimeric regions with all sequences being parsed with 454 acceptable protocols through a dada pipeline).
 
 ``` r
 # quick check to see if error models match data
@@ -503,7 +510,7 @@ sequence_table <- makeSequenceTable(dada_forward_reads)
 
     ## The sequences being tabled vary in length.
 
-The output table has 20 rows (samples) and 178 columns (sequence variants). Notice how we can embed R code directly in our markdown text.
+**Figure 1**: Sequence Length Histogram
 
 ``` r
 # Quick check to look at distribution of trimmed and denoised sequences
@@ -512,7 +519,7 @@ hist(nchar(getSequences(sequence_table)),
      xlab = "Sequence length in bp")
 ```
 
-![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/histogram-of-sequence-lengths-1.png)
+![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/histogram-of-sequence-lengths-1.png) This table explicitly represents the sequence lengths of the trimmed dataset to show they are all correctly anlayzed beneath the given range of 225 bases.
 
 ``` r
 # Check for and remove chimeras
@@ -577,6 +584,8 @@ kable(track)
 | ERR1942298 |    562|       389|       389|             389|           389|
 | ERR1942299 |   1025|       852|       852|             852|           852|
 
+This markdown table showcases the edited data and the reads given out after each step of filtering for the corrected data set to be used in figure based computational analysis.
+
 ``` r
 # assigns taxonomy to each sequence variant based on a supplied training set
 # made up of known sequences
@@ -592,7 +601,7 @@ unname(taxa)
     ##        [,1]       [,2]                        [,3]                 
     ##   [1,] "Bacteria" "Proteobacteria"            NA                   
     ##   [2,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ##   [3,] "Bacteria" "Bacteroidetes"             "Cytophagia"         
+    ##   [3,] "Bacteria" "Bacteroidetes"             NA                   
     ##   [4,] "Bacteria" "Proteobacteria"            NA                   
     ##   [5,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
     ##   [6,] "Bacteria" "Cyanobacteria/Chloroplast" "Chloroplast"        
@@ -648,11 +657,11 @@ unname(taxa)
     ##  [56,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
     ##  [57,] "Bacteria" "Firmicutes"                "Clostridia"         
     ##  [58,] "Bacteria" "Proteobacteria"            "Gammaproteobacteria"
-    ##  [59,] "Bacteria" NA                          NA                   
+    ##  [59,] "Bacteria" "Proteobacteria"            NA                   
     ##  [60,] "Bacteria" "Firmicutes"                "Clostridia"         
     ##  [61,] "Bacteria" "Firmicutes"                "Clostridia"         
     ##  [62,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ##  [63,] "Bacteria" "Firmicutes"                NA                   
+    ##  [63,] "Bacteria" "Firmicutes"                "Clostridia"         
     ##  [64,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
     ##  [65,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
     ##  [66,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
@@ -755,7 +764,7 @@ unname(taxa)
     ## [163,] "Bacteria" "Firmicutes"                "Bacilli"            
     ## [164,] "Bacteria" "Firmicutes"                "Clostridia"         
     ## [165,] "Bacteria" "Nitrospirae"               "Nitrospira"         
-    ## [166,] "Bacteria" "Parcubacteria"             NA                   
+    ## [166,] "Bacteria" NA                          NA                   
     ## [167,] "Bacteria" "Firmicutes"                "Bacilli"            
     ## [168,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
     ## [169,] "Bacteria" "Bacteroidetes"             "Sphingobacteriia"   
@@ -769,7 +778,7 @@ unname(taxa)
     ##        [,4]                 [,5]                  
     ##   [1,] NA                   NA                    
     ##   [2,] "Rhizobiales"        "Bartonellaceae"      
-    ##   [3,] "Cytophagales"       NA                    
+    ##   [3,] NA                   NA                    
     ##   [4,] NA                   NA                    
     ##   [5,] "Neisseriales"       "Neisseriaceae"       
     ##   [6,] "Chloroplast"        "Streptophyta"        
@@ -829,7 +838,7 @@ unname(taxa)
     ##  [60,] "Clostridiales"      "Ruminococcaceae"     
     ##  [61,] "Clostridiales"      "Ruminococcaceae"     
     ##  [62,] "Rhizobiales"        "Methylobacteriaceae" 
-    ##  [63,] NA                   NA                    
+    ##  [63,] "Clostridiales"      NA                    
     ##  [64,] "Actinomycetales"    "Micrococcaceae"      
     ##  [65,] "Actinomycetales"    "Nocardioidaceae"     
     ##  [66,] "Actinomycetales"    "Microbacteriaceae"   
@@ -928,7 +937,7 @@ unname(taxa)
     ## [159,] "Lactobacillales"    "Carnobacteriaceae"   
     ## [160,] "Flavobacteriales"   "Flavobacteriaceae"   
     ## [161,] "Fusobacteriales"    "Leptotrichiaceae"    
-    ## [162,] "Clostridiales"      NA                    
+    ## [162,] "Clostridiales"      "Ruminococcaceae"     
     ## [163,] "Bacillales"         "Bacillaceae_1"       
     ## [164,] "Clostridiales"      NA                    
     ## [165,] "Nitrospirales"      "Nitrospiraceae"      
@@ -940,7 +949,7 @@ unname(taxa)
     ## [171,] "Rhizobiales"        "Bradyrhizobiaceae"   
     ## [172,] "Clostridiales"      NA                    
     ## [173,] "Clostridiales"      "Catabacteriaceae"    
-    ## [174,] "Actinomycetales"    "Nocardiaceae"        
+    ## [174,] "Actinomycetales"    NA                    
     ## [175,] "Pasteurellales"     "Pasteurellaceae"     
     ## [176,] "Actinomycetales"    "Microbacteriaceae"   
     ##        [,6]                       
@@ -964,7 +973,7 @@ unname(taxa)
     ##  [18,] "Acetatifactor"            
     ##  [19,] NA                         
     ##  [20,] "Diaphorobacter"           
-    ##  [21,] NA                         
+    ##  [21,] "Clostridium_IV"           
     ##  [22,] "Intestinimonas"           
     ##  [23,] NA                         
     ##  [24,] NA                         
@@ -972,9 +981,9 @@ unname(taxa)
     ##  [26,] NA                         
     ##  [27,] NA                         
     ##  [28,] "Streptomyces"             
-    ##  [29,] "Clostridium_IV"           
+    ##  [29,] NA                         
     ##  [30,] "Sphingobium"              
-    ##  [31,] "Marmoricola"              
+    ##  [31,] NA                         
     ##  [32,] "Streptomyces"             
     ##  [33,] NA                         
     ##  [34,] "Streptomyces"             
@@ -1039,13 +1048,13 @@ unname(taxa)
     ##  [93,] "Herbaspirillum"           
     ##  [94,] "Streptococcus"            
     ##  [95,] NA                         
-    ##  [96,] NA                         
+    ##  [96,] "Microlunatus"             
     ##  [97,] NA                         
     ##  [98,] "Streptomyces"             
     ##  [99,] "Knoellia"                 
     ## [100,] NA                         
     ## [101,] NA                         
-    ## [102,] "Oscillibacter"            
+    ## [102,] NA                         
     ## [103,] "Blautia"                  
     ## [104,] "Aeromicrobium"            
     ## [105,] NA                         
@@ -1083,7 +1092,7 @@ unname(taxa)
     ## [137,] "Stappia"                  
     ## [138,] NA                         
     ## [139,] "Massilia"                 
-    ## [140,] NA                         
+    ## [140,] "Erysipelothrix"           
     ## [141,] "Mycobacterium"            
     ## [142,] "Microbacterium"           
     ## [143,] NA                         
@@ -1096,7 +1105,7 @@ unname(taxa)
     ## [150,] NA                         
     ## [151,] NA                         
     ## [152,] "Clostridium_sensu_stricto"
-    ## [153,] "Prevotella"               
+    ## [153,] NA                         
     ## [154,] NA                         
     ## [155,] NA                         
     ## [156,] NA                         
@@ -1120,6 +1129,8 @@ unname(taxa)
     ## [174,] NA                         
     ## [175,] "Nicoletella"              
     ## [176,] "Agrococcus"
+
+Taxonomy was assigned for each sequence to describe which bacterial community was present within the samples tested for.
 
 ``` r
 # we want to export the cleaned, trimmed, filtered, denoised sequence variants
@@ -1146,6 +1157,8 @@ export_taxa_table_and_seqs(sequence_table_nochim,
                            "output/sequence_variants_table.txt",
                            "output/sequence_variants_seqs.fa")
 ```
+
+This taxa table showcases information from each given sequence with the apropriate Phylum to Genus information.
 
 ``` r
 # Next we want to read in the metadata file so we can add that in too
@@ -1180,47 +1193,47 @@ pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
     ## Square root transformation
     ## Wisconsin double standardization
     ## Run 0 stress 4.418541e-05 
-    ## Run 1 stress 9.346878e-05 
-    ## ... Procrustes: rmse 0.2099213  max resid 0.4474311 
+    ## Run 1 stress 7.907685e-05 
+    ## ... Procrustes: rmse 0.2466806  max resid 0.3704695 
     ## Run 2 stress 0 
     ## ... New best solution
-    ## ... Procrustes: rmse 0.2999818  max resid 0.4053591 
-    ## Run 3 stress 8.498981e-06 
-    ## ... Procrustes: rmse 0.2890693  max resid 0.507398 
-    ## Run 4 stress 0 
-    ## ... Procrustes: rmse 0.2780145  max resid 0.6353292 
-    ## Run 5 stress 7.594972e-05 
-    ## ... Procrustes: rmse 0.2729062  max resid 0.5644232 
-    ## Run 6 stress 3.0575e-05 
-    ## ... Procrustes: rmse 0.3061882  max resid 0.5356973 
-    ## Run 7 stress 0 
-    ## ... Procrustes: rmse 0.2666929  max resid 0.5124827 
+    ## ... Procrustes: rmse 0.2500663  max resid 0.4899832 
+    ## Run 3 stress 7.83216e-05 
+    ## ... Procrustes: rmse 0.2868339  max resid 0.458984 
+    ## Run 4 stress 8.318457e-05 
+    ## ... Procrustes: rmse 0.2844838  max resid 0.4862633 
+    ## Run 5 stress 9.763269e-05 
+    ## ... Procrustes: rmse 0.2324287  max resid 0.4473084 
+    ## Run 6 stress 0 
+    ## ... Procrustes: rmse 0.3040233  max resid 0.4898548 
+    ## Run 7 stress 7.339152e-06 
+    ## ... Procrustes: rmse 0.2071102  max resid 0.4704674 
     ## Run 8 stress 0 
-    ## ... Procrustes: rmse 0.3015305  max resid 0.6098357 
-    ## Run 9 stress 9.340914e-05 
-    ## ... Procrustes: rmse 0.23445  max resid 0.5629521 
+    ## ... Procrustes: rmse 0.2783934  max resid 0.5585042 
+    ## Run 9 stress 0 
+    ## ... Procrustes: rmse 0.2756936  max resid 0.5043099 
     ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.1915432  max resid 0.3621997 
-    ## Run 11 stress 8.805715e-05 
-    ## ... Procrustes: rmse 0.1775302  max resid 0.2652609 
-    ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.2566819  max resid 0.5575642 
-    ## Run 13 stress 7.460176e-05 
-    ## ... Procrustes: rmse 0.2548954  max resid 0.5496766 
-    ## Run 14 stress 6.66716e-05 
-    ## ... Procrustes: rmse 0.3114065  max resid 0.5184583 
+    ## ... Procrustes: rmse 0.3101889  max resid 0.5891691 
+    ## Run 11 stress 0 
+    ## ... Procrustes: rmse 0.2121822  max resid 0.4874098 
+    ## Run 12 stress 2.864916e-05 
+    ## ... Procrustes: rmse 0.2986476  max resid 0.4788187 
+    ## Run 13 stress 9.778924e-05 
+    ## ... Procrustes: rmse 0.2491158  max resid 0.4007279 
+    ## Run 14 stress 9.638221e-05 
+    ## ... Procrustes: rmse 0.2866084  max resid 0.5742471 
     ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.2809692  max resid 0.561337 
+    ## ... Procrustes: rmse 0.2683869  max resid 0.468645 
     ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.2908048  max resid 0.6218499 
+    ## ... Procrustes: rmse 0.2457641  max resid 0.3999402 
     ## Run 17 stress 0 
-    ## ... Procrustes: rmse 0.2551558  max resid 0.5146719 
-    ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.2720659  max resid 0.5158547 
+    ## ... Procrustes: rmse 0.1623144  max resid 0.3024449 
+    ## Run 18 stress 7.913606e-05 
+    ## ... Procrustes: rmse 0.2877785  max resid 0.4445679 
     ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.2739329  max resid 0.4800133 
-    ## Run 20 stress 8.474659e-05 
-    ## ... Procrustes: rmse 0.2974287  max resid 0.4873084 
+    ## ... Procrustes: rmse 0.2344411  max resid 0.3733536 
+    ## Run 20 stress 9.537985e-05 
+    ## ... Procrustes: rmse 0.2286434  max resid 0.3829702 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
@@ -1235,13 +1248,30 @@ pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
 melted_obj <- psmelt(phyloseq_obj)
 ```
 
-**Figure 1**: Abundance Measure for Male versus Female sample types
+Phyloseq was used to create a compiled data set with sequenced MetaData and taxonomy. This was parsed to remove Non-applicable sex based data (i.e. from electronic device swabs.)nThe data was also melted together to form a larger data set applicable for computational analyses of sexual data chaaracteristics and taxonomical characteristics.
+
+After the data was parsed and filtered the "melted" data set is now applicable for analytical research regarding the community analysis of male and female participants and their corresponding bacterial communities.
+
+Analyiti
+--------
+
+**Figure 2**: Abundance Measure for Male versus Female sample types
 
 ``` r
 # use dplyr to add in data as a boxplot and use tally function to quantify all counts 
+ggplot(melted_obj,
+       aes(x = sex_s,
+           y = Abundance)) +
+  geom_boxplot(alpha = 1) +
+  ggtitle("Abundance for Male Verus Female Participants") +
+  xlab("Sex") +
+  ylab("Abundance") +
+  theme_light()
 ```
 
-**Figure 2**: Richness Measure for Male versus Female sample types
+![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/Abundance-1.png)
+
+**Figure 3**: Richness Measure for Male versus Female sample types
 
 ``` r
 #abundance, boxplot, table of values
@@ -1263,9 +1293,7 @@ plot_richness(pruned_phyloseq,
 
 ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/Richness-plot-1.png)
 
-**Richness Table**:
-
-**Figure 3**: Alpha diversity measures of the two sample types, colored by gender.
+**Figure 4**: Alpha diversity measures of the two sample types
 
 ``` r
 # alpha diversity metrics
@@ -1287,7 +1315,7 @@ plot_richness(pruned_phyloseq,
 
 ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/Shannon%20Diversity%20Plot-1.png)
 
-**Figure 5**:
+**Figure 5**: Male versus Female bar graph showcasing the phylums present within each bacterial community
 
 ``` r
 plot_bar(pruned_phyloseq, 
@@ -1299,10 +1327,7 @@ plot_bar(pruned_phyloseq,
   scale_fill_brewer(palette = "Blues")
 ```
 
-    ## Warning in RColorBrewer::brewer.pal(n, pal): n too large, allowed maximum for palette Blues is 9
-    ## Returning the palette you asked for with that many colors
-
-![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/Abundance%20Table-1.png)
+![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/Abundance%20Taxonomy%20Graph-1.png)
 
 **Figure 6**: Inferred phylogeny of sequences, with points on tips representing samples within which each particular taxa occurred. Tree represents maximum likelihood phylogeny inferred using RAxML.
 
@@ -1397,31 +1422,43 @@ Discussion
 
 ### Abundance
 
-    Abundance is a measure of the total number of individuals residing within the same niche environment to statistically observe how consecrated the region is. If a high abundance occurs in one environment it can be observed as having more resources, or less environmentally de-stabling associations.
+    Abundance is a measure of the total number of individuals residing within the same niche environment to statistically observe how consecrated the region is. If a high abundance occurs in one environment it can be observed as having more resources, or less environmentally de-stabling associations. Abundance is the relative representation of a species in a particular ecological niche, which in this case is the human hand skin for both male and female particpants.
+     Evaluation of Figure 2 expresses an abundance of differing amounts between the sample sexes with male samples having apprximately 3000 individual bacterial colony reads. On female hand samples there was only approximately 1500 colony reads, meaning male hands carried twice as much bacterial on their hands as females. This means male participants overall have a larger bacterial community residing on their hands than females.
+     
+     However, when abundance levels are overlayed with taxonomicaly representation there is a similarity between the two bacterial communities represented; both communities have more proteobacteria than any other bacteria (Figure 5). We can conclude that the similar environmental pressures faced by both sample sets due to living in Colorado could account for this. 
 
 ### Richness
 
     Richness is a measure of different morphotypes within a bacterial community. Calculations of richness within a community are imperative to showcase if only one species is present or many within the same niche environment. Biodiversity is measured through both richness and diversity factors. By observing biodiversity within communities conservation of certain species can occur through the creation of more favorable niches. In the observation between male and female resident sample populations like richness is observed in the overlap of some varying morphotypes, however, due to the ability for potential mutation or nutritional needs of the bacteria, some morphotypes favored the males over the females environment and vice versa.
+      Evaluation of Figure 3 showcases the differences within richness metrics between both female and male bacterial communities. Unlike abundance, where males showcased more colony reads, we visualize female samples to have an increased level of richness to deduce that a large variety of bacterial species are present on the female hand. Though male samples have some diversity, female samples show a richness level double that of male samples (9:4). We can conclude that male samples then have more colonies of a singular bacterial type, where female samples have fewer overall colonies but of more diverse types. 
 
 ### Diversity
 
-    Diversity is a measure of the relative variability among organisms from all sources or morphologies. Shannon Diversity offers a statistical means of categorizing the diversity of individuals within a community
+    Diversity is a measure of the relative variability among organisms from all sources or morphologies. Shannon Diversity offers a statistical means of categorizing the diversity of individuals within a community by accounting for abundance and eveness. We apply Shannon Diversity as a metric to compare the male and female bacterial communities farther.
+      Within Figure 4 we see an increased alpha level for female samples than that of males, which is comprable to the richness measure given previously in Figure 3. This measure again is almost double that of the male samples. We can conclude that for the region in which the bacteria inhabit (human hand), the female communities offer a more diverse community. High diversity is favored over low diversity since this ensures natural sustaininability to the micro-cumminity which populates the hand. However, we can question the male community since it has lower diversity over an asusmed larger area (male hand size versus female hand size). We can postulate that the microbiota on the male hand are less diverse because of the skin pH which is nominally different between the two sexes due to sweat glands which produce a more acidic environment unfavorable to many microbiota {@fierer2008influence}. These conditions would also account for differences observed in abundance and richness.
+      
 
-#### Abundance versus Diversity
-
-    Male:
-    Female
-
-#### Richness Versus Diversity
-
-    Male:
-    Female:
+#### Phylogeny
 
 ### Ordination
 
-    Ordination can be used as a exploratory measure for data clustering of similar and different multivariable types
+Ordination can be used as a exploratory measure for data clustering of similar and different multivariable types. When looking at both male and female sample types we visualize
 
 ### Conclusion
 
+By eva
+
 Sources Cited
 =============
+
+Birtel,J. *et al.* (2015) Estimating bacterial diversity for ecological studies: Methods, metrics, and assumptions. *PloS one*, **10**, e0125356.
+
+Fierer,N. *et al.* (2010) Forensic identification using skin bacterial communities. *Proceedings of the National Academy of Sciences*, **107**, 6477–6481.
+
+Fuhrman,J.A. (1999) Marine viruses and their biogeochemical and ecological effects. *Nature*, **399**, 541–548.
+
+Markle,J.G. *et al.* (2013) Sex differences in the gut microbiome drive hormone-dependent regulation of autoimmunity. *Science*, **339**, 1084–1088.
+
+Nichols,D. (2007) Cultivation gives context to the microbial ecologist. *FEMS microbiology ecology*, **60**, 351–357.
+
+Wu,S. *et al.* (2012) Composition, diversity, and origin of the bacterial community in grass carp intestine. *PloS one*, **7**, e30440.
