@@ -391,14 +391,18 @@ print(p1)
 
 # Discussion
 
-  Understanding the microbiota 
+  Understanding the microbiota which live within our unique niche environments can yield information regarding medical advancements. Specifically, understanding how these microbiota differ within female and male populations can increase our understanding of hormone differences and gland production that can yield evidence towards how these mirobes symbiotically interact with human host systems. We predicted that differences between male and female bacterial communities within the hand would be present in regards to abundance, diversity, and richness. We further our analysis to divulge if the similar environments constitute a similar makeup of bacteria present throught taxonomical representation.
+  
+### Computational 
+
+   
 
 ### Abundance
 
 	Abundance is a measure of the total number of individuals residing within the same niche environment to statistically observe how consecrated the region is. If a high abundance occurs in one environment it can be observed as having more resources, or less environmentally de-stabling associations. Abundance is the relative representation of a species in a particular ecological niche, which in this case is the human hand skin for both male and female particpants.
 	 Evaluation of Figure 2 expresses an abundance of differing amounts between the sample sexes with male samples having apprximately 3000 individual bacterial colony reads. On female hand samples there was only approximately 1500 colony reads, meaning male hands carried twice as much bacterial on their hands as females. This means male participants overall have a larger bacterial community residing on their hands than females.
 	 
-	 However, when abundance levels are overlayed with taxonomicaly representation there is a similarity between the two bacterial communities represented; both communities have more proteobacteria than any other bacteria (Figure 5). We can conclude that the similar environmental pressures faced by both sample sets due to living in Colorado could account for this. 
+	 However, when abundance levels are overlayed with taxonomical representation there is a similarity between the two bacterial communities represented; both communities have more proteobacteria than any other bacteria (Figure 5). We can conclude that the similar environmental pressures faced by both sample sets due to living in Colorado could account for this. 
 
 ### Richness
 
@@ -409,17 +413,20 @@ print(p1)
 
 	Diversity is a measure of the relative variability among organisms from all sources or morphologies. Shannon Diversity offers a statistical means of categorizing the diversity of individuals within a community by accounting for abundance and eveness. We apply Shannon Diversity as a metric to compare the male and female bacterial communities farther.
 	
-	  Within Figure 4 we see an increased alpha level for female samples than that of males, which is comprable to the richness measure given previously in Figure 3. This measure again is almost double that of the male samples. We can conclude that for the region in which the bacteria inhabit (human hand), the female communities offer a more diverse community. High diversity is favored over low diversity since this ensures natural sustaininability to the micro-cumminity which populates the hand. However, we can question the male community since it has lower diversity over an asusmed larger area (male hand size versus female hand size). We can postulate that the microbiota on the male hand are less diverse because of the skin pH, which is nominally different between the two sexes due to sweat glands which produce a more acidic environment unfavorable to many microbiota {@fierer2008influence}. These conditions would also account for differences observed in abundance and richness.
+	  Within Figure 4 we see an increased alpha level for female samples than that of males, which is comprable to the richness measure given previously in Figure 3. This measure again is almost double that of the male samples. We can conclude that for the region in which the bacteria inhabit (human hand), the female communities offer a more diverse community. High diversity is favored over low diversity since this ensures natural sustaininability to the micro-cumminity which populates the hand. 
 	  
 
 #### Phylogeny
+    
 
 ### Ordination
 
-Ordination can be used as a exploratory measure for data clustering of similar and different multivariable types. When looking at both male and female sample types we visualize 
+  Ordination can be used as a exploratory measure for data clustering of similar and different multivariable types. When looking at both male and female sample types we visualize more clustering in the male sample types, concluding that male populations show a higher level of relatdness over all tested variables (Figure 7). This relatedness counters the larger levels of dispersion seen within female samples.
+  
+  Plotting an ordination is a measure for quantifying richness and diversity simultaneously over multiple axes, and here we visualize these traits are more closely related for male species. However, when looking at the male samples alone we do see some disperon between the two predominant clusters, which we can deduce as two more diverse populations. Potentially, these bacteria represent bacteria found on a different region of the hand where there are more glands, more contact with the environment, or constitute more rough or raw skin. When looking at female samples, the populations are not closely clustered at all, and show a dramatic spread over the plot to accentuate the diversity between all groups found. Potentially, these groups have similar nutritional needs, but function differently within the skin microbiota.
 
 ### Conclusion
-
+However, we can question the male community since it has lower diversity over an asusmed larger area (male hand size versus female hand size). We can postulate that the microbiota on the male hand are less diverse because of the skin pH, which is nominally different between the two sexes due to sweat glands which produce a more acidic environment unfavorable to many microbiota {@fierer2008influence}. These conditions would also account for differences observed in abundance and richness.
   By eva
 
 # Sources Cited
