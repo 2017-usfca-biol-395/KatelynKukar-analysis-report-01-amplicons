@@ -391,7 +391,7 @@ print(p1)
 
 # Discussion
 
-### Intro-recap
+  Understanding the microbiota 
 
 ### Abundance
 
@@ -409,7 +409,7 @@ print(p1)
 
 	Diversity is a measure of the relative variability among organisms from all sources or morphologies. Shannon Diversity offers a statistical means of categorizing the diversity of individuals within a community by accounting for abundance and eveness. We apply Shannon Diversity as a metric to compare the male and female bacterial communities farther.
 	
-	  Within Figure 4 we see an increased alpha level for female samples than that of males, which is comprable to the richness measure given previously in Figure 3. This measure again is almost double that of the male samples. We can conclude that for the region in which the bacteria inhabit (human hand), the female communities offer a more diverse community. High diversity is favored over low diversity since this ensures natural sustaininability to the micro-cumminity which populates the hand. However, we can question the male community since it has lower diversity over an asusmed larger area (male hand size versus female hand size). We can postulate that the microbiota on the male hand are less diverse because of the skin pH which is nominally different between the two sexes due to sweat glands which produce a more acidic environment unfavorable to many microbiota {@fierer2008influence}. These conditions would also account for differences observed in abundance and richness.
+	  Within Figure 4 we see an increased alpha level for female samples than that of males, which is comprable to the richness measure given previously in Figure 3. This measure again is almost double that of the male samples. We can conclude that for the region in which the bacteria inhabit (human hand), the female communities offer a more diverse community. High diversity is favored over low diversity since this ensures natural sustaininability to the micro-cumminity which populates the hand. However, we can question the male community since it has lower diversity over an asusmed larger area (male hand size versus female hand size). We can postulate that the microbiota on the male hand are less diverse because of the skin pH, which is nominally different between the two sexes due to sweat glands which produce a more acidic environment unfavorable to many microbiota {@fierer2008influence}. These conditions would also account for differences observed in abundance and richness.
 	  
 
 #### Phylogeny
