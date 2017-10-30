@@ -154,10 +154,10 @@ errors_forward_reads <- learnErrors(filtered_reads_path,
 
 
 This table and corresponding error models were built to showcase the read errors from the sequencing data and the corresponding trimming profile and alignment that needed to be accounted for to allow for reproducible and unbiased analysis (removing repeats, trimming, accounting for error bias, and chimeric regions with all sequences being parsed with 454 acceptable protocols through a dada pipeline).
-```{r visualize-errors-with-plots, echo = FALSE}
+```{r visualize-errors-with-plots}
 # quick check to see if error models match data
 # (black lines match black points) and are generally decresing left to right
-# plotErrors(errors_forward_reads,
+ plotErrors(errors_forward_reads,
            nominalQ = TRUE)
 ```
 
