@@ -624,7 +624,7 @@ This markdown table showcases the edited data and the reads given out after each
     ##  [24,] "Clostridiales"      "Lachnospiraceae"     
     ##  [25,] "Burkholderiales"    "Comamonadaceae"      
     ##  [26,] "Chloroplast"        "Streptophyta"        
-    ##  [27,] "Clostridiales"      NA                    
+    ##  [27,] "Clostridiales"      "Ruminococcaceae"     
     ##  [28,] "Actinomycetales"    "Streptomycetaceae"   
     ##  [29,] "Clostridiales"      "Ruminococcaceae"     
     ##  [30,] "Sphingomonadales"   "Sphingomonadaceae"   
@@ -796,8 +796,8 @@ This markdown table showcases the edited data and the reads given out after each
     ##  [19,] NA                         
     ##  [20,] "Diaphorobacter"           
     ##  [21,] NA                         
-    ##  [22,] "Intestinimonas"           
-    ##  [23,] "Clostridium_IV"           
+    ##  [22,] NA                         
+    ##  [23,] NA                         
     ##  [24,] NA                         
     ##  [25,] "Pelomonas"                
     ##  [26,] NA                         
@@ -822,7 +822,7 @@ This markdown table showcases the edited data and the reads given out after each
     ##  [45,] "Pseudomonas"              
     ##  [46,] "Streptomyces"             
     ##  [47,] NA                         
-    ##  [48,] "Pelomonas"                
+    ##  [48,] NA                         
     ##  [49,] "Microbacterium"           
     ##  [50,] "Mycobacterium"            
     ##  [51,] "Marmoricola"              
@@ -839,7 +839,7 @@ This markdown table showcases the edited data and the reads given out after each
     ##  [62,] "Microvirga"               
     ##  [63,] NA                         
     ##  [64,] "Arthrobacter"             
-    ##  [65,] NA                         
+    ##  [65,] "Marmoricola"              
     ##  [66,] "Microbacterium"           
     ##  [67,] "Sphingomonas"             
     ##  [68,] NA                         
@@ -854,7 +854,7 @@ This markdown table showcases the edited data and the reads given out after each
     ##  [77,] "Nocardia"                 
     ##  [78,] "Nocardioides"             
     ##  [79,] "Subtercola"               
-    ##  [80,] "Butyricicoccus"           
+    ##  [80,] NA                         
     ##  [81,] "Cloacibacterium"          
     ##  [82,] "Microbacterium"           
     ##  [83,] "Sphingomonas"             
@@ -896,9 +896,9 @@ This markdown table showcases the edited data and the reads given out after each
     ## [119,] "Roseburia"                
     ## [120,] NA                         
     ## [121,] "Sphingobium"              
-    ## [122,] "Ruminococcus"             
+    ## [122,] NA                         
     ## [123,] "Nocardioides"             
-    ## [124,] NA                         
+    ## [124,] "Atopostipes"              
     ## [125,] NA                         
     ## [126,] "Bacillus"                 
     ## [127,] NA                         
@@ -922,7 +922,7 @@ This markdown table showcases the edited data and the reads given out after each
     ## [145,] "Pseudoflavonifractor"     
     ## [146,] "Nocardioides"             
     ## [147,] NA                         
-    ## [148,] NA                         
+    ## [148,] "Arachidicoccus"           
     ## [149,] "Ruminococcus"             
     ## [150,] NA                         
     ## [151,] NA                         
@@ -959,49 +959,47 @@ This taxa table showcases information from each given sequence with the appropri
     ## Square root transformation
     ## Wisconsin double standardization
     ## Run 0 stress 4.418541e-05 
-    ## Run 1 stress 9.830943e-05 
-    ## ... Procrustes: rmse 0.2749019  max resid 0.4500927 
-    ## Run 2 stress 3.33707e-05 
+    ## Run 1 stress 6.634224e-05 
+    ## ... Procrustes: rmse 0.2355622  max resid 0.4998108 
+    ## Run 2 stress 0 
     ## ... New best solution
-    ## ... Procrustes: rmse 0.2614925  max resid 0.4728866 
-    ## Run 3 stress 9.789219e-05 
-    ## ... Procrustes: rmse 0.2708297  max resid 0.3978962 
-    ## Run 4 stress 7.953982e-05 
-    ## ... Procrustes: rmse 0.2554715  max resid 0.4058634 
-    ## Run 5 stress 4.405663e-06 
-    ## ... New best solution
-    ## ... Procrustes: rmse 0.2989097  max resid 0.5169145 
-    ## Run 6 stress 9.884559e-05 
-    ## ... Procrustes: rmse 0.2882343  max resid 0.6761937 
+    ## ... Procrustes: rmse 0.2868938  max resid 0.4110583 
+    ## Run 3 stress 0 
+    ## ... Procrustes: rmse 0.2586048  max resid 0.6039412 
+    ## Run 4 stress 9.179886e-05 
+    ## ... Procrustes: rmse 0.2671441  max resid 0.597501 
+    ## Run 5 stress 7.562183e-05 
+    ## ... Procrustes: rmse 0.161259  max resid 0.2441627 
+    ## Run 6 stress 0 
+    ## ... Procrustes: rmse 0.2691042  max resid 0.5177576 
     ## Run 7 stress 0 
-    ## ... New best solution
-    ## ... Procrustes: rmse 0.2467697  max resid 0.4403206 
-    ## Run 8 stress 9.759034e-05 
-    ## ... Procrustes: rmse 0.2860157  max resid 0.5172638 
-    ## Run 9 stress 8.186607e-05 
-    ## ... Procrustes: rmse 0.2227873  max resid 0.4290029 
-    ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.2555014  max resid 0.4144013 
+    ## ... Procrustes: rmse 0.2743908  max resid 0.6033324 
+    ## Run 8 stress 0 
+    ## ... Procrustes: rmse 0.2626489  max resid 0.5277675 
+    ## Run 9 stress 0 
+    ## ... Procrustes: rmse 0.1673145  max resid 0.3007199 
+    ## Run 10 stress 7.813556e-05 
+    ## ... Procrustes: rmse 0.2532451  max resid 0.5440469 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.2753613  max resid 0.4545144 
-    ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.2921258  max resid 0.3753367 
+    ## ... Procrustes: rmse 0.2725322  max resid 0.4087839 
+    ## Run 12 stress 7.300575e-05 
+    ## ... Procrustes: rmse 0.201565  max resid 0.3210048 
     ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.1909705  max resid 0.3298 
-    ## Run 14 stress 1.555414e-05 
-    ## ... Procrustes: rmse 0.2773092  max resid 0.5761055 
-    ## Run 15 stress 9.691891e-05 
-    ## ... Procrustes: rmse 0.2917963  max resid 0.5487551 
+    ## ... Procrustes: rmse 0.2261962  max resid 0.3589858 
+    ## Run 14 stress 0 
+    ## ... Procrustes: rmse 0.2411495  max resid 0.4137657 
+    ## Run 15 stress 0 
+    ## ... Procrustes: rmse 0.3096276  max resid 0.575305 
     ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.2766029  max resid 0.5155569 
+    ## ... Procrustes: rmse 0.2386229  max resid 0.3657798 
     ## Run 17 stress 0 
-    ## ... Procrustes: rmse 0.2761416  max resid 0.6311249 
+    ## ... Procrustes: rmse 0.2872373  max resid 0.5092638 
     ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.2176492  max resid 0.3862683 
-    ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.2577114  max resid 0.4625694 
-    ## Run 20 stress 8.634106e-05 
-    ## ... Procrustes: rmse 0.3091605  max resid 0.54565 
+    ## ... Procrustes: rmse 0.2497436  max resid 0.4505281 
+    ## Run 19 stress 5.602879e-05 
+    ## ... Procrustes: rmse 0.2593652  max resid 0.5090095 
+    ## Run 20 stress 0 
+    ## ... Procrustes: rmse 0.2382184  max resid 0.5118576 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
