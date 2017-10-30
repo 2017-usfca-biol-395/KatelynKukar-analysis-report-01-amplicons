@@ -131,137 +131,31 @@ We can see from the quality profiles that most reads tend to get pretty bad in q
 
 This table and corresponding error models were built to showcase the read errors from the sequencing data and the corresponding trimming profile and alignment that needed to be accounted for to allow for reproducible and unbiased analysis (removing repeats, trimming, accounting for error bias, and chimeric regions with all sequences being parsed with 454 acceptable protocols through a dada pipeline).
 
-``` r
-# quick check to see if error models match data
-# (black lines match black points) and are generally decresing left to right
- plotErrors(errors_forward_reads,
-           nominalQ = TRUE)
-```
-
     ## Warning: Transformation introduced infinite values in continuous y-axis
 
     ## Warning: Transformation introduced infinite values in continuous y-axis
 
 ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/visualize-errors-with-plots-1.png)
 
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942280_filt.fastq.gz
-
-    ## Encountered 72 unique sequences from 350 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942281_filt.fastq.gz
-
-    ## Encountered 163 unique sequences from 194 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942282_filt.fastq.gz
-
-    ## Encountered 25 unique sequences from 31 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942283_filt.fastq.gz
-
-    ## Encountered 176 unique sequences from 426 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942284_filt.fastq.gz
-
-    ## Encountered 134 unique sequences from 525 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942285_filt.fastq.gz
-
-    ## Encountered 65 unique sequences from 72 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942286_filt.fastq.gz
-
-    ## Encountered 178 unique sequences from 617 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942287_filt.fastq.gz
-
-    ## Encountered 135 unique sequences from 541 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942288_filt.fastq.gz
-
-    ## Encountered 201 unique sequences from 877 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942289_filt.fastq.gz
-
-    ## Encountered 107 unique sequences from 147 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942290_filt.fastq.gz
-
-    ## Encountered 181 unique sequences from 249 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942291_filt.fastq.gz
-
-    ## Encountered 212 unique sequences from 819 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942292_filt.fastq.gz
-
-    ## Encountered 128 unique sequences from 709 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942293_filt.fastq.gz
-
-    ## Encountered 171 unique sequences from 470 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942294_filt.fastq.gz
-
-    ## Encountered 250 unique sequences from 552 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942295_filt.fastq.gz
-
-    ## Encountered 141 unique sequences from 620 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942296_filt.fastq.gz
-
-    ## Encountered 186 unique sequences from 441 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942297_filt.fastq.gz
-
-    ## Encountered 88 unique sequences from 246 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942298_filt.fastq.gz
-
-    ## Encountered 332 unique sequences from 389 total sequences read.
-
     ## Not all sequences were the same length.
-
-    ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942299_filt.fastq.gz
-
-    ## Encountered 239 unique sequences from 852 total sequences read.
-
     ## Not all sequences were the same length.
 
     ## Sample 1 - 350 reads in 72 unique sequences.
@@ -391,8 +285,6 @@ This table and corresponding error models were built to showcase the read errors
 
 This table explicitly represents the sequence lengths of the trimmed data set to show they are all correctly analyzed beneath the given range of 225 bases.
 
-    ## Identified 2 bimeras out of 178 input sequences.
-
 After removing chimeras, we were left with 99.65% of our cleaned reads.
 
 |            |  Input|  Filtered|  Denoised|  Sequence Table|  Non-chimeric|
@@ -483,7 +375,7 @@ This markdown table showcases the edited data and the reads given out after each
     ##  [60,] "Bacteria" "Firmicutes"                "Clostridia"         
     ##  [61,] "Bacteria" "Firmicutes"                "Clostridia"         
     ##  [62,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ##  [63,] "Bacteria" "Firmicutes"                "Clostridia"         
+    ##  [63,] "Bacteria" "Firmicutes"                NA                   
     ##  [64,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
     ##  [65,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
     ##  [66,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
@@ -660,7 +552,7 @@ This markdown table showcases the edited data and the reads given out after each
     ##  [60,] "Clostridiales"      "Ruminococcaceae"     
     ##  [61,] "Clostridiales"      "Ruminococcaceae"     
     ##  [62,] "Rhizobiales"        "Methylobacteriaceae" 
-    ##  [63,] "Clostridiales"      NA                    
+    ##  [63,] NA                   NA                    
     ##  [64,] "Actinomycetales"    "Micrococcaceae"      
     ##  [65,] "Actinomycetales"    "Nocardioidaceae"     
     ##  [66,] "Actinomycetales"    "Microbacteriaceae"   
@@ -740,7 +632,7 @@ This markdown table showcases the edited data and the reads given out after each
     ## [140,] "Erysipelotrichales" "Erysipelotrichaceae" 
     ## [141,] "Actinomycetales"    "Mycobacteriaceae"    
     ## [142,] "Actinomycetales"    "Microbacteriaceae"   
-    ## [143,] "Clostridiales"      "Ruminococcaceae"     
+    ## [143,] "Clostridiales"      NA                    
     ## [144,] "Actinomycetales"    "Propionibacteriaceae"
     ## [145,] "Clostridiales"      "Ruminococcaceae"     
     ## [146,] "Actinomycetales"    "Nocardioidaceae"     
@@ -759,7 +651,7 @@ This markdown table showcases the edited data and the reads given out after each
     ## [159,] "Lactobacillales"    "Carnobacteriaceae"   
     ## [160,] "Flavobacteriales"   "Flavobacteriaceae"   
     ## [161,] "Fusobacteriales"    "Leptotrichiaceae"    
-    ## [162,] "Clostridiales"      "Ruminococcaceae"     
+    ## [162,] "Clostridiales"      NA                    
     ## [163,] "Bacillales"         "Bacillaceae_1"       
     ## [164,] "Clostridiales"      NA                    
     ## [165,] "Nitrospirales"      "Nitrospiraceae"      
@@ -771,7 +663,7 @@ This markdown table showcases the edited data and the reads given out after each
     ## [171,] "Rhizobiales"        "Bradyrhizobiaceae"   
     ## [172,] "Clostridiales"      NA                    
     ## [173,] "Clostridiales"      "Catabacteriaceae"    
-    ## [174,] "Actinomycetales"    "Nocardiaceae"        
+    ## [174,] "Actinomycetales"    NA                    
     ## [175,] "Pasteurellales"     "Pasteurellaceae"     
     ## [176,] "Actinomycetales"    "Microbacteriaceae"   
     ##        [,6]                       
@@ -796,7 +688,7 @@ This markdown table showcases the edited data and the reads given out after each
     ##  [19,] NA                         
     ##  [20,] "Diaphorobacter"           
     ##  [21,] NA                         
-    ##  [22,] NA                         
+    ##  [22,] "Intestinimonas"           
     ##  [23,] NA                         
     ##  [24,] NA                         
     ##  [25,] "Pelomonas"                
@@ -805,7 +697,7 @@ This markdown table showcases the edited data and the reads given out after each
     ##  [28,] "Streptomyces"             
     ##  [29,] NA                         
     ##  [30,] "Sphingobium"              
-    ##  [31,] NA                         
+    ##  [31,] "Marmoricola"              
     ##  [32,] "Streptomyces"             
     ##  [33,] "Salinibacterium"          
     ##  [34,] "Streptomyces"             
@@ -822,10 +714,10 @@ This markdown table showcases the edited data and the reads given out after each
     ##  [45,] "Pseudomonas"              
     ##  [46,] "Streptomyces"             
     ##  [47,] NA                         
-    ##  [48,] NA                         
+    ##  [48,] "Pelomonas"                
     ##  [49,] "Microbacterium"           
     ##  [50,] "Mycobacterium"            
-    ##  [51,] "Marmoricola"              
+    ##  [51,] NA                         
     ##  [52,] NA                         
     ##  [53,] "Streptomyces"             
     ##  [54,] NA                         
@@ -839,7 +731,7 @@ This markdown table showcases the edited data and the reads given out after each
     ##  [62,] "Microvirga"               
     ##  [63,] NA                         
     ##  [64,] "Arthrobacter"             
-    ##  [65,] "Marmoricola"              
+    ##  [65,] NA                         
     ##  [66,] "Microbacterium"           
     ##  [67,] "Sphingomonas"             
     ##  [68,] NA                         
@@ -854,7 +746,7 @@ This markdown table showcases the edited data and the reads given out after each
     ##  [77,] "Nocardia"                 
     ##  [78,] "Nocardioides"             
     ##  [79,] "Subtercola"               
-    ##  [80,] NA                         
+    ##  [80,] "Butyricicoccus"           
     ##  [81,] "Cloacibacterium"          
     ##  [82,] "Microbacterium"           
     ##  [83,] "Sphingomonas"             
@@ -959,47 +851,47 @@ This taxa table showcases information from each given sequence with the appropri
     ## Square root transformation
     ## Wisconsin double standardization
     ## Run 0 stress 4.418541e-05 
-    ## Run 1 stress 6.634224e-05 
-    ## ... Procrustes: rmse 0.2355622  max resid 0.4998108 
-    ## Run 2 stress 0 
+    ## Run 1 stress 0 
     ## ... New best solution
-    ## ... Procrustes: rmse 0.2868938  max resid 0.4110583 
+    ## ... Procrustes: rmse 0.2511064  max resid 0.5354425 
+    ## Run 2 stress 9.465691e-05 
+    ## ... Procrustes: rmse 0.2268697  max resid 0.3959141 
     ## Run 3 stress 0 
-    ## ... Procrustes: rmse 0.2586048  max resid 0.6039412 
-    ## Run 4 stress 9.179886e-05 
-    ## ... Procrustes: rmse 0.2671441  max resid 0.597501 
-    ## Run 5 stress 7.562183e-05 
-    ## ... Procrustes: rmse 0.161259  max resid 0.2441627 
-    ## Run 6 stress 0 
-    ## ... Procrustes: rmse 0.2691042  max resid 0.5177576 
-    ## Run 7 stress 0 
-    ## ... Procrustes: rmse 0.2743908  max resid 0.6033324 
+    ## ... Procrustes: rmse 0.2698835  max resid 0.3917387 
+    ## Run 4 stress 0 
+    ## ... Procrustes: rmse 0.2215149  max resid 0.4300175 
+    ## Run 5 stress 9.349507e-05 
+    ## ... Procrustes: rmse 0.2755207  max resid 0.5241567 
+    ## Run 6 stress 4.422212e-05 
+    ## ... Procrustes: rmse 0.242872  max resid 0.4462544 
+    ## Run 7 stress 7.403412e-05 
+    ## ... Procrustes: rmse 0.2835076  max resid 0.4550936 
     ## Run 8 stress 0 
-    ## ... Procrustes: rmse 0.2626489  max resid 0.5277675 
-    ## Run 9 stress 0 
-    ## ... Procrustes: rmse 0.1673145  max resid 0.3007199 
-    ## Run 10 stress 7.813556e-05 
-    ## ... Procrustes: rmse 0.2532451  max resid 0.5440469 
+    ## ... Procrustes: rmse 0.2879418  max resid 0.405793 
+    ## Run 9 stress 6.973186e-05 
+    ## ... Procrustes: rmse 0.2843659  max resid 0.4833395 
+    ## Run 10 stress 9.895901e-05 
+    ## ... Procrustes: rmse 0.2671471  max resid 0.5392531 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.2725322  max resid 0.4087839 
-    ## Run 12 stress 7.300575e-05 
-    ## ... Procrustes: rmse 0.201565  max resid 0.3210048 
+    ## ... Procrustes: rmse 0.2246127  max resid 0.372972 
+    ## Run 12 stress 0 
+    ## ... Procrustes: rmse 0.2993735  max resid 0.5727 
     ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.2261962  max resid 0.3589858 
-    ## Run 14 stress 0 
-    ## ... Procrustes: rmse 0.2411495  max resid 0.4137657 
+    ## ... Procrustes: rmse 0.284358  max resid 0.4491476 
+    ## Run 14 stress 3.732296e-05 
+    ## ... Procrustes: rmse 0.22883  max resid 0.4972881 
     ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.3096276  max resid 0.575305 
-    ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.2386229  max resid 0.3657798 
-    ## Run 17 stress 0 
-    ## ... Procrustes: rmse 0.2872373  max resid 0.5092638 
+    ## ... Procrustes: rmse 0.2557044  max resid 0.3343116 
+    ## Run 16 stress 8.898378e-05 
+    ## ... Procrustes: rmse 0.2337014  max resid 0.3906341 
+    ## Run 17 stress 4.718688e-05 
+    ## ... Procrustes: rmse 0.2202157  max resid 0.3298974 
     ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.2497436  max resid 0.4505281 
-    ## Run 19 stress 5.602879e-05 
-    ## ... Procrustes: rmse 0.2593652  max resid 0.5090095 
-    ## Run 20 stress 0 
-    ## ... Procrustes: rmse 0.2382184  max resid 0.5118576 
+    ## ... Procrustes: rmse 0.1917572  max resid 0.3092862 
+    ## Run 19 stress 0 
+    ## ... Procrustes: rmse 0.2918671  max resid 0.452532 
+    ## Run 20 stress 9.62742e-06 
+    ## ... Procrustes: rmse 0.2361778  max resid 0.4337509 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
@@ -1125,7 +1017,7 @@ We proved that differences between male and female bacterial communities within 
 
 ### Computational
 
-Computational analyses included preparing the sequencing data in order to have trimmed and aligned sequences that appropriately underscore the important information needed to be extrapolated for further analyses. The primary quality plot data showcases the region of the sequences that needs to be trimmed to account for sequence errors; primarily after 220 base pairs. The corresponding errors graphic after trimming shows the statistical margin of error that occurs when longer sequences are read through an NGS system like 454. The error graph shows a direcet relationship between the number of errors and the lengths of the sequences. Once trimmed Figure 1 portrays the new sequence lengths using a histrogram to graphically underscore that all sequences are now under the 225 base pair limit. The next markdown table showcases how many reads were present before and after trimming, alignment, removing chimeras and removing duplicates to again underscore how the data was manipulated, in order to, increase statistical rational towards our hypothesis and decrease extraneous error in tests we wanted to run. Lastly a taxonomy table was compiled with ribosomal database information to allow sequence data to be compared to corresponding bacterial types.
+Computational analyses included preparing the sequencing data in order to have trimmed and aligned sequences that appropriately underscore the important information needed to be extrapolated for further analyses. The primary quality plot data showcases the region of the sequences that needs to be trimmed to account for sequence errors; primarily after 220 base pairs. The corresponding errors graphic after trimming shows the statistical margin of error that occurs when longer sequences are read through an NGS system like 454. The error graph shows a direct relationship between the number of errors and the lengths of the sequences. Once trimmed Figure 1 portrays the new sequence lengths using a histogram to graphically underscore that all sequences are now under the 225 base pair limit. The next markdown table showcases how many reads were present before and after trimming, alignment, removing chimeras and removing duplicates to again underscore how the data was manipulated, in order to, increase statistical rational towards our hypothesis and decrease extraneous error in tests we wanted to run. Lastly a taxonomy table was compiled with ribosomal database information to allow sequence data to be compared to corresponding bacterial types.
 
 ### Abundance
 
@@ -1137,7 +1029,7 @@ However, when abundance levels are overlapped with taxonomical representation th
 
 ### Richness
 
-Richness is a measure of different morphotypes within a bacterial community. Calculations of richness within a community are imperative to showcase if only one species is present or many within the same niche environment. Biodiversity is measured through both richness and diversity factors. By observing biodiversity within communities conservation of certain species can occur through the creation of more favorable niches. In the observation between male and female resident sample populations like richness is observed in the overlap of some varying morphotypes, however, due to the ability for potential mutation or nutritional needs of the bacteria, some morphotypes favored the males over the females environment and vice versa.
+Richness is a measure of different morphotypes within a bacterial community. Calculations of richness within a community are imperative to showcase if only one species is present, or many within the same niche environment. Biodiversity is measured through both richness and diversity factors. By observing biodiversity within communities conservation of certain species can occur through the creation of more favorable niches. In the observation between male and female resident sample populations like richness is observed in the overlap of some varying morphotypes. However, due to the ability for potential mutation or nutritional needs of the bacteria, some morphotypes favored the males over the females environment and vice versa.
 
 Evaluation of Figure 3 showcases the differences within richness metrics between both female and male bacterial communities. Unlike abundance, where males showcased more colony reads, we visualize female samples to have an increased level of richness to deduce that a large variety of bacterial species are present on the female hand. Though male samples have some diversity, female samples show a richness level double that of male samples (9:4). We can conclude that male samples then have more colonies of a singular bacterial type, where female samples have fewer overall colonies but of more diverse types.
 
@@ -1161,7 +1053,7 @@ Plotting an ordination is a measure for quantifying richness and diversity simul
 
 ### Conclusion
 
-Overall, we utilize measures of abundance, richness, and diversity to prove male and female hands have different bacterial communities. We see that males house a community of more abundant bacteria that are more closely related overall, while females have less bacteria but of more diverse morphologies. We also explain that though the communities are overall different they do represent similraties in the phylum of bacteria seen for both sex samples (Proteobacteria) which is most likely from the overall similar environment the study participants live in (Univeristy of Colorado at Boulder). We can postulate that the microbiota on the male hand are less diverse because of the skin pH, which is nominally different between the two sexes due to sweat glands which produce a more acidic environment unfavorable to many microbiota and are sitmulated by hormonal differences between the sexes {Fierer *et al.* (2008)}. These conditions would also account for differences observed in abundance and richness. Further studies need to be conducted to directly prove this association with pH, and simultaneously disprove these conclusions for the different bacterial communities are not from hygiene differences or social constructs which imply females using more cosmetic products.
+Overall, we utilize measures of abundance, richness, and diversity to prove male and female hands have different bacterial communities. We see that males house a community of more abundant bacteria that are more closely related overall, while females have less bacteria but of more diverse morphologies. We also explain that though the communities are overall different they do represent similarities in the phylum of bacteria seen for both sex samples (Proteobacteria) which is most likely from the overall similar environment the study participants live in (University of Colorado at Boulder). We can postulate that the microbiota on the male hand are less diverse because of the skin pH, which is nominally different between the two sexes due to sweat glands which produce a more acidic environment unfavorable to many microbiota and are stimulated by hormonal differences between the sexes {Fierer *et al.* (2008)}. These conditions would also account for differences observed in abundance and richness. Further studies need to be conducted to directly prove this association with pH, and simultaneously disprove these conclusions for the different bacterial communities are not from hygiene differences or social constructs which imply females using more cosmetic products.
 
 Sources Cited
 =============

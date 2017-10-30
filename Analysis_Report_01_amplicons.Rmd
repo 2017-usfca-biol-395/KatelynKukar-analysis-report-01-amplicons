@@ -138,7 +138,7 @@ filtered_output <- filterAndTrim(fwd = filenames_forward_reads,
 ```
 
   
-```{r filtered-read-counts-table, echo = FALSE}
+```{r filtered-read-counts-table, echo = FALSE, message = FALSE}
 # produce nicely-formatted markdown table of read counts
 # before/after trimming
 kable(filtered_output,
@@ -146,7 +146,7 @@ kable(filtered_output,
                     "Reads Out"))
 ```
 
-```{r learn-errors, echo = FALSE}
+```{r learn-errors, echo = FALSE, message = FALSE}
 # this build error models from each of the samples
 errors_forward_reads <- learnErrors(filtered_reads_path,
                                     multithread = FALSE)
@@ -154,14 +154,14 @@ errors_forward_reads <- learnErrors(filtered_reads_path,
 
 
 This table and corresponding error models were built to showcase the read errors from the sequencing data and the corresponding trimming profile and alignment that needed to be accounted for to allow for reproducible and unbiased analysis (removing repeats, trimming, accounting for error bias, and chimeric regions with all sequences being parsed with 454 acceptable protocols through a dada pipeline).
-```{r visualize-errors-with-plots}
+```{r visualize-errors-with-plots, echo = FALSE, message = FALSE}
 # quick check to see if error models match data
 # (black lines match black points) and are generally decresing left to right
  plotErrors(errors_forward_reads,
            nominalQ = TRUE)
 ```
 
-```{r dereplicate-sequences, echo = FALSE}
+```{r dereplicate-sequences, echo = FALSE, message = FALSE}
 # get rid of any duplicated sequences
 dereplicated_forward_reads <- derepFastq(filtered_reads_path,
                                          verbose = TRUE)
@@ -170,7 +170,7 @@ dereplicated_forward_reads <- derepFastq(filtered_reads_path,
 names(dereplicated_forward_reads) <- sample_names
 ```
 
-```{r run-dada, echo = FALSE}
+```{r run-dada, echo = FALSE, message = FALSE}
 # parameters adjusted based on recommendations for 454 data here:
 # https://benjjneb.github.io/dada2/
 #     faq.html#can-i-use-dada2-with-my-454-or-ion-torrent-data
@@ -199,7 +199,7 @@ hist(nchar(getSequences(sequence_table)),
 
 This table explicitly represents the sequence lengths of the trimmed data set to show they are all correctly analyzed beneath the given range of 225 bases.
 
-```{r remove-chimeras, echo = FALSE}
+```{r remove-chimeras, echo = FALSE, message = FALSE}
 # Check for and remove chimeras
 sequence_table_nochim <- removeBimeraDenovo(sequence_table,
                                             method = "consensus",
@@ -213,7 +213,7 @@ non_chimeric_reads <- round(sum(sequence_table_nochim) / sum(sequence_table),
 
 After removing chimeras, we were left with `r non_chimeric_reads`% of our cleaned reads.
 
-```{r table-of-pipeline-read-counts, echo = FALSE}
+```{r table-of-pipeline-read-counts, echo = FALSE, message = FALSE}
 # Build a table showing how many sequences remain at each step of the pipeline
 get_n <- function(x) sum(getUniques(x)) # make a quick function
 track <- cbind(filtered_output, # already has 2 columns
@@ -237,7 +237,7 @@ kable(track)
 
 This markdown table showcases the edited data and the reads given out after each step of filtering for the corrected data set to be used in figure based computational analysis.
 
-```{r assign-taxonomy, echo = FALSE}
+```{r assign-taxonomy, echo = FALSE, message = FALSE}
 # assigns taxonomy to each sequence variant based on a supplied training set
 # made up of known sequences
 taxa <- assignTaxonomy(sequence_table_nochim,
@@ -251,7 +251,7 @@ unname(taxa)
 
 Taxonomy was assigned for each sequence to describe which bacterial community was present within the samples tested for.
 
-```{r extract-sequences-to-fasta, echo = FALSE}
+```{r extract-sequences-to-fasta, echo = FALSE, message = FALSE}
 # we want to export the cleaned, trimmed, filtered, denoised sequence variants
 # so that we can build a phylogeny - we'll build the phylogeny outside of R
 # but we need the fasta file to do so. We keep the names of each sequence as the
@@ -279,7 +279,7 @@ export_taxa_table_and_seqs(sequence_table_nochim,
 
 This taxa table showcases information from each given sequence with the appropriate Phylum to Genus information. 
 
-```{r read-in-metadata-and-create-phyloseq, echo = FALSE}
+```{r read-in-metadata-and-create-phyloseq, echo = FALSE, message = FALSE}
 # Next we want to read in the metadata file so we can add that in too
 # This is not a csv file, so we have to use a slightly different syntax
 # here the `sep = "\t"` tells the function that the data are tab-delimited
