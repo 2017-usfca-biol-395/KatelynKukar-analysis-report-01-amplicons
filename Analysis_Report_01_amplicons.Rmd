@@ -319,7 +319,7 @@ After the data was parsed and filtered the "melted" data set is now applicable f
 ##Analyitics
 **Figure 2**: Abundance Measure for Male versus Female sample types
 ```{r Abundance, echo = FALSE}
-# use dplyr to add in data as a boxplot and use tally function to quantify all counts 
+# use dplyr to add in boxplot/use tally function to quantify all counts 
 melted_obj %>%
   filter(sex_s != "Not applicable") %>%
   ggplot(
@@ -362,12 +362,12 @@ plot_richness(pruned_phyloseq,
 
 **Figure 5**: Male versus Female bar graph showcasing the phylum present within each bacterial community
 ```{r Abundance Taxonomy Graph, echo = FALSE}
-plot_bar(pruned_phyloseq, 
-         x="sex_s", 
-         y="Abundance", 
-         fill="Phylum",
-         title="Abundance of Male and Female Samples", 
-         facet_grid=NULL) + 
+plot_bar(pruned_phyloseq,
+         x = "sex_s",
+         y = "Abundance",
+         fill = "Phylum",
+         title = "Abundance of Male and Female Samples",
+         facet_grid = NULL) +
   scale_fill_brewer(palette = "Blues")
 ```
 
@@ -387,13 +387,17 @@ plot_tree(pruned_phyloseq,
 **Figure 7**: Ordination to order species along presumed ecological gradient to identify patterns of species distribution and abundance for male versus female samples
 ```{r Ordination Male vs. Female, echo = FALSE}
 # Ordination of Male and Female species distribution
-# apply pruned data set 
+# apply pruned data set
 pruned_phyloseq <- subset_samples(phyloseq_obj, sex_s != "Not applicable")
 set.seed(28)
 pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
 # plot ordination without NA
-p1 = plot_ordination(pruned_phyloseq, pruned_ord, type="samples", color="sex_s", title="Ordination of Male versus Female Sequences")
-print(p1)
+p1 = plot_ordination(pruned_phyloseq,
+                     pruned_ord,
+                     type = "samples",
+                     color = "sex_s",
+                     title = "Ordination of Male versus Female Sequences")
+                     print(p1)
 ```
 
 
