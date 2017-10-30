@@ -8,11 +8,11 @@ Introduction
 
 Methodology to estimate microbial diversity has significantly increased with an effort to understand the distribution and diversity of microbes in their natural environments. Cultivation-dependent methodology work to mimic the natural environment of microbes in a laboratory setting, with enrichment cultures being particularly important for visualizing species that favor the selected media for growth (Nichols, 2007). Different ecological metrics have been used to categorize these cultivated colonies in order to deduce community data about known bacterial species and potentially deduce information about unknown species (Birtel *et al.*, 2015). Understanding the cultivation methodology to successfully grow microbial species lends information about the requirements imperative for bio diverse communities that can be beneficial in studying niche environments like the human gut which interact with pathogens and probiotics (Wu *et al.*, 2012). Beyond healthcare, general dispersal of bacterial communities increases biodiversity in water sources, soils, and all micro environments that effect the well being of the larger ecosystem, with this assumption also holding true for bacterial organisms which reside on a human host or human host environment (Fuhrman, 1999).
 
-Within the paper, *Forensic identification using skin bacterial communities*, published in 2010 by Noah Fierer the diversity in human skin bacterial communities is explained to be “far higher than previously recognized, with a high degree of inter-individual variability in the composition of bacterial communities.” This discovery leads the paper to discuss that these individualized communities can be utilized as personal identifiers for criminal cases as forensic evidence. Fierer et al. specifically claims that “these skin bacteria may persist on touched surfaces for prolonged periods because many are highly resistant to environmental- mental stresses, including moisture, temperature, and UV radiation,” meaning the community samples can be collected long after the host has left (Fierer *et al.*, 2010). Though the implications for forensic research are still under scrutiny, the data can be more broadly analyzed to deduce if there are specific differences in bacterial communities between female and male participants. By analytically evaluating these communities separately to find patterns in abundance, richness, and diversity we deduce information about the specific community composition, which can yield information about the overall biodiversity of the niche the bacteria are a part of. The inference that human hosts hold their own unique sets of bacteria helps foster the notion of unique micro environments that endosymbiotically regulate the human body.
+Within the paper, *Forensic identification using skin bacterial communities*, published in 2010 by Noah Fierer the diversity in human skin bacterial communities is explained to be “far higher than previously recognized, with a high degree of inter-individual variability in the composition of bacterial communities.” This discovery leads the paper to discuss that these individualized communities can be utilized as personal identifiers for criminal cases as forensic evidence. Fierer et al. (2010) specifically claims that “these skin bacteria may persist on touched surfaces for prolonged periods because many are highly resistant to environmental- mental stresses, including moisture, temperature, and UV radiation,” meaning the community samples can be collected long after the host has left (Fierer *et al.*, 2010). Though the implications for forensic research are still under scrutiny, the data can be more broadly analyzed to deduce if there are specific differences in bacterial communities between female and male participants. By analytically evaluating these communities separately to find patterns in abundance, richness, and diversity we deduce information about the specific community composition, which can yield information about the overall biodiversity of the niche the bacteria are a part of. The inference that human hosts hold their own unique sets of bacteria helps foster the notion of unique micro environments that endosymbiotically regulate the human body.
 
 By explicitly looking at community differences between male and female participants, information can be gathered about the overall health and well-being of each participant sex in regard to the surrounding environment. In a study published in Science in 2013, it was discovered that the gut microbiota is extremely relevant in determining autoimmune disease susceptibility (Markle *et al.*, 2013). Markle et al. stated that when male cecal contents were transferred to female mice these mice received a higher level of protection against “pancreatic islet inflammation, autoantibody production, and the development of diabetes,” meaning this difference within the sexes microbiota was translational to inhibit the spread of disease (Markle *et al.*, 2013). Therefore, understanding the differences in the skin microbiota could also potentially pose interesting medical questions that could yield insight on diseases current to specific, sexually biased traits.
 
-Overall, divulging community data analysis from female and male participants, from the sequenced data sets from the Fierer et. al paper, can provide useful information about the resident skin microbiota of sexually diverse humans. By using sex as the means of a comparison further hypotheses can be made that explain differences based on hormonal differences and social differences since the presiding environment remains constant for both sample sets. We can thereby infer that because of these differences a community the female and male sex of humans house a community of bacteria that are significantly different in regard to diversity, richness, and abundance on human hands. We test this hypothesis utilizing computational amplicon sequencing analyses that parse data particular to the bacterial communities found within the Fierer et al paper.
+Overall, divulging community data analysis from female and male participants, from the sequenced data sets from the Fierer et. al (2010) paper, can provide useful information about the resident skin microbiota of sexually diverse humans. By using sex as the means of a comparison further hypotheses can be made that explain differences based on hormonal differences and social differences since the presiding environment remains constant for both sample sets. We can thereby infer that because of these differences a community the female and male sex of humans house a community of bacteria that are significantly different in regard to diversity, richness, and abundance on human hands. We test this hypothesis utilizing computational amplicon sequencing analyses that parse data particular to the bacterial communities found within Fierer et al (2010).
 
 Methods
 =======
@@ -26,7 +26,7 @@ All analysis was done using Fierer et al. as a reference source for sequence dat
 
 ### DNA and Pyrosequencing
 
-Fierer et. al 2010 explains that for each sample the 16s rRNA genes were amplified using the MO BIO PowerSoil DNA Isolation kit with the broken, frozen cotton swabs. These tubes were then horizontally shaken and kit procedures were followed for extraction. PCR reactions were carried out in triplicate repeats using HotMAsterMic with thermal cycling at 94C for 3min followed by 35 cycles of denaturation, annealing for 30s, and extension and final extension procedures. Replicate amplicons were pooled in agarose gel using SYBR Safe DNA gel stain from Invitrogen. Amplicon DNA concentrations were then measured with the final pool of DNA being precipitated, centrifuged, and centrifuged to create a pellet that was re-suspended in nuclease-free water. Pyrosequencing was then carried out on a 454 Life Sciences Genome Sequencer FLX instrument at the University of South Carolina (Fierer *et al.*, 2010).
+Fierer et. al 2010 explains that for each sample the 16s rRNA genes were amplified using the MO BIO PowerSoil DNA Isolation kit with the broken, frozen cotton swabs. These tubes were then horizontally shaken and kit procedures were followed for extraction. PCR reactions were carried out in triplicate repeats using HotMAsterMic with thermal cycling at 94C for 3min followed by 35 cycles of denaturation, annealing for 30s, and extension and final extension procedures. Replicate amplicons were pooled in agarose gel using SYBR Safe DNA gel stain from Invitrogen. Amplicon DNA concentrations were then measured with the final pool of DNA being precipitated, centrifuged, and centrifuged to create a pellet that was re-suspended in nuclease-free water. Pyrosequencing was then carried out on a 454 Life Sciences Genome Sequencer FLX instrument at the University of South Carolina (an NGS system used to sequence DNA samples) (Fierer *et al.*, 2010).
 
 Computational
 -------------
@@ -179,105 +179,10 @@ This table and corresponding error models were built to showcase the read errors
     ## Sample 19 - 389 reads in 332 unique sequences.
     ## Sample 20 - 852 reads in 239 unique sequences.
 
-    ## $ERR1942280
-    ## dada-class: object describing DADA2 denoising results
-    ## 3 sample sequences were inferred from 72 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942281
-    ## dada-class: object describing DADA2 denoising results
-    ## 18 sample sequences were inferred from 163 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942282
-    ## dada-class: object describing DADA2 denoising results
-    ## 3 sample sequences were inferred from 25 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942283
-    ## dada-class: object describing DADA2 denoising results
-    ## 17 sample sequences were inferred from 176 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942284
-    ## dada-class: object describing DADA2 denoising results
-    ## 4 sample sequences were inferred from 134 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942285
-    ## dada-class: object describing DADA2 denoising results
-    ## 7 sample sequences were inferred from 65 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942286
-    ## dada-class: object describing DADA2 denoising results
-    ## 8 sample sequences were inferred from 178 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942287
-    ## dada-class: object describing DADA2 denoising results
-    ## 5 sample sequences were inferred from 135 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942288
-    ## dada-class: object describing DADA2 denoising results
-    ## 5 sample sequences were inferred from 201 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942289
-    ## dada-class: object describing DADA2 denoising results
-    ## 17 sample sequences were inferred from 107 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942290
-    ## dada-class: object describing DADA2 denoising results
-    ## 13 sample sequences were inferred from 181 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942291
-    ## dada-class: object describing DADA2 denoising results
-    ## 8 sample sequences were inferred from 212 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942292
-    ## dada-class: object describing DADA2 denoising results
-    ## 3 sample sequences were inferred from 128 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942293
-    ## dada-class: object describing DADA2 denoising results
-    ## 11 sample sequences were inferred from 171 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942294
-    ## dada-class: object describing DADA2 denoising results
-    ## 30 sample sequences were inferred from 250 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942295
-    ## dada-class: object describing DADA2 denoising results
-    ## 4 sample sequences were inferred from 141 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942296
-    ## dada-class: object describing DADA2 denoising results
-    ## 17 sample sequences were inferred from 186 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942297
-    ## dada-class: object describing DADA2 denoising results
-    ## 5 sample sequences were inferred from 88 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942298
-    ## dada-class: object describing DADA2 denoising results
-    ## 21 sample sequences were inferred from 332 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
-    ## 
-    ## $ERR1942299
-    ## dada-class: object describing DADA2 denoising results
-    ## 8 sample sequences were inferred from 239 input unique sequences.
-    ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
+``` r
+# check dada results
+dada_forward_reads
+```
 
     ## The sequences being tabled vary in length.
 
@@ -312,537 +217,10 @@ After removing chimeras, we were left with 99.65% of our cleaned reads.
 
 This markdown table showcases the edited data and the reads given out after each step of filtering for the corrected data set to be used in figure based computational analysis.
 
-    ##        [,1]       [,2]                        [,3]                 
-    ##   [1,] "Bacteria" "Proteobacteria"            NA                   
-    ##   [2,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ##   [3,] "Bacteria" "Bacteroidetes"             NA                   
-    ##   [4,] "Bacteria" "Proteobacteria"            NA                   
-    ##   [5,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ##   [6,] "Bacteria" "Cyanobacteria/Chloroplast" "Chloroplast"        
-    ##   [7,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ##   [8,] "Bacteria" "Bacteroidetes"             NA                   
-    ##   [9,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ##  [10,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ##  [11,] "Bacteria" "Proteobacteria"            NA                   
-    ##  [12,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [13,] "Bacteria" "Cyanobacteria/Chloroplast" "Chloroplast"        
-    ##  [14,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ##  [15,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ##  [16,] "Bacteria" "Proteobacteria"            NA                   
-    ##  [17,] "Bacteria" "Bacteroidetes"             "Flavobacteriia"     
-    ##  [18,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [19,] "Bacteria" NA                          NA                   
-    ##  [20,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ##  [21,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [22,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [23,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [24,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [25,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ##  [26,] "Bacteria" "Cyanobacteria/Chloroplast" "Chloroplast"        
-    ##  [27,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [28,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [29,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [30,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ##  [31,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [32,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [33,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [34,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [35,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [36,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ##  [37,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ##  [38,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [39,] "Bacteria" "Cyanobacteria/Chloroplast" "Chloroplast"        
-    ##  [40,] "Bacteria" "Bacteroidetes"             "Flavobacteriia"     
-    ##  [41,] "Bacteria" "Firmicutes"                "Bacilli"            
-    ##  [42,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [43,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ##  [44,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [45,] "Bacteria" "Proteobacteria"            "Gammaproteobacteria"
-    ##  [46,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [47,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [48,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ##  [49,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [50,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [51,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [52,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [53,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [54,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ##  [55,] "Bacteria" "Firmicutes"                NA                   
-    ##  [56,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [57,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [58,] "Bacteria" "Proteobacteria"            "Gammaproteobacteria"
-    ##  [59,] "Bacteria" NA                          NA                   
-    ##  [60,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [61,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [62,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ##  [63,] "Bacteria" "Firmicutes"                NA                   
-    ##  [64,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [65,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [66,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [67,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ##  [68,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [69,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [70,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ##  [71,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [72,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ##  [73,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [74,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [75,] "Bacteria" "Cyanobacteria/Chloroplast" "Chloroplast"        
-    ##  [76,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [77,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [78,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [79,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [80,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [81,] "Bacteria" "Bacteroidetes"             "Flavobacteriia"     
-    ##  [82,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [83,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ##  [84,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [85,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ##  [86,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ##  [87,] "Bacteria" "Cyanobacteria/Chloroplast" "Chloroplast"        
-    ##  [88,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [89,] "Bacteria" "Proteobacteria"            "Gammaproteobacteria"
-    ##  [90,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ##  [91,] "Bacteria" "Gemmatimonadetes"          "Gemmatimonadetes"   
-    ##  [92,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [93,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ##  [94,] "Bacteria" "Firmicutes"                "Bacilli"            
-    ##  [95,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ##  [96,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [97,] "Bacteria" "Proteobacteria"            NA                   
-    ##  [98,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##  [99,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ## [100,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [101,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [102,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [103,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [104,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ## [105,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [106,] "Bacteria" NA                          NA                   
-    ## [107,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [108,] "Bacteria" "Bacteroidetes"             "Sphingobacteriia"   
-    ## [109,] "Bacteria" "Firmicutes"                "Bacilli"            
-    ## [110,] "Bacteria" "Gemmatimonadetes"          "Gemmatimonadetes"   
-    ## [111,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ## [112,] "Bacteria" "Firmicutes"                "Bacilli"            
-    ## [113,] "Bacteria" "Bacteroidetes"             "Sphingobacteriia"   
-    ## [114,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [115,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [116,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [117,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ## [118,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ## [119,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [120,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [121,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ## [122,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [123,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ## [124,] "Bacteria" "Firmicutes"                "Bacilli"            
-    ## [125,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [126,] "Bacteria" "Firmicutes"                "Bacilli"            
-    ## [127,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [128,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ## [129,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ## [130,] "Bacteria" "Spirochaetes"              "Spirochaetia"       
-    ## [131,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [132,] "Bacteria" NA                          NA                   
-    ## [133,] "Bacteria" "Firmicutes"                NA                   
-    ## [134,] "Bacteria" "Proteobacteria"            "Gammaproteobacteria"
-    ## [135,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [136,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ## [137,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ## [138,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [139,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ## [140,] "Bacteria" "Firmicutes"                "Erysipelotrichia"   
-    ## [141,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ## [142,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ## [143,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [144,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ## [145,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [146,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ## [147,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [148,] "Bacteria" "Bacteroidetes"             "Sphingobacteriia"   
-    ## [149,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [150,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ## [151,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ## [152,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [153,] "Bacteria" "Bacteroidetes"             "Bacteroidia"        
-    ## [154,] "Bacteria" NA                          NA                   
-    ## [155,] "Bacteria" "Proteobacteria"            NA                   
-    ## [156,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [157,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [158,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [159,] "Bacteria" "Firmicutes"                "Bacilli"            
-    ## [160,] "Bacteria" "Bacteroidetes"             "Flavobacteriia"     
-    ## [161,] "Bacteria" "Fusobacteria"              "Fusobacteriia"      
-    ## [162,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [163,] "Bacteria" "Firmicutes"                "Bacilli"            
-    ## [164,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [165,] "Bacteria" "Nitrospirae"               "Nitrospira"         
-    ## [166,] "Bacteria" "Parcubacteria"             NA                   
-    ## [167,] "Bacteria" "Firmicutes"                "Bacilli"            
-    ## [168,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
-    ## [169,] "Bacteria" "Bacteroidetes"             "Sphingobacteriia"   
-    ## [170,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ## [171,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ## [172,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [173,] "Bacteria" "Firmicutes"                "Clostridia"         
-    ## [174,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ## [175,] "Bacteria" "Proteobacteria"            "Gammaproteobacteria"
-    ## [176,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
-    ##        [,4]                 [,5]                  
-    ##   [1,] NA                   NA                    
-    ##   [2,] "Rhizobiales"        "Bartonellaceae"      
-    ##   [3,] NA                   NA                    
-    ##   [4,] NA                   NA                    
-    ##   [5,] "Neisseriales"       "Neisseriaceae"       
-    ##   [6,] "Chloroplast"        "Streptophyta"        
-    ##   [7,] "Burkholderiales"    "Comamonadaceae"      
-    ##   [8,] NA                   NA                    
-    ##   [9,] "Rhizobiales"        "Bartonellaceae"      
-    ##  [10,] "Burkholderiales"    "Oxalobacteraceae"    
-    ##  [11,] NA                   NA                    
-    ##  [12,] "Actinomycetales"    "Nocardiaceae"        
-    ##  [13,] "Chloroplast"        "Streptophyta"        
-    ##  [14,] "Burkholderiales"    "Oxalobacteraceae"    
-    ##  [15,] "Neisseriales"       "Neisseriaceae"       
-    ##  [16,] NA                   NA                    
-    ##  [17,] "Flavobacteriales"   "Flavobacteriaceae"   
-    ##  [18,] "Clostridiales"      "Lachnospiraceae"     
-    ##  [19,] NA                   NA                    
-    ##  [20,] "Burkholderiales"    "Comamonadaceae"      
-    ##  [21,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [22,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [23,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [24,] "Clostridiales"      "Lachnospiraceae"     
-    ##  [25,] "Burkholderiales"    "Comamonadaceae"      
-    ##  [26,] "Chloroplast"        "Streptophyta"        
-    ##  [27,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [28,] "Actinomycetales"    "Streptomycetaceae"   
-    ##  [29,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [30,] "Sphingomonadales"   "Sphingomonadaceae"   
-    ##  [31,] "Actinomycetales"    "Nocardioidaceae"     
-    ##  [32,] "Actinomycetales"    "Streptomycetaceae"   
-    ##  [33,] "Actinomycetales"    "Microbacteriaceae"   
-    ##  [34,] "Actinomycetales"    "Streptomycetaceae"   
-    ##  [35,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [36,] "Methylophilales"    "Methylophilaceae"    
-    ##  [37,] "Sphingomonadales"   "Sphingomonadaceae"   
-    ##  [38,] "Actinomycetales"    "Intrasporangiaceae"  
-    ##  [39,] "Chloroplast"        "Streptophyta"        
-    ##  [40,] "Flavobacteriales"   "Flavobacteriaceae"   
-    ##  [41,] "Lactobacillales"    "Streptococcaceae"    
-    ##  [42,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [43,] "Rhodocyclales"      "Rhodocyclaceae"      
-    ##  [44,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [45,] "Pseudomonadales"    "Pseudomonadaceae"    
-    ##  [46,] "Actinomycetales"    "Streptomycetaceae"   
-    ##  [47,] "Clostridiales"      "Lachnospiraceae"     
-    ##  [48,] "Burkholderiales"    "Comamonadaceae"      
-    ##  [49,] "Actinomycetales"    "Microbacteriaceae"   
-    ##  [50,] "Actinomycetales"    "Mycobacteriaceae"    
-    ##  [51,] "Actinomycetales"    "Nocardioidaceae"     
-    ##  [52,] "Clostridiales"      "Lachnospiraceae"     
-    ##  [53,] "Actinomycetales"    "Streptomycetaceae"   
-    ##  [54,] "Sphingomonadales"   "Sphingomonadaceae"   
-    ##  [55,] NA                   NA                    
-    ##  [56,] "Actinomycetales"    NA                    
-    ##  [57,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [58,] "Pseudomonadales"    "Moraxellaceae"       
-    ##  [59,] NA                   NA                    
-    ##  [60,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [61,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [62,] "Rhizobiales"        "Methylobacteriaceae" 
-    ##  [63,] NA                   NA                    
-    ##  [64,] "Actinomycetales"    "Micrococcaceae"      
-    ##  [65,] "Actinomycetales"    "Nocardioidaceae"     
-    ##  [66,] "Actinomycetales"    "Microbacteriaceae"   
-    ##  [67,] "Sphingomonadales"   "Sphingomonadaceae"   
-    ##  [68,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [69,] "Clostridiales"      "Lachnospiraceae"     
-    ##  [70,] "Rhizobiales"        "Methylobacteriaceae" 
-    ##  [71,] "Clostridiales"      "Clostridiaceae_1"    
-    ##  [72,] "Burkholderiales"    "Oxalobacteraceae"    
-    ##  [73,] "Clostridiales"      "Lachnospiraceae"     
-    ##  [74,] "Actinomycetales"    "Nocardioidaceae"     
-    ##  [75,] "Chloroplast"        "Streptophyta"        
-    ##  [76,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [77,] "Actinomycetales"    "Nocardiaceae"        
-    ##  [78,] "Actinomycetales"    "Nocardioidaceae"     
-    ##  [79,] "Actinomycetales"    "Microbacteriaceae"   
-    ##  [80,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [81,] "Flavobacteriales"   "Flavobacteriaceae"   
-    ##  [82,] "Actinomycetales"    "Microbacteriaceae"   
-    ##  [83,] "Sphingomonadales"   "Sphingomonadaceae"   
-    ##  [84,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [85,] "Burkholderiales"    "Oxalobacteraceae"    
-    ##  [86,] "Rhizobiales"        "Bartonellaceae"      
-    ##  [87,] "Chloroplast"        "Streptophyta"        
-    ##  [88,] "Clostridiales"      "Ruminococcaceae"     
-    ##  [89,] "Pseudomonadales"    "Pseudomonadaceae"    
-    ##  [90,] "Rhodocyclales"      "Rhodocyclaceae"      
-    ##  [91,] "Gemmatimonadales"   "Gemmatimonadaceae"   
-    ##  [92,] "Actinomycetales"    "Nocardioidaceae"     
-    ##  [93,] "Burkholderiales"    "Oxalobacteraceae"    
-    ##  [94,] "Lactobacillales"    "Streptococcaceae"    
-    ##  [95,] "Clostridiales"      NA                    
-    ##  [96,] "Actinomycetales"    "Propionibacteriaceae"
-    ##  [97,] NA                   NA                    
-    ##  [98,] "Actinomycetales"    "Streptomycetaceae"   
-    ##  [99,] "Actinomycetales"    "Intrasporangiaceae"  
-    ## [100,] "Clostridiales"      "Lachnospiraceae"     
-    ## [101,] "Clostridiales"      NA                    
-    ## [102,] "Clostridiales"      "Ruminococcaceae"     
-    ## [103,] "Clostridiales"      "Lachnospiraceae"     
-    ## [104,] "Actinomycetales"    "Nocardioidaceae"     
-    ## [105,] "Clostridiales"      "Lachnospiraceae"     
-    ## [106,] NA                   NA                    
-    ## [107,] "Clostridiales"      "Lachnospiraceae"     
-    ## [108,] "Sphingobacteriales" "Sphingobacteriaceae" 
-    ## [109,] "Bacillales"         "Staphylococcaceae"   
-    ## [110,] "Gemmatimonadales"   "Gemmatimonadaceae"   
-    ## [111,] "Actinomycetales"    NA                    
-    ## [112,] "Bacillales"         "Staphylococcaceae"   
-    ## [113,] "Sphingobacteriales" "Sphingobacteriaceae" 
-    ## [114,] "Clostridiales"      NA                    
-    ## [115,] "Clostridiales"      NA                    
-    ## [116,] "Clostridiales"      "Lachnospiraceae"     
-    ## [117,] "Actinomycetales"    "Geodermatophilaceae" 
-    ## [118,] "Sphingomonadales"   "Sphingomonadaceae"   
-    ## [119,] "Clostridiales"      "Lachnospiraceae"     
-    ## [120,] "Clostridiales"      "Lachnospiraceae"     
-    ## [121,] "Sphingomonadales"   "Sphingomonadaceae"   
-    ## [122,] "Clostridiales"      "Ruminococcaceae"     
-    ## [123,] "Actinomycetales"    "Nocardioidaceae"     
-    ## [124,] "Lactobacillales"    "Carnobacteriaceae"   
-    ## [125,] "Clostridiales"      "Lachnospiraceae"     
-    ## [126,] "Bacillales"         "Bacillaceae_1"       
-    ## [127,] "Clostridiales"      "Ruminococcaceae"     
-    ## [128,] "Rhizobiales"        "Methylobacteriaceae" 
-    ## [129,] "Rhodospirillales"   "Rhodospirillaceae"   
-    ## [130,] "Spirochaetales"     "Spirochaetaceae"     
-    ## [131,] "Clostridiales"      "Lachnospiraceae"     
-    ## [132,] NA                   NA                    
-    ## [133,] NA                   NA                    
-    ## [134,] "Pasteurellales"     "Pasteurellaceae"     
-    ## [135,] "Clostridiales"      "Ruminococcaceae"     
-    ## [136,] "Rhodospirillales"   "Acetobacteraceae"    
-    ## [137,] "Rhodobacterales"    "Rhodobacteraceae"    
-    ## [138,] "Clostridiales"      "Ruminococcaceae"     
-    ## [139,] "Burkholderiales"    "Oxalobacteraceae"    
-    ## [140,] "Erysipelotrichales" "Erysipelotrichaceae" 
-    ## [141,] "Actinomycetales"    "Mycobacteriaceae"    
-    ## [142,] "Actinomycetales"    "Microbacteriaceae"   
-    ## [143,] "Clostridiales"      NA                    
-    ## [144,] "Actinomycetales"    "Propionibacteriaceae"
-    ## [145,] "Clostridiales"      "Ruminococcaceae"     
-    ## [146,] "Actinomycetales"    "Nocardioidaceae"     
-    ## [147,] "Clostridiales"      "Lachnospiraceae"     
-    ## [148,] "Sphingobacteriales" "Chitinophagaceae"    
-    ## [149,] "Clostridiales"      "Ruminococcaceae"     
-    ## [150,] "Sphingomonadales"   "Sphingomonadaceae"   
-    ## [151,] "Actinomycetales"    "Nocardiaceae"        
-    ## [152,] "Clostridiales"      "Clostridiaceae_1"    
-    ## [153,] "Bacteroidales"      "Prevotellaceae"      
-    ## [154,] NA                   NA                    
-    ## [155,] NA                   NA                    
-    ## [156,] "Clostridiales"      "Ruminococcaceae"     
-    ## [157,] "Clostridiales"      "Ruminococcaceae"     
-    ## [158,] "Clostridiales"      NA                    
-    ## [159,] "Lactobacillales"    "Carnobacteriaceae"   
-    ## [160,] "Flavobacteriales"   "Flavobacteriaceae"   
-    ## [161,] "Fusobacteriales"    "Leptotrichiaceae"    
-    ## [162,] "Clostridiales"      NA                    
-    ## [163,] "Bacillales"         "Bacillaceae_1"       
-    ## [164,] "Clostridiales"      NA                    
-    ## [165,] "Nitrospirales"      "Nitrospiraceae"      
-    ## [166,] NA                   NA                    
-    ## [167,] "Bacillales"         "Paenibacillaceae_1"  
-    ## [168,] NA                   NA                    
-    ## [169,] "Sphingobacteriales" "Chitinophagaceae"    
-    ## [170,] "Actinomycetales"    "Propionibacteriaceae"
-    ## [171,] "Rhizobiales"        "Bradyrhizobiaceae"   
-    ## [172,] "Clostridiales"      NA                    
-    ## [173,] "Clostridiales"      "Catabacteriaceae"    
-    ## [174,] "Actinomycetales"    NA                    
-    ## [175,] "Pasteurellales"     "Pasteurellaceae"     
-    ## [176,] "Actinomycetales"    "Microbacteriaceae"   
-    ##        [,6]                       
-    ##   [1,] NA                         
-    ##   [2,] "Bartonella"               
-    ##   [3,] NA                         
-    ##   [4,] NA                         
-    ##   [5,] NA                         
-    ##   [6,] NA                         
-    ##   [7,] "Acidovorax"               
-    ##   [8,] NA                         
-    ##   [9,] "Bartonella"               
-    ##  [10,] "Massilia"                 
-    ##  [11,] NA                         
-    ##  [12,] "Gordonia"                 
-    ##  [13,] NA                         
-    ##  [14,] "Massilia"                 
-    ##  [15,] NA                         
-    ##  [16,] NA                         
-    ##  [17,] "Cloacibacterium"          
-    ##  [18,] "Acetatifactor"            
-    ##  [19,] NA                         
-    ##  [20,] "Diaphorobacter"           
-    ##  [21,] NA                         
-    ##  [22,] "Intestinimonas"           
-    ##  [23,] NA                         
-    ##  [24,] NA                         
-    ##  [25,] "Pelomonas"                
-    ##  [26,] NA                         
-    ##  [27,] NA                         
-    ##  [28,] "Streptomyces"             
-    ##  [29,] NA                         
-    ##  [30,] "Sphingobium"              
-    ##  [31,] "Marmoricola"              
-    ##  [32,] "Streptomyces"             
-    ##  [33,] "Salinibacterium"          
-    ##  [34,] "Streptomyces"             
-    ##  [35,] "Ruminococcus"             
-    ##  [36,] "Methylotenera"            
-    ##  [37,] "Novosphingobium"          
-    ##  [38,] "Knoellia"                 
-    ##  [39,] NA                         
-    ##  [40,] "Cloacibacterium"          
-    ##  [41,] "Streptococcus"            
-    ##  [42,] "Oscillibacter"            
-    ##  [43,] "Azonexus"                 
-    ##  [44,] NA                         
-    ##  [45,] "Pseudomonas"              
-    ##  [46,] "Streptomyces"             
-    ##  [47,] NA                         
-    ##  [48,] "Pelomonas"                
-    ##  [49,] "Microbacterium"           
-    ##  [50,] "Mycobacterium"            
-    ##  [51,] NA                         
-    ##  [52,] NA                         
-    ##  [53,] "Streptomyces"             
-    ##  [54,] NA                         
-    ##  [55,] NA                         
-    ##  [56,] NA                         
-    ##  [57,] "Oscillibacter"            
-    ##  [58,] "Acinetobacter"            
-    ##  [59,] NA                         
-    ##  [60,] "Pseudoflavonifractor"     
-    ##  [61,] "Ruminococcus"             
-    ##  [62,] "Microvirga"               
-    ##  [63,] NA                         
-    ##  [64,] "Arthrobacter"             
-    ##  [65,] NA                         
-    ##  [66,] "Microbacterium"           
-    ##  [67,] "Sphingomonas"             
-    ##  [68,] NA                         
-    ##  [69,] NA                         
-    ##  [70,] "Microvirga"               
-    ##  [71,] "Clostridium_sensu_stricto"
-    ##  [72,] "Massilia"                 
-    ##  [73,] "Blautia"                  
-    ##  [74,] "Marmoricola"              
-    ##  [75,] NA                         
-    ##  [76,] NA                         
-    ##  [77,] "Nocardia"                 
-    ##  [78,] "Nocardioides"             
-    ##  [79,] "Subtercola"               
-    ##  [80,] "Butyricicoccus"           
-    ##  [81,] "Cloacibacterium"          
-    ##  [82,] "Microbacterium"           
-    ##  [83,] "Sphingomonas"             
-    ##  [84,] "Ruminococcus"             
-    ##  [85,] "Massilia"                 
-    ##  [86,] "Bartonella"               
-    ##  [87,] NA                         
-    ##  [88,] "Ruminococcus"             
-    ##  [89,] "Pseudomonas"              
-    ##  [90,] "Azonexus"                 
-    ##  [91,] "Gemmatimonas"             
-    ##  [92,] "Nocardioides"             
-    ##  [93,] "Herbaspirillum"           
-    ##  [94,] "Streptococcus"            
-    ##  [95,] NA                         
-    ##  [96,] NA                         
-    ##  [97,] NA                         
-    ##  [98,] "Streptomyces"             
-    ##  [99,] "Knoellia"                 
-    ## [100,] NA                         
-    ## [101,] NA                         
-    ## [102,] NA                         
-    ## [103,] "Blautia"                  
-    ## [104,] "Aeromicrobium"            
-    ## [105,] NA                         
-    ## [106,] NA                         
-    ## [107,] NA                         
-    ## [108,] "Sphingobacterium"         
-    ## [109,] "Staphylococcus"           
-    ## [110,] "Gemmatimonas"             
-    ## [111,] NA                         
-    ## [112,] "Staphylococcus"           
-    ## [113,] "Pedobacter"               
-    ## [114,] NA                         
-    ## [115,] NA                         
-    ## [116,] NA                         
-    ## [117,] "Blastococcus"             
-    ## [118,] NA                         
-    ## [119,] "Roseburia"                
-    ## [120,] NA                         
-    ## [121,] "Sphingobium"              
-    ## [122,] NA                         
-    ## [123,] "Nocardioides"             
-    ## [124,] "Atopostipes"              
-    ## [125,] NA                         
-    ## [126,] "Bacillus"                 
-    ## [127,] NA                         
-    ## [128,] "Microvirga"               
-    ## [129,] "Niveispirillum"           
-    ## [130,] "Spirochaeta"              
-    ## [131,] NA                         
-    ## [132,] NA                         
-    ## [133,] NA                         
-    ## [134,] "Nicoletella"              
-    ## [135,] NA                         
-    ## [136,] NA                         
-    ## [137,] "Stappia"                  
-    ## [138,] NA                         
-    ## [139,] "Massilia"                 
-    ## [140,] NA                         
-    ## [141,] "Mycobacterium"            
-    ## [142,] "Microbacterium"           
-    ## [143,] NA                         
-    ## [144,] NA                         
-    ## [145,] "Pseudoflavonifractor"     
-    ## [146,] "Nocardioides"             
-    ## [147,] NA                         
-    ## [148,] "Arachidicoccus"           
-    ## [149,] "Ruminococcus"             
-    ## [150,] NA                         
-    ## [151,] NA                         
-    ## [152,] "Clostridium_sensu_stricto"
-    ## [153,] NA                         
-    ## [154,] NA                         
-    ## [155,] NA                         
-    ## [156,] NA                         
-    ## [157,] NA                         
-    ## [158,] NA                         
-    ## [159,] NA                         
-    ## [160,] "Flavobacterium"           
-    ## [161,] "Leptotrichia"             
-    ## [162,] NA                         
-    ## [163,] "Bacillus"                 
-    ## [164,] NA                         
-    ## [165,] "Nitrospira"               
-    ## [166,] NA                         
-    ## [167,] "Paenibacillus"            
-    ## [168,] NA                         
-    ## [169,] "Flavitalea"               
-    ## [170,] "Tessaracoccus"            
-    ## [171,] "Rhodopseudomonas"         
-    ## [172,] NA                         
-    ## [173,] "Catabacter"               
-    ## [174,] NA                         
-    ## [175,] "Nicoletella"              
-    ## [176,] "Agrococcus"
+``` r
+# show the results of the taxonomy assignment
+unname(taxa)
+```
 
 Taxonomy was assigned for each sequence to describe which bacterial community was present within the samples tested for.
 
@@ -853,45 +231,45 @@ This taxa table showcases information from each given sequence with the appropri
     ## Run 0 stress 4.418541e-05 
     ## Run 1 stress 0 
     ## ... New best solution
-    ## ... Procrustes: rmse 0.2511064  max resid 0.5354425 
-    ## Run 2 stress 9.465691e-05 
-    ## ... Procrustes: rmse 0.2268697  max resid 0.3959141 
+    ## ... Procrustes: rmse 0.2820571  max resid 0.485768 
+    ## Run 2 stress 0 
+    ## ... Procrustes: rmse 0.3091672  max resid 0.5862336 
     ## Run 3 stress 0 
-    ## ... Procrustes: rmse 0.2698835  max resid 0.3917387 
-    ## Run 4 stress 0 
-    ## ... Procrustes: rmse 0.2215149  max resid 0.4300175 
-    ## Run 5 stress 9.349507e-05 
-    ## ... Procrustes: rmse 0.2755207  max resid 0.5241567 
-    ## Run 6 stress 4.422212e-05 
-    ## ... Procrustes: rmse 0.242872  max resid 0.4462544 
-    ## Run 7 stress 7.403412e-05 
-    ## ... Procrustes: rmse 0.2835076  max resid 0.4550936 
-    ## Run 8 stress 0 
-    ## ... Procrustes: rmse 0.2879418  max resid 0.405793 
-    ## Run 9 stress 6.973186e-05 
-    ## ... Procrustes: rmse 0.2843659  max resid 0.4833395 
-    ## Run 10 stress 9.895901e-05 
-    ## ... Procrustes: rmse 0.2671471  max resid 0.5392531 
-    ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.2246127  max resid 0.372972 
+    ## ... Procrustes: rmse 0.2478633  max resid 0.4104827 
+    ## Run 4 stress 9.614782e-05 
+    ## ... Procrustes: rmse 0.2756815  max resid 0.4624499 
+    ## Run 5 stress 6.500191e-05 
+    ## ... Procrustes: rmse 0.294453  max resid 0.4617666 
+    ## Run 6 stress 6.92376e-05 
+    ## ... Procrustes: rmse 0.2650543  max resid 0.6498855 
+    ## Run 7 stress 0 
+    ## ... Procrustes: rmse 0.2778478  max resid 0.4515167 
+    ## Run 8 stress 3.439974e-05 
+    ## ... Procrustes: rmse 0.2853802  max resid 0.6103784 
+    ## Run 9 stress 0 
+    ## ... Procrustes: rmse 0.2447329  max resid 0.4532574 
+    ## Run 10 stress 0 
+    ## ... Procrustes: rmse 0.2656861  max resid 0.5029355 
+    ## Run 11 stress 9.962156e-05 
+    ## ... Procrustes: rmse 0.2727105  max resid 0.4747381 
     ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.2993735  max resid 0.5727 
+    ## ... Procrustes: rmse 0.2830869  max resid 0.5950296 
     ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.284358  max resid 0.4491476 
-    ## Run 14 stress 3.732296e-05 
-    ## ... Procrustes: rmse 0.22883  max resid 0.4972881 
-    ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.2557044  max resid 0.3343116 
-    ## Run 16 stress 8.898378e-05 
-    ## ... Procrustes: rmse 0.2337014  max resid 0.3906341 
-    ## Run 17 stress 4.718688e-05 
-    ## ... Procrustes: rmse 0.2202157  max resid 0.3298974 
+    ## ... Procrustes: rmse 0.2760896  max resid 0.6720581 
+    ## Run 14 stress 0 
+    ## ... Procrustes: rmse 0.2414972  max resid 0.4318616 
+    ## Run 15 stress 5.977615e-05 
+    ## ... Procrustes: rmse 0.2288947  max resid 0.3582486 
+    ## Run 16 stress 0 
+    ## ... Procrustes: rmse 0.2601182  max resid 0.6228836 
+    ## Run 17 stress 7.07239e-05 
+    ## ... Procrustes: rmse 0.2571979  max resid 0.3939474 
     ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.1917572  max resid 0.3092862 
-    ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.2918671  max resid 0.452532 
-    ## Run 20 stress 9.62742e-06 
-    ## ... Procrustes: rmse 0.2361778  max resid 0.4337509 
+    ## ... Procrustes: rmse 0.2602965  max resid 0.3666285 
+    ## Run 19 stress 7.3857e-05 
+    ## ... Procrustes: rmse 0.2704077  max resid 0.4462751 
+    ## Run 20 stress 4.022264e-05 
+    ## ... Procrustes: rmse 0.2561326  max resid 0.5284633 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
@@ -901,9 +279,9 @@ This taxa table showcases information from each given sequence with the appropri
     ## Warning in postMDS(out$points, dis, plot = max(0, plot - 1), ...): skipping
     ## half-change scaling: too few points below threshold
 
-Phyloseq was used to create a compiled data set with sequenced MetaData and taxonomy. This was parsed to remove Non-applicable sex based data (i.e. from electronic device swabs.)The data was also melted together to form a larger data set applicable for computational analyses of sexual data characteristics and taxonomical characteristics.
+Phyloseq is used to create a compiled data set with sequenced MetaData and taxonomy. This is parsed to remove Non-applicable sex based data (i.e. from electronic device swabs.). The data is also melted together to form a larger data set applicable for computational analyses of sexual data characteristics and taxonomical characteristics.
 
-After the data was parsed and filtered the "melted" data set is now applicable for analytically research regarding the community analysis of male and female participants and their corresponding bacterial communities.
+After parsing and filtering, the "melted" data set is now applicable for analytical research regarding the community analysis of male and female participants, and their corresponding bacterial communities.
 
 Analyitics
 ----------
@@ -1013,11 +391,11 @@ Discussion
 
 Understanding the microbiota which live within our unique niche environments can yield information regarding medical advancements. Specifically, understanding how these microbiota differ within female and male populations can increase our understanding of hormone differences and gland production that can yield evidence towards how these microbes symbiotically interact with human host systems.
 
-We proved that differences between male and female bacterial communities within the hand are present, in regards to; abundance, diversity, and richness. We furthered our analysis to divulge if the similar environments constitute a similar makeup of bacteria present through taxonomical representation.
+Here we prove that differences between male and female bacterial communities within the hand are present, in regards to; abundance, diversity, and richness. We further our analysis to divulge if the similar environments constitute a similar makeup of bacteria present through taxonomical representation.
 
 ### Computational
 
-Computational analyses included preparing the sequencing data in order to have trimmed and aligned sequences that appropriately underscore the important information needed to be extrapolated for further analyses. The primary quality plot data showcases the region of the sequences that needs to be trimmed to account for sequence errors; primarily after 220 base pairs. The corresponding errors graphic after trimming shows the statistical margin of error that occurs when longer sequences are read through an NGS system like 454. The error graph shows a direct relationship between the number of errors and the lengths of the sequences. Once trimmed Figure 1 portrays the new sequence lengths using a histogram to graphically underscore that all sequences are now under the 225 base pair limit. The next markdown table showcases how many reads were present before and after trimming, alignment, removing chimeras and removing duplicates to again underscore how the data was manipulated, in order to, increase statistical rational towards our hypothesis and decrease extraneous error in tests we wanted to run. Lastly a taxonomy table was compiled with ribosomal database information to allow sequence data to be compared to corresponding bacterial types.
+Computational analyses include preparing the sequencing data in order to have trimmed and aligned sequences that appropriately underscore the important information needed to be extrapolated for further analyses. The primary quality plot data showcases the region of the sequences that needs to be trimmed to account for sequence errors; primarily after 220 base pairs. The corresponding errors graphic, after trimming, shows the statistical margin of error that occurs when longer sequences are read through an NGS system like 454. The error graph shows a direct relationship between the number of errors and the lengths of the sequences. Once trimmed, Figure 1 portrays the new sequence lengths using a histogram to graphically underscore that all sequences are now under the 225 base pair limit. The next markdown table showcases how many reads were present before and after trimming, alignment, removing chimeras and removing duplicates to again underscore how the data was manipulated, in order to, increase statistical rational towards our hypothesis and decrease extraneous error in tests we wanted to run. Lastly, a taxonomy table that is compiled with ribosomal database information highlights the comparisson of sequence data to corresponding bacterial types.
 
 ### Abundance
 
@@ -1025,11 +403,11 @@ Abundance is a measure of the total number of individuals residing within the sa
 
 Evaluation of Figure 2 expresses an abundance of differing amounts between the sample sexes with male samples having approximately 3000 individual bacterial colony reads. On female hand samples there was only approximately 1500 colony reads, meaning male hands carried twice as much bacterial on their hands as females. This means male participants overall have a larger bacterial community residing on their hands than females.
 
-However, when abundance levels are overlapped with taxonomical representation there is a similarity between the two bacterial communities represented; both communities have more proteobacteria than any other bacteria (Figure 5). We can conclude that the similar environmental pressures faced by both sample sets due to living in Colorado could account for this.
+However, when abundance levels are overlapped with taxonomical representation there is a similarity between the two bacterial communities represented; both communities have more proteobacteria than any other bacteria (Figure 5). We can conclude that the similar environmental pressures faced by both sample sets, due to living in Colorado, could account for this.
 
 ### Richness
 
-Richness is a measure of different morphotypes within a bacterial community. Calculations of richness within a community are imperative to showcase if only one species is present, or many within the same niche environment. Biodiversity is measured through both richness and diversity factors. By observing biodiversity within communities conservation of certain species can occur through the creation of more favorable niches. In the observation between male and female resident sample populations like richness is observed in the overlap of some varying morphotypes. However, due to the ability for potential mutation or nutritional needs of the bacteria, some morphotypes favored the males over the females environment and vice versa.
+Richness is a measure of different morphotypes within a bacterial community. Calculations of richness within a community are imperative to showcase if only one species is present, or many within the same niche environment. Biodiversity is measured through both richness and diversity factors. By observing biodiversity within communities, conservation of certain species can occur through the creation of more favorable niches. In the observation between male and female resident sample populations, like richness is observed in the overlap of some varying morphotypes. However, due to the ability for potential mutation or nutritional needs of the bacteria, some morphotypes favored the males over the females environment and vice versa.
 
 Evaluation of Figure 3 showcases the differences within richness metrics between both female and male bacterial communities. Unlike abundance, where males showcased more colony reads, we visualize female samples to have an increased level of richness to deduce that a large variety of bacterial species are present on the female hand. Though male samples have some diversity, female samples show a richness level double that of male samples (9:4). We can conclude that male samples then have more colonies of a singular bacterial type, where female samples have fewer overall colonies but of more diverse types.
 
@@ -1037,23 +415,25 @@ Evaluation of Figure 3 showcases the differences within richness metrics between
 
 Diversity is a measure of the relative variability among organisms from all sources or morphologies. Shannon Diversity offers a statistical means of categorizing the diversity of individuals within a community by accounting for abundance and evenness. We apply Shannon Diversity as a metric to compare the male and female bacterial communities farther.
 
-Within Figure 4 we see an increased alpha level for female samples than that of males, which is comparable to the richness measure given previously in Figure 3. This measure again is almost double that of the male samples. We can conclude that for the region in which the bacteria inhabit (human hand), the female communities offer a more diverse community. High diversity is favored over low diversity since this ensures natural sustainability to the micro-community which populates the hand.
+Within Figure 4 we see an increased alpha level for female samples than that of males, which is comparable to the richness measure given previously in Figure 3. This measure is almost double that of the male samples. We can conclude that for the region in which the bacteria inhabit (human hand), the female communities offer a more diverse community. High diversity is favored over low diversity since this ensures natural sustainability to the micro-community which populates the hand.
 
 #### Phylogeny
 
-Utilizing the Ribosomal Database Project (RDP via DADA2) we were able to create a taxonomy based on the sequences found. This taxonomy allowed for a direct comparison of the bacterial communities found and their sex-based origin.
+Utilizing the Ribosomal Database Project (RDP via DADA2) we created a taxonomy based on the sequences found. This taxonomy allowed for a direct comparison of the bacterial communities found, and their sex-based origin.
 
-Within Figure 6 we visualize this phylogeny that is colored over to represent male and female differences within each branch. We visualize more dispersion over all of the branches for female samples, showing multiple phylums, genus, and species all stemming from multiple ancestor lineages. We can conclude that this spread within the phylogeny directly compares to the level of richness represented in prior figures. However in comparison, male sample data, which has a decreased spread, still has taxonomies that overlap with female samples. This proves that though many of the microbiota are different between male and female samples, overall most communities present in male samples are also simultaneously presented in female samples. This means that male populations are more alike to female populations than female populations are to males.
+Within Figure 6, we visualize this phylogeny that is colored over to represent male and female differences within each branch. We visualize more dispersion over all of the branches for female samples, showing multiple phylums, genus, and species all stemming from multiple ancestor lineages. We can conclude that this spread within the phylogeny directly compares to the level of richness represented in prior figures. However in comparison, male sample data, which has a decreased spread, still has taxonomies that overlap with female samples. This proves that though many of the microbiota are different between male and female samples, overall most communities present in male samples are also simultaneously presented in female samples. This means that male populations are more alike to female populations than female populations are to males.
 
 ### Ordination
 
 Ordination can be used as a exploratory measure for data clustering of similar and different multivariate types. When looking at both male and female sample types we visualize more clustering in the male sample types, concluding that male populations show a higher level of relatedness over all tested variables (Figure 7). This relatedness counters the larger levels of dispersion seen within female samples.
 
-Plotting an ordination is a measure for quantifying richness and diversity simultaneously over multiple axes, and here we visualize these traits are more closely related for male species. However, when looking at the male samples alone we do see some dispersion between the two predominant clusters, which we can deduce as two more diverse populations. Potentially, these bacteria represent bacteria found on a different region of the hand where there are more glands, more contact with the environment, or constitute more rough or raw skin. When looking at female samples, the populations are not closely clustered at all, and show a dramatic spread over the plot to accentuate the diversity between all groups found. Potentially, these groups have similar nutritional needs, but function differently within the skin microbiota.
+Plotting an ordination is a measure for quantifying richness and diversity simultaneously over multiple axes, and here we visualize these traits are more closely related for male species. However, when looking at the male samples alone we do see some dispersion between the two predominant clusters, which we can deduce as two more diverse populations. Potentially, these clusters represent species found on a different region of the hand where there are more glands, more contact with the environment, or constitute more rough or raw skin. When looking at female samples, the populations are not closely clustered at all, and show a dramatic spread over the plot to accentuate the diversity between all groups found. Potentially, these groups have similar nutritional needs, but function differently within the skin microbiota population.
 
 ### Conclusion
 
-Overall, we utilize measures of abundance, richness, and diversity to prove male and female hands have different bacterial communities. We see that males house a community of more abundant bacteria that are more closely related overall, while females have less bacteria but of more diverse morphologies. We also explain that though the communities are overall different they do represent similarities in the phylum of bacteria seen for both sex samples (Proteobacteria) which is most likely from the overall similar environment the study participants live in (University of Colorado at Boulder). We can postulate that the microbiota on the male hand are less diverse because of the skin pH, which is nominally different between the two sexes due to sweat glands which produce a more acidic environment unfavorable to many microbiota and are stimulated by hormonal differences between the sexes {Fierer *et al.* (2008)}. These conditions would also account for differences observed in abundance and richness. Further studies need to be conducted to directly prove this association with pH, and simultaneously disprove these conclusions for the different bacterial communities are not from hygiene differences or social constructs which imply females using more cosmetic products.
+Overall, we utilize measures of abundance, richness, and diversity to prove male and female hands have different bacterial communities. We see that males house a community of more abundant bacteria that are more closely related overall, while females have less bacteria but of more diverse morphologies. We also explain that though the communities are overall different they do represent similarities in the phylum of bacteria seen for both sex samples (Proteobacteria), which is most likely from the overall similar environment the study participants live in (University of Colorado at Boulder). We can postulate that the microbiota on the male hand are less diverse because of the skin pH, which is nominally different between the two sexes due to sweat glands which produce a more acidic environment unfavorable to many microbiota and are stimulated by hormonal differences between the sexes {Fierer *et al.* (2008)}. These conditions would also account for differences observed in abundance and richness.
+
+Further studies need to be conducted to directly prove this association with pH, and simultaneously disprove these conclusions for the different bacterial communities are not from hygiene differences or social constructs which imply females using more cosmetic products. By understanding these differences between sexes we can develop a better understanding of how these differences can be responsible for changes in the health and well-being of individuals studied.
 
 Sources Cited
 =============

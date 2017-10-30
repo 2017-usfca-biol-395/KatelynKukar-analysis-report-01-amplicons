@@ -161,10 +161,9 @@ This table and corresponding error models were built to showcase the read errors
            nominalQ = TRUE)
 ```
 
-```{r dereplicate-sequences, echo = FALSE, message = FALSE}
+```{r dereplicate-sequences, echo = FALSE, error = FALSE, message = FALSE}
 # get rid of any duplicated sequences
-dereplicated_forward_reads <- derepFastq(filtered_reads_path,
-                                         verbose = TRUE)
+dereplicated_forward_reads <- derepFastq(filtered_reads_path)
 
 # Name the derep-class objects by the sample names
 names(dereplicated_forward_reads) <- sample_names
@@ -178,10 +177,13 @@ dada_forward_reads <- dada(dereplicated_forward_reads,
                            err = errors_forward_reads,
                            HOMOPOLYMER_GAP_PENALTY = -1, # reduce penalty bc 454
                            BAND_SIZE = 32) # performs local alignments bc indels
+```
 
+```{r, eval = FALSE}
 # check dada results
 dada_forward_reads
 ```
+
 
 ```{r site by species matrix, echo = FALSE}
 # produce the 'site by species matrix'
@@ -245,6 +247,9 @@ taxa <- assignTaxonomy(sequence_table_nochim,
                        multithread = FALSE,
                        tryRC = TRUE) # also check with seq reverse compliments
 
+```
+
+```{r, eval = FALSE}
 # show the results of the taxonomy assignment
 unname(taxa)
 ```
