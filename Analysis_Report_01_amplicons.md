@@ -6,9 +6,9 @@ November 01, 2017
 Introduction
 ============
 
-Methodology to estimate microbial diversity has significantly increased with an effort to understand the distribution and diversity of microbes in their natural environments. Cultivation-dependent methodology work to mimic the natural environment of microbes in a laboratory setting, with enrichment cultures being particularly important for visualizing species that favor the selected media for growth (Nichols, 2007). Different ecological metrics have been used to categorize these cultivated colonies in order to deduce community data about known bacterial species and potentially deduce information about unknown species (Birtel *et al.*, 2015). Understanding the cultivation methodology to successfully grow microbial species lends information about the requirements imperative for biodiverse communities that can be beneficial in studying niche environments like the human gut which interact with pathogens and probiotics (Wu *et al.*, 2012). Beyond healthcare, general dispersal of bacterial communities increases biodiversity in water sources, soils, and all microenvironments that effect the well being of the larger ecosystem, with this assumption also holding true for bacterial organisms which reside on a human host or human host environment (Fuhrman, 1999).
+Methodology to estimate microbial diversity has significantly increased with an effort to understand the distribution and diversity of microbes in their natural environments. Cultivation-dependent methodology work to mimic the natural environment of microbes in a laboratory setting, with enrichment cultures being particularly important for visualizing species that favor the selected media for growth (Nichols, 2007). Different ecological metrics have been used to categorize these cultivated colonies in order to deduce community data about known bacterial species and potentially deduce information about unknown species (Birtel *et al.*, 2015). Understanding the cultivation methodology to successfully grow microbial species lends information about the requirements imperative for bio diverse communities that can be beneficial in studying niche environments like the human gut which interact with pathogens and probiotics (Wu *et al.*, 2012). Beyond healthcare, general dispersal of bacterial communities increases biodiversity in water sources, soils, and all micro environments that effect the well being of the larger ecosystem, with this assumption also holding true for bacterial organisms which reside on a human host or human host environment (Fuhrman, 1999).
 
-Within the paper, *Forensic identification using skin bacterial communities*, published in 2010 by Noah Fierer the diversity in human skin bacterial communities is explained to be “far higher than previously recognized, with a high degree of inter-individual variability in the composition of bacterial communities.” This discovery leads the paper to discuss that these individualized communities can be utilized as personal identifiers for criminal cases as forensic evidence. Fierer et al. specifically claims that “these skin bacteria may persist on touched surfaces for prolonged periods because many are highly resistant to environ- mental stresses, including moisture, temperature, and UV radiation,” meaning the community samples can be collected long after the host has left (Fierer *et al.*, 2010). Though the implications for forensic research are still under scrutiny, the data can be more broadly analyzed to deduce if there are specific differences in bacterial communities between female and male participants. By analytically evaluating these communities separately to find patterns in abundance, richness, and diversity we deduce information about the specific community composition, which can yield information about the overall biodiversity of the niche the bacteria are a part of. The inference that human hosts hold their own unique sets of bacteria helps foster the notion of unique microenvironments that endosymbiotically regulate the human body.
+Within the paper, *Forensic identification using skin bacterial communities*, published in 2010 by Noah Fierer the diversity in human skin bacterial communities is explained to be “far higher than previously recognized, with a high degree of inter-individual variability in the composition of bacterial communities.” This discovery leads the paper to discuss that these individualized communities can be utilized as personal identifiers for criminal cases as forensic evidence. Fierer et al. specifically claims that “these skin bacteria may persist on touched surfaces for prolonged periods because many are highly resistant to environmental- mental stresses, including moisture, temperature, and UV radiation,” meaning the community samples can be collected long after the host has left (Fierer *et al.*, 2010). Though the implications for forensic research are still under scrutiny, the data can be more broadly analyzed to deduce if there are specific differences in bacterial communities between female and male participants. By analytically evaluating these communities separately to find patterns in abundance, richness, and diversity we deduce information about the specific community composition, which can yield information about the overall biodiversity of the niche the bacteria are a part of. The inference that human hosts hold their own unique sets of bacteria helps foster the notion of unique micro environments that endosymbiotically regulate the human body.
 
 By explicitly looking at community differences between male and female participants, information can be gathered about the overall health and well-being of each participant sex in regard to the surrounding environment. In a study published in Science in 2013, it was discovered that the gut microbiota is extremely relevant in determining autoimmune disease susceptibility (Markle *et al.*, 2013). Markle et al. stated that when male cecal contents were transferred to female mice these mice received a higher level of protection against “pancreatic islet inflammation, autoantibody production, and the development of diabetes,” meaning this difference within the sexes microbiota was translational to inhibit the spread of disease (Markle *et al.*, 2013). Therefore, understanding the differences in the skin microbiota could also potentially pose interesting medical questions that could yield insight on diseases current to specific, sexually biased traits.
 
@@ -31,11 +31,11 @@ Fierer et. al 2010 explains that for each sample the 16s rRNA genes were amplifi
 Computational
 -------------
 
-To create a meta data set with all of the vectors of interest we initially utilized the raw data sets collected from the 454 Sequencer and published by Fierer et al. This was done using a dada pipeline within R. We ordered the samples first, then extracted the sample names from their fastq format, which was initially done using a remote server and fastq-dump to download the list of files in the run table to the raw directory. QC reports were then created for each of the runs utilizing fastqc and outputted as HTML to be readable. We then plotted the quality of each of the twenty samples of interest into a readable format in order to deduce the length to trim. It was found that quality is reduced after 200 bases, so the maximum acceptable length was made to be 225 bases. Using the dada pipeline the sequences were filtered, trimmed, into a new output folder and allowed to have 3 expected errors ((McMurdie and Holmes, 2013). A table of read counts was formatted to visualize the reads before and after filters and then again to visualize error trends. Duplicated sequences were then removed and dada was run on the reads based on 454 data recommendations. The sequences were aligned to craft a site by species matrix and a histogram representation of sequence lengths from all samples. Chimeras were removed and a singular table to give all pipeline information of the sequences trimmed and edited was created. A taxa code was initiated to yield a table with the taxonomy of each individual sequence to create a phylogeny that expresses the overall relatedness of each sequence. All of these tables were crafted in the dada pipeline through the sex of both male and female sample sets to visualize relatedness among all samples tested.
+To create a meta data set with all of the vectors of interest we initially utilized the raw data sets collected from the 454 Sequencer and published by Fierer et al. This was done using a Dada pipeline within R. We ordered the samples first, then extracted the sample names from their fastq format, which was initially done using a remote server and fastq-dump to download the list of files in the run table to the raw directory. QC reports were then created for each of the runs utilizing fastqc and outputted as HTML to be readable. We then plotted the quality of each of the twenty samples of interest into a readable format in order to deduce the length to trim. It was found that quality is reduced after 200 bases, so the maximum acceptable length was made to be 225 bases. Using the dada pipeline the sequences were filtered, trimmed, into a new output folder and allowed to have 3 expected errors ((McMurdie and Holmes, 2013). A table of read counts was formatted to visualize the reads before and after filters and then again to visualize error trends. Duplicated sequences were then removed and dada was run on the reads based on 454 data recommendations. The sequences were aligned to craft a site by species matrix and a histogram representation of sequence lengths from all samples. Chimeras were removed and a singular table to give all pipeline information of the sequences trimmed and edited was created. A taxa code was initiated to yield a table with the taxonomy of each individual sequence to create a phylogeny that expresses the overall relatedness of each sequence. All of these tables were crafted in the dada pipeline through the sex of both male and female sample sets to visualize relatedness among all samples tested.
 
 Once the data set was compiled by relatedness pyroseq organized all aspects of the data into a merged meta data set. This data set was parsed to remove any non-applicable data regarding the sex of participants (i.e. all samples which included swabs from electronic devices). The data was then melted to include all taxonomically related data sets that were coded for under the taxa file, separate from the metadata that was read in. This allowed for analysis via tables, figures, and ggplot graphs.
 
-Dplyr and ggplot packages were used to analyze the data through representative figures and tables for the melted figure which was a compilation of the taxonomical data and pyrosequenced data. The pyrosequenced data set was also pruned in order to use pyroseq plot format on samples whuch include only males and females. The figures used look at abundance, richness, diversity metrics (applied through Shannon diversity), a phylogeny of the entire community set, and an ordination all of which are separated by the respective sex to divulge sex based community analysis on the bacterial species present.
+Dplyr and ggplot packages were used to analyze the data through representative figures and tables for the melted figure which was a compilation of the taxonomical data and pyrosequenced data. The pyrosequenced data set was also pruned in order to use pyroseq plot format on samples which include only males and females. The figures used look at abundance, richness, diversity metrics (applied through Shannon diversity), a phylogeny of the entire community set, and an ordination all of which are separated by the respective sex to divulge sex based community analysis on the bacterial species present.
 
 Results
 =======
@@ -45,66 +45,9 @@ Parsing Data
 
 To divulge significant evidence towards our hypothesis on the differences between sexually unique bacterial communities computational metrics were applied to the 2010 Fierer et al study in order to parse the data to uniquely address male and female samples alone.
 
-The primary step for this analysis included analyzing the 454 sequenced samples to be trimmed in order to reduce errors and then compiled into an easy to read spreadsheet where sequence identifiers, sequence length, read errors, taxonomy, and sex-based sample type were listed for imperative analytical usage.
-
-``` r
-# Be sure to install these packages before running this script
-# They can be installed either with the intall.packages() function
-# or with the 'Packages' pane in RStudio
-
-# load general-use packages
-library("dplyr")
-library("tidyr")
-library("knitr")
-library("ggplot2")
-
-# this package allows for the easy inclusion of literature citations in our Rmd
-# more info here: https://github.com/crsh/citr
-# and here:
-# http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html
-library("citr")
-
-# These are the primary packages well use to clean and analyze the data
-# this package needs to be installed from bioconductor -- it's not on CRAN
-# see info here: https://benjjneb.github.io/dada2/dada-installation.html
-library("dada2")
-
-# This to export a fasta of our final denoised sequence variants
-library("seqinr")
-
-# To install this you have to install from GitHub
-# See more info here: https://github.com/leffj/mctoolsr
-# run this -- install.packages("devtools")
-# and then this -- devtools::install_github("leffj/mctoolsr")
-library("mctoolsr")
-
-# And this to visualize our results
-# it also needs to be installed from bioconductor
-library("phyloseq")
-
-# Add colors
-library("RColorBrewer")
-```
+The primary step for this analysis included analyzing the 454 sequenced samples to be trimmed in order to reduce errors and then compiled into an easy to read spreadsheet where sequence identifiers, sequence length, read errors, taxonomy, and sex-based sample type were listed for imperative analytic usage.
 
 The primary graphs represent each of 20 samples original sequence error margins.
-
-``` r
-# NOTE: Much of the following follows the DADA2 tutorials available here:
-# https://benjjneb.github.io/dada2/tutorial.html
-# Accessed October 19, 2017
-
-# set the base path for our input data files
-path <- "data/raw_data"
-
-# Sort ensures samples are in order
-filenames_forward_reads <- sort(list.files(path, pattern = ".fastq"))
-
-# Extract sample names, assuming filenames have format: SAMPLENAME.fastq
-sample_names <- sapply(strsplit(filenames_forward_reads, "\\."), `[`, 1)
-
-# Specify the full path to each of the filenames_forward_reads
-filenames_forward_reads <- file.path(path, filenames_forward_reads)
-```
 
 ``` r
 # Plots the quality profiles of all twenty samples
@@ -114,37 +57,6 @@ plotQualityProfile(filenames_forward_reads[1:20])
 ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/check-quality-plots-1.png)
 
 We can see from the quality profiles that most reads tend to get pretty bad in quality after around 200 bases. Therefore, we decided to set a maximum acceptable sequence length of 225 bases.
-
-``` r
-# Place filtered files in filtered/ subdirectory
-# note this will fail if the directory doesn't exist
-filter_path <- file.path("output", "filtered")
-filtered_reads_path <- file.path(filter_path,
-                                 paste0(sample_names,
-                                        "_filt.fastq.gz"))
-
-# See ?filterAndTrim for details on the parameters
-# See here for adjustments for 454 data:
-# https://benjjneb.github.io/dada2/
-#     faq.html#can-i-use-dada2-with-my-454-or-ion-torrent-data
-filtered_output <- filterAndTrim(fwd = filenames_forward_reads,
-                                 filt = filtered_reads_path,
-                                 maxLen = 225,
-                                 maxN = 0, # discard any seqs with Ns
-                                 maxEE = 3, # allow w/ up to 3 expected errors
-                                 truncQ = 2, # cut off if quality gets this low
-                                 rm.phix = TRUE,
-                                 compress = TRUE,
-                                 multithread = FALSE)
-```
-
-``` r
-# produce nicely-formatted markdown table of read counts
-# before/after trimming
-kable(filtered_output,
-      col.names = c("Reads In",
-                    "Reads Out"))
-```
 
 |                  |  Reads In|  Reads Out|
 |------------------|---------:|----------:|
@@ -168,12 +80,6 @@ kable(filtered_output,
 | ERR1942297.fastq |       275|        246|
 | ERR1942298.fastq |       562|        389|
 | ERR1942299.fastq |      1025|        852|
-
-``` r
-# this build error models from each of the samples
-errors_forward_reads <- learnErrors(filtered_reads_path,
-                                    multithread = FALSE)
-```
 
     ## Not all sequences were the same length.
     ## Not all sequences were the same length.
@@ -223,12 +129,12 @@ errors_forward_reads <- learnErrors(filtered_reads_path,
     ## Convergence after  3  rounds.
     ## Total reads used:  9127
 
-This table and corresponding error models were built to showcase theread errors from the sequencing data and the corresponding trimming profile and alignment that needed to be accounted for to allow for reproducible and unbiased analysis (removing repeats, trimming, accounting for error bias, and chimeric regions with all sequences being parsed with 454 acceptable protocols through a dada pipeline).
+This table and corresponding error models were built to showcase the read errors from the sequencing data and the corresponding trimming profile and alignment that needed to be accounted for to allow for reproducible and unbiased analysis (removing repeats, trimming, accounting for error bias, and chimeric regions with all sequences being parsed with 454 acceptable protocols through a dada pipeline).
 
 ``` r
 # quick check to see if error models match data
 # (black lines match black points) and are generally decresing left to right
-plotErrors(errors_forward_reads,
+ plotErrors(errors_forward_reads,
            nominalQ = TRUE)
 ```
 
@@ -237,12 +143,6 @@ plotErrors(errors_forward_reads,
     ## Warning: Transformation introduced infinite values in continuous y-axis
 
 ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/visualize-errors-with-plots-1.png)
-
-``` r
-# get rid of any duplicated sequences
-dereplicated_forward_reads <- derepFastq(filtered_reads_path,
-                                         verbose = TRUE)
-```
 
     ## Dereplicating sequence entries in Fastq file: output/filtered/ERR1942280_filt.fastq.gz
 
@@ -364,21 +264,6 @@ dereplicated_forward_reads <- derepFastq(filtered_reads_path,
 
     ## Not all sequences were the same length.
 
-``` r
-# Name the derep-class objects by the sample names
-names(dereplicated_forward_reads) <- sample_names
-```
-
-``` r
-# parameters adjusted based on recommendations for 454 data here:
-# https://benjjneb.github.io/dada2/
-#     faq.html#can-i-use-dada2-with-my-454-or-ion-torrent-data
-dada_forward_reads <- dada(dereplicated_forward_reads,
-                           err = errors_forward_reads,
-                           HOMOPOLYMER_GAP_PENALTY = -1, # reduce penalty bc 454
-                           BAND_SIZE = 32) # performs local alignments bc indels
-```
-
     ## Sample 1 - 350 reads in 72 unique sequences.
     ## Sample 2 - 194 reads in 163 unique sequences.
     ## Sample 3 - 31 reads in 25 unique sequences.
@@ -399,11 +284,6 @@ dada_forward_reads <- dada(dereplicated_forward_reads,
     ## Sample 18 - 246 reads in 88 unique sequences.
     ## Sample 19 - 389 reads in 332 unique sequences.
     ## Sample 20 - 852 reads in 239 unique sequences.
-
-``` r
-# check dada results
-dada_forward_reads
-```
 
     ## $ERR1942280
     ## dada-class: object describing DADA2 denoising results
@@ -505,65 +385,15 @@ dada_forward_reads
     ## 8 sample sequences were inferred from 239 input unique sequences.
     ## Key parameters: OMEGA_A = 1e-40, BAND_SIZE = 32, USE_QUALS = TRUE
 
-``` r
-# produce the 'site by species matrix'
-sequence_table <- makeSequenceTable(dada_forward_reads)
-```
-
     ## The sequences being tabled vary in length.
 
-**Figure 1**: Sequence Length Histogram
+**Figure 1**: Sequence Length Histogram ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/histogram-of-sequence-lengths-1.png)
 
-``` r
-# Quick check to look at distribution of trimmed and denoised sequences
-hist(nchar(getSequences(sequence_table)),
-     main = "Histogram of fingal sequence variant lengths",
-     xlab = "Sequence length in bp")
-```
-
-![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/histogram-of-sequence-lengths-1.png)
-
-This table explicitly represents the sequence lengths of the trimmed dataset to show they are all correctly anlayzed beneath the given range of 225 bases.
-
-``` r
-# Check for and remove chimeras
-sequence_table_nochim <- removeBimeraDenovo(sequence_table,
-                                            method = "consensus",
-                                            multithread = FALSE,
-                                            verbose = TRUE)
-```
+This table explicitly represents the sequence lengths of the trimmed data set to show they are all correctly analyzed beneath the given range of 225 bases.
 
     ## Identified 2 bimeras out of 178 input sequences.
 
-``` r
-# What percent of our reads are non-chimeric?
-non_chimeric_reads <- round(sum(sequence_table_nochim) / sum(sequence_table),
-                            digits = 4) * 100
-```
-
 After removing chimeras, we were left with 99.65% of our cleaned reads.
-
-``` r
-# Build a table showing how many sequences remain at each step of the pipeline
-get_n <- function(x) sum(getUniques(x)) # make a quick function
-track <- cbind(filtered_output, # already has 2 columns
-               sapply(dada_forward_reads, get_n),
-               rowSums(sequence_table),
-               rowSums(sequence_table_nochim))
-
-# add nice meaningful column names
-colnames(track) <- c("Input",
-                     "Filtered",
-                     "Denoised",
-                     "Sequence Table",
-                     "Non-chimeric")
-
-# set the proper rownames
-rownames(track) <- sample_names
-
-# produce nice markdown table of progress through the pipeline
-kable(track)
-```
 
 |            |  Input|  Filtered|  Denoised|  Sequence Table|  Non-chimeric|
 |------------|------:|---------:|---------:|---------------:|-------------:|
@@ -589,18 +419,6 @@ kable(track)
 | ERR1942299 |   1025|       852|       852|             852|           852|
 
 This markdown table showcases the edited data and the reads given out after each step of filtering for the corrected data set to be used in figure based computational analysis.
-
-``` r
-# assigns taxonomy to each sequence variant based on a supplied training set
-# made up of known sequences
-taxa <- assignTaxonomy(sequence_table_nochim,
-                       "data/training/rdp_train_set_16.fa.gz",
-                       multithread = FALSE,
-                       tryRC = TRUE) # also check with seq reverse compliments
-
-# show the results of the taxonomy assignment
-unname(taxa)
-```
 
     ##        [,1]       [,2]                        [,3]                 
     ##   [1,] "Bacteria" "Proteobacteria"            NA                   
@@ -665,7 +483,7 @@ unname(taxa)
     ##  [60,] "Bacteria" "Firmicutes"                "Clostridia"         
     ##  [61,] "Bacteria" "Firmicutes"                "Clostridia"         
     ##  [62,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
-    ##  [63,] "Bacteria" "Firmicutes"                "Clostridia"         
+    ##  [63,] "Bacteria" "Firmicutes"                NA                   
     ##  [64,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
     ##  [65,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
     ##  [66,] "Bacteria" "Actinobacteria"            "Actinobacteria"     
@@ -735,7 +553,7 @@ unname(taxa)
     ## [130,] "Bacteria" "Spirochaetes"              "Spirochaetia"       
     ## [131,] "Bacteria" "Firmicutes"                "Clostridia"         
     ## [132,] "Bacteria" NA                          NA                   
-    ## [133,] "Bacteria" "Firmicutes"                "Bacilli"            
+    ## [133,] "Bacteria" "Firmicutes"                NA                   
     ## [134,] "Bacteria" "Proteobacteria"            "Gammaproteobacteria"
     ## [135,] "Bacteria" "Firmicutes"                "Clostridia"         
     ## [136,] "Bacteria" "Proteobacteria"            "Alphaproteobacteria"
@@ -768,7 +586,7 @@ unname(taxa)
     ## [163,] "Bacteria" "Firmicutes"                "Bacilli"            
     ## [164,] "Bacteria" "Firmicutes"                "Clostridia"         
     ## [165,] "Bacteria" "Nitrospirae"               "Nitrospira"         
-    ## [166,] "Bacteria" NA                          NA                   
+    ## [166,] "Bacteria" "Parcubacteria"             NA                   
     ## [167,] "Bacteria" "Firmicutes"                "Bacilli"            
     ## [168,] "Bacteria" "Proteobacteria"            "Betaproteobacteria" 
     ## [169,] "Bacteria" "Bacteroidetes"             "Sphingobacteriia"   
@@ -842,7 +660,7 @@ unname(taxa)
     ##  [60,] "Clostridiales"      "Ruminococcaceae"     
     ##  [61,] "Clostridiales"      "Ruminococcaceae"     
     ##  [62,] "Rhizobiales"        "Methylobacteriaceae" 
-    ##  [63,] "Clostridiales"      NA                    
+    ##  [63,] NA                   NA                    
     ##  [64,] "Actinomycetales"    "Micrococcaceae"      
     ##  [65,] "Actinomycetales"    "Nocardioidaceae"     
     ##  [66,] "Actinomycetales"    "Microbacteriaceae"   
@@ -922,7 +740,7 @@ unname(taxa)
     ## [140,] "Erysipelotrichales" "Erysipelotrichaceae" 
     ## [141,] "Actinomycetales"    "Mycobacteriaceae"    
     ## [142,] "Actinomycetales"    "Microbacteriaceae"   
-    ## [143,] "Clostridiales"      "Ruminococcaceae"     
+    ## [143,] "Clostridiales"      NA                    
     ## [144,] "Actinomycetales"    "Propionibacteriaceae"
     ## [145,] "Clostridiales"      "Ruminococcaceae"     
     ## [146,] "Actinomycetales"    "Nocardioidaceae"     
@@ -979,7 +797,7 @@ unname(taxa)
     ##  [20,] "Diaphorobacter"           
     ##  [21,] NA                         
     ##  [22,] NA                         
-    ##  [23,] NA                         
+    ##  [23,] "Clostridium_IV"           
     ##  [24,] NA                         
     ##  [25,] "Pelomonas"                
     ##  [26,] NA                         
@@ -1004,13 +822,13 @@ unname(taxa)
     ##  [45,] "Pseudomonas"              
     ##  [46,] "Streptomyces"             
     ##  [47,] NA                         
-    ##  [48,] "Pelomonas"                
+    ##  [48,] NA                         
     ##  [49,] "Microbacterium"           
     ##  [50,] "Mycobacterium"            
     ##  [51,] "Marmoricola"              
     ##  [52,] NA                         
     ##  [53,] "Streptomyces"             
-    ##  [54,] NA                         
+    ##  [54,] "Sphingosinicella"         
     ##  [55,] NA                         
     ##  [56,] NA                         
     ##  [57,] "Oscillibacter"            
@@ -1021,7 +839,7 @@ unname(taxa)
     ##  [62,] "Microvirga"               
     ##  [63,] NA                         
     ##  [64,] "Arthrobacter"             
-    ##  [65,] NA                         
+    ##  [65,] "Marmoricola"              
     ##  [66,] "Microbacterium"           
     ##  [67,] "Sphingomonas"             
     ##  [68,] NA                         
@@ -1095,8 +913,8 @@ unname(taxa)
     ## [136,] NA                         
     ## [137,] "Stappia"                  
     ## [138,] NA                         
-    ## [139,] "Massilia"                 
-    ## [140,] "Erysipelothrix"           
+    ## [139,] NA                         
+    ## [140,] NA                         
     ## [141,] "Mycobacterium"            
     ## [142,] "Microbacterium"           
     ## [143,] NA                         
@@ -1104,7 +922,7 @@ unname(taxa)
     ## [145,] "Pseudoflavonifractor"     
     ## [146,] "Nocardioides"             
     ## [147,] NA                         
-    ## [148,] "Arachidicoccus"           
+    ## [148,] NA                         
     ## [149,] "Ruminococcus"             
     ## [150,] NA                         
     ## [151,] NA                         
@@ -1136,108 +954,52 @@ unname(taxa)
 
 Taxonomy was assigned for each sequence to describe which bacterial community was present within the samples tested for.
 
-``` r
-# we want to export the cleaned, trimmed, filtered, denoised sequence variants
-# so that we can build a phylogeny - we'll build the phylogeny outside of R
-# but we need the fasta file to do so. We keep the names of each sequence as the
-# sequence itself (which is rather confusing), because that's how DADA2 labels
-# it's columns (e.g. 'species')
-# function taken from https://github.com/benjjneb/dada2/issues/88
-export_taxa_table_and_seqs <- function(sequence_table_nochim,
-                                       file_seqtab,
-                                       file_seqs) {
-  seqtab_t <- as.data.frame(t(sequence_table_nochim)) # transpose to data frame
-  seqs <- row.names(seqtab_t) # extract rownames
-  row.names(seqtab_t) <- seqs # set rownames to sequences
-  outlist <- list(data_loaded = seqtab_t)
-  mctoolsr::export_taxa_table(outlist, file_seqtab) # write out an OTU table
-  seqs <- as.list(seqs)
-  seqinr::write.fasta(seqs, row.names(seqtab_t), file_seqs) # write out fasta
-}
-
-# actually run the function, with the names of the files we want it to create
-# and where to put them
-export_taxa_table_and_seqs(sequence_table_nochim,
-                           "output/sequence_variants_table.txt",
-                           "output/sequence_variants_seqs.fa")
-```
-
-This taxa table showcases information from each given sequence with the apropriate Phylum to Genus information.
-
-``` r
-# Next we want to read in the metadata file so we can add that in too
-# This is not a csv file, so we have to use a slightly different syntax
-# here the `sep = "\t"` tells the function that the data are tab-delimited
-# and the `stringsAsFactors = FALSE` tells it not to assume that things are
-# categorical variables
-metadata_in <- read.table(paste0("data/metadata/",
-                                 "fierer_forensic_hand_mouse_SraRunTable.txt"),
-                          sep = "\t",
-                          header = TRUE,
-                          stringsAsFactors = FALSE,
-                          row.names = 6) # sets sample IDs to row names
-
-# read in the phylogeny, which was created from the fasta exported above
-# in Geneious by aligning the sequences with MAFFT and then building a
-# Maximum-Likelihood tree with RAxML
-tree_in <- read_tree("output/sequence_variants_MAFFT_RAxML.newick")
-
-# Construct phyloseq object (straightforward from dada2 outputs)
-phyloseq_obj <- phyloseq(otu_table(sequence_table_nochim,
-                                   taxa_are_rows = FALSE), # sample-spp matrix
-                         sample_data(metadata_in), # metadata for each sample
-                         tax_table(taxa), # taxonomy for each sequence variant
-                         phy_tree(tree_in)) # phylogeny from sequence variants
-
-# Pruning Data to remove Nona applicable
-pruned_phyloseq <- subset_samples(phyloseq_obj, sex_s != "Not applicable")
-pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
-```
+This taxa table showcases information from each given sequence with the appropriate Phylum to Genus information.
 
     ## Square root transformation
     ## Wisconsin double standardization
     ## Run 0 stress 4.418541e-05 
-    ## Run 1 stress 9.87794e-05 
-    ## ... Procrustes: rmse 0.2843539  max resid 0.661156 
-    ## Run 2 stress 9.51371e-05 
-    ## ... Procrustes: rmse 0.2857078  max resid 0.5698433 
-    ## Run 3 stress 0 
+    ## Run 1 stress 5.023909e-05 
+    ## ... Procrustes: rmse 0.2957861  max resid 0.4290785 
+    ## Run 2 stress 0 
     ## ... New best solution
-    ## ... Procrustes: rmse 0.2693605  max resid 0.4616977 
-    ## Run 4 stress 9.332716e-05 
-    ## ... Procrustes: rmse 0.2451383  max resid 0.3226627 
+    ## ... Procrustes: rmse 0.2277015  max resid 0.4645106 
+    ## Run 3 stress 0 
+    ## ... Procrustes: rmse 0.1953648  max resid 0.3310181 
+    ## Run 4 stress 2.859716e-05 
+    ## ... Procrustes: rmse 0.2061071  max resid 0.354221 
     ## Run 5 stress 0 
-    ## ... Procrustes: rmse 0.2993176  max resid 0.4814757 
-    ## Run 6 stress 7.440865e-05 
-    ## ... Procrustes: rmse 0.2356634  max resid 0.4682106 
-    ## Run 7 stress 9.880654e-05 
-    ## ... Procrustes: rmse 0.282151  max resid 0.5023241 
+    ## ... Procrustes: rmse 0.2409427  max resid 0.3763938 
+    ## Run 6 stress 0 
+    ## ... Procrustes: rmse 0.2467757  max resid 0.3574777 
+    ## Run 7 stress 0 
+    ## ... Procrustes: rmse 0.2307977  max resid 0.3174427 
     ## Run 8 stress 0 
-    ## ... Procrustes: rmse 0.2895289  max resid 0.612767 
+    ## ... Procrustes: rmse 0.2604214  max resid 0.3838553 
     ## Run 9 stress 0 
-    ## ... Procrustes: rmse 0.2717583  max resid 0.3872538 
-    ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.3021442  max resid 0.6506458 
+    ## ... Procrustes: rmse 0.2915775  max resid 0.4583454 
+    ## Run 10 stress 3.351197e-05 
+    ## ... Procrustes: rmse 0.2297166  max resid 0.3646531 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.2988576  max resid 0.6765045 
-    ## Run 12 stress 4.278363e-05 
-    ## ... Procrustes: rmse 0.1617049  max resid 0.3026491 
-    ## Run 13 stress 7.411462e-05 
-    ## ... Procrustes: rmse 0.2347971  max resid 0.383677 
-    ## Run 14 stress 0 
-    ## ... Procrustes: rmse 0.2264188  max resid 0.3181446 
-    ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.2707031  max resid 0.3877311 
-    ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.2643618  max resid 0.5402616 
-    ## Run 17 stress 9.635956e-05 
-    ## ... Procrustes: rmse 0.1751016  max resid 0.2621574 
+    ## ... Procrustes: rmse 0.2661153  max resid 0.5214597 
+    ## Run 12 stress 9.629293e-05 
+    ## ... Procrustes: rmse 0.206491  max resid 0.3088956 
+    ## Run 13 stress 6.333324e-05 
+    ## ... Procrustes: rmse 0.2294414  max resid 0.3666579 
+    ## Run 14 stress 4.676247e-05 
+    ## ... Procrustes: rmse 0.2989927  max resid 0.5107178 
+    ## Run 15 stress 4.7835e-05 
+    ## ... Procrustes: rmse 0.2714538  max resid 0.3978897 
+    ## Run 16 stress 9.74127e-05 
+    ## ... Procrustes: rmse 0.2647883  max resid 0.3852124 
+    ## Run 17 stress 0 
+    ## ... Procrustes: rmse 0.2960065  max resid 0.5002234 
     ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.2663305  max resid 0.5068727 
+    ## ... Procrustes: rmse 0.2802712  max resid 0.4680062 
     ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.2896002  max resid 0.465879 
+    ## ... Procrustes: rmse 0.2775387  max resid 0.4528829 
     ## Run 20 stress 0 
-    ## ... Procrustes: rmse 0.1970552  max resid 0.3656766 
+    ## ... Procrustes: rmse 0.2250417  max resid 0.368282 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
@@ -1247,46 +1009,22 @@ pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
     ## Warning in postMDS(out$points, dis, plot = max(0, plot - 1), ...): skipping
     ## half-change scaling: too few points below threshold
 
-``` r
-# Melt Phyloseq
-melted_obj <- psmelt(phyloseq_obj)
-```
+Phyloseq was used to create a compiled data set with sequenced MetaData and taxonomy. This was parsed to remove Non-applicable sex based data (i.e. from electronic device swabs.)The data was also melted together to form a larger data set applicable for computational analyses of sexual data characteristics and taxonomical characteristics.
 
-Phyloseq was used to create a compiled data set with sequenced MetaData and taxonomy. This was parsed to remove Non-applicable sex based data (i.e. from electronic device swabs.)nThe data was also melted together to form a larger data set applicable for computational analyses of sexual data chaaracteristics and taxonomical characteristics.
+After the data was parsed and filtered the "melted" data set is now applicable for analytically research regarding the community analysis of male and female participants and their corresponding bacterial communities.
 
-After the data was parsed and filtered the "melted" data set is now applicable for analytical research regarding the community analysis of male and female participants and their corresponding bacterial communities.
-
-Analyiti
---------
+Analyitics
+----------
 
 **Figure 2**: Abundance Measure for Male versus Female sample types
 
-``` r
-# use dplyr to add in data as a boxplot and use tally function to quantify all counts 
-ggplot(melted_obj,
-       aes(x = sex_s,
-           y = Abundance)) +
-  geom_boxplot(alpha = 1) +
-  ggtitle("Abundance for Male Verus Female Participants") +
-  xlab("Sex") +
-  ylab("Abundance") +
-  theme_light()
-```
+    ## Warning: Transformation introduced infinite values in continuous y-axis
+
+    ## Warning: Removed 1660 rows containing non-finite values (stat_boxplot).
 
 ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/Abundance-1.png)
 
 **Figure 3**: Richness Measure for Male versus Female sample types
-
-``` r
-#abundance, boxplot, table of values
-plot_richness(pruned_phyloseq,
-              x = "sex_s",
-              measures = c("Observed")) +
-  xlab("Sample origin") +
-  geom_boxplot(width = 0.2) +
-  theme_bw() +
-  labs(title = "Males Versus Females Richness Metric")
-```
 
     ## Warning in estimate_richness(physeq, split = TRUE, measures = measures): The data you have provided does not have
     ## any singletons. This is highly suspicious. Results of richness
@@ -1299,17 +1037,6 @@ plot_richness(pruned_phyloseq,
 
 **Figure 4**: Alpha diversity measures of the two sample types
 
-``` r
-# alpha diversity metrics
-plot_richness(pruned_phyloseq,
-              x = "sex_s",
-              measures = c("Shannon")) +
-  xlab("Sample origin") +
-  geom_boxplot(width = 0.2) +
-  theme_bw() +
-  labs(title = "Males Versus Females Diversity Metric")
-```
-
     ## Warning in estimate_richness(physeq, split = TRUE, measures = measures): The data you have provided does not have
     ## any singletons. This is highly suspicious. Results of richness
     ## estimates (for example) are probably unreliable, or wrong, if you have already
@@ -1319,44 +1046,20 @@ plot_richness(pruned_phyloseq,
 
 ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/Shannon%20Diversity%20Plot-1.png)
 
-**Figure 5**: Male versus Female bar graph showcasing the phylums present within each bacterial community
+**Figure 5**: Male versus Female bar graph showcasing the phylum present within each bacterial community
 
-``` r
-plot_bar(pruned_phyloseq, 
-         x="sex_s", 
-         y="Abundance", 
-         fill="Phylum",
-         title="Abundance of Male and Female Samples", 
-         facet_grid=NULL) + 
-  scale_fill_brewer(palette = "Blues")
-```
+    ## Warning in RColorBrewer::brewer.pal(n, pal): n too large, allowed maximum for palette Blues is 9
+    ## Returning the palette you asked for with that many colors
 
 ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/Abundance%20Taxonomy%20Graph-1.png)
 
 **Figure 6**: Inferred phylogeny of sequences, with points on tips representing samples within which each particular taxa occurred. Tree represents maximum likelihood phylogeny inferred using RAxML.
 
-``` r
-# phylogeny, yay!
-# use ladderize to make branches equal
-plot_tree(pruned_phyloseq,
-          color = "sex_s",
-          ladderize = TRUE) +
-          labs(title = "Phylogeny of Males and Females")
-```
-
     ## Warning: Removed 1 rows containing missing values (geom_segment).
 
-![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/example-phyloseq-plot-2-1.png)
+![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/example-phyloseq-plot-1.png)
 
 **Figure 7**: Ordination to order species along presumed ecological gradient to identify patterns of species distribution and abundance for male versus female samples
-
-``` r
-# Ordination of Male and Female species distribution
-# apply pruned data set 
-pruned_phyloseq <- subset_samples(phyloseq_obj, sex_s != "Not applicable")
-set.seed(28)
-pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
-```
 
     ## Square root transformation
     ## Wisconsin double standardization
@@ -1411,30 +1114,26 @@ pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
     ## Warning in postMDS(out$points, dis, plot = max(0, plot - 1), ...): skipping
     ## half-change scaling: too few points below threshold
 
-``` r
-# plot ordination without NA
-p1 = plot_ordination(pruned_phyloseq, pruned_ord, type="samples", color="sex_s", title="Ordination of Male versus Female Sequences")
-print(p1)
-```
-
 ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/Ordination%20Male%20vs.%20Female-1.png)
 
 Discussion
 ==========
 
-Understanding the microbiota which live within our unique niche environments can yield information regarding medical advancements. Specifically, understanding how these microbiota differ within female and male populations can increase our understanding of hormone differences and gland production that can yield evidence towards how these mirobes symbiotically interact with human host systems.
+Understanding the microbiota which live within our unique niche environments can yield information regarding medical advancements. Specifically, understanding how these microbiota differ within female and male populations can increase our understanding of hormone differences and gland production that can yield evidence towards how these microbes symbiotically interact with human host systems.
 
 We proved that differences between male and female bacterial communities within the hand are present, in regards to; abundance, diversity, and richness. We furthered our analysis to divulge if the similar environments constitute a similar makeup of bacteria present through taxonomical representation.
 
 ### Computational
 
+Computational analyses included preparing the sequencing data in order to have trimmed and aligned sequences that appropriately underscore the important information needed to be extrapolated for further analyses. The primary quality plot data showcases the region of the sequences that needs to be trimmed to account for sequence errors; primarily after 220 base pairs. The corresponding errors graphic after trimming shows the statistical margin of error that occurs when longer sequences are read through an NGS system like 454. The error graph shows a direcet relationship between the number of errors and the lengths of the sequences. Once trimmed Figure 1 portrays the new sequence lengths using a histrogram to graphically underscore that all sequences are now under the 225 base pair limit. The next markdown table showcases how many reads were present before and after trimming, alignment, removing chimeras and removing duplicates to again underscore how the data was manipulated, in order to, increase statistical rational towards our hypothesis and decrease extraneous error in tests we wanted to run. Lastly a taxonomy table was compiled with ribosomal database information to allow sequence data to be compared to corresponding bacterial types.
+
 ### Abundance
 
-Abundance is a measure of the total number of individuals residing within the same niche environment to statistically observe how consecrated the region is. If a high abundance occurs in one environment it can be observed as having more resources, or less environmentally de-stabling associations. Abundance is the relative representation of a species in a particular ecological niche, which in this case is the human hand skin for both male and female particpants.
+Abundance is a measure of the total number of individuals residing within the same niche environment to statistically observe how consecrated the region is. If a high abundance occurs in one environment it can be observed as having more resources, or less environmentally de-stabling associations. Abundance is the relative representation of a species in a particular ecological niche, which in this case is the human hand skin for both male and female participants.
 
-Evaluation of Figure 2 expresses an abundance of differing amounts between the sample sexes with male samples having apprximately 3000 individual bacterial colony reads. On female hand samples there was only approximately 1500 colony reads, meaning male hands carried twice as much bacterial on their hands as females. This means male participants overall have a larger bacterial community residing on their hands than females.
+Evaluation of Figure 2 expresses an abundance of differing amounts between the sample sexes with male samples having approximately 3000 individual bacterial colony reads. On female hand samples there was only approximately 1500 colony reads, meaning male hands carried twice as much bacterial on their hands as females. This means male participants overall have a larger bacterial community residing on their hands than females.
 
-However, when abundance levels are overlayed with taxonomical representation there is a similarity between the two bacterial communities represented; both communities have more proteobacteria than any other bacteria (Figure 5). We can conclude that the similar environmental pressures faced by both sample sets due to living in Colorado could account for this.
+However, when abundance levels are overlapped with taxonomical representation there is a similarity between the two bacterial communities represented; both communities have more proteobacteria than any other bacteria (Figure 5). We can conclude that the similar environmental pressures faced by both sample sets due to living in Colorado could account for this.
 
 ### Richness
 
@@ -1444,9 +1143,9 @@ Evaluation of Figure 3 showcases the differences within richness metrics between
 
 ### Diversity
 
-Diversity is a measure of the relative variability among organisms from all sources or morphologies. Shannon Diversity offers a statistical means of categorizing the diversity of individuals within a community by accounting for abundance and eveness. We apply Shannon Diversity as a metric to compare the male and female bacterial communities farther.
+Diversity is a measure of the relative variability among organisms from all sources or morphologies. Shannon Diversity offers a statistical means of categorizing the diversity of individuals within a community by accounting for abundance and evenness. We apply Shannon Diversity as a metric to compare the male and female bacterial communities farther.
 
-Within Figure 4 we see an increased alpha level for female samples than that of males, which is comparable to the richness measure given previously in Figure 3. This measure again is almost double that of the male samples. We can conclude that for the region in which the bacteria inhabit (human hand), the female communities offer a more diverse community. High diversity is favored over low diversity since this ensures natural sustaininability to the micro-cumminity which populates the hand.
+Within Figure 4 we see an increased alpha level for female samples than that of males, which is comparable to the richness measure given previously in Figure 3. This measure again is almost double that of the male samples. We can conclude that for the region in which the bacteria inhabit (human hand), the female communities offer a more diverse community. High diversity is favored over low diversity since this ensures natural sustainability to the micro-community which populates the hand.
 
 #### Phylogeny
 
@@ -1456,13 +1155,13 @@ Within Figure 6 we visualize this phylogeny that is colored over to represent ma
 
 ### Ordination
 
-Ordination can be used as a exploratory measure for data clustering of similar and different multivariable types. When looking at both male and female sample types we visualize more clustering in the male sample types, concluding that male populations show a higher level of relatdness over all tested variables (Figure 7). This relatedness counters the larger levels of dispersion seen within female samples.
+Ordination can be used as a exploratory measure for data clustering of similar and different multivariate types. When looking at both male and female sample types we visualize more clustering in the male sample types, concluding that male populations show a higher level of relatedness over all tested variables (Figure 7). This relatedness counters the larger levels of dispersion seen within female samples.
 
-Plotting an ordination is a measure for quantifying richness and diversity simultaneously over multiple axes, and here we visualize these traits are more closely related for male species. However, when looking at the male samples alone we do see some disperon between the two predominant clusters, which we can deduce as two more diverse populations. Potentially, these bacteria represent bacteria found on a different region of the hand where there are more glands, more contact with the environment, or constitute more rough or raw skin. When looking at female samples, the populations are not closely clustered at all, and show a dramatic spread over the plot to accentuate the diversity between all groups found. Potentially, these groups have similar nutritional needs, but function differently within the skin microbiota.
+Plotting an ordination is a measure for quantifying richness and diversity simultaneously over multiple axes, and here we visualize these traits are more closely related for male species. However, when looking at the male samples alone we do see some dispersion between the two predominant clusters, which we can deduce as two more diverse populations. Potentially, these bacteria represent bacteria found on a different region of the hand where there are more glands, more contact with the environment, or constitute more rough or raw skin. When looking at female samples, the populations are not closely clustered at all, and show a dramatic spread over the plot to accentuate the diversity between all groups found. Potentially, these groups have similar nutritional needs, but function differently within the skin microbiota.
 
 ### Conclusion
 
-However, we can question the male community since it has lower diversity over an asusmed larger area (male hand size versus female hand size). We can postulate that the microbiota on the male hand are less diverse because of the skin pH, which is nominally different between the two sexes due to sweat glands which produce a more acidic environment unfavorable to many microbiota {Fierer *et al.* (2008)}. These conditions would also account for differences observed in abundance and richness. By eva
+Overall, we utilize measures of abundance, richness, and diversity to prove male and female hands have different bacterial communities. We see that males house a community of more abundant bacteria that are more closely related overall, while females have less bacteria but of more diverse morphologies. We also explain that though the communities are overall different they do represent similraties in the phylum of bacteria seen for both sex samples (Proteobacteria) which is most likely from the overall similar environment the study participants live in (Univeristy of Colorado at Boulder). We can postulate that the microbiota on the male hand are less diverse because of the skin pH, which is nominally different between the two sexes due to sweat glands which produce a more acidic environment unfavorable to many microbiota and are sitmulated by hormonal differences between the sexes {Fierer *et al.* (2008)}. These conditions would also account for differences observed in abundance and richness. Further studies need to be conducted to directly prove this association with pH, and simultaneously disprove these conclusions for the different bacterial communities are not from hygiene differences or social constructs which imply females using more cosmetic products.
 
 Sources Cited
 =============
