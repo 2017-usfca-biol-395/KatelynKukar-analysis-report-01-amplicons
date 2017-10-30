@@ -319,7 +319,7 @@ After the data was parsed and filtered the "melted" data set is now applicable f
 ##Analyitics
 **Figure 2**: Abundance Measure for Male versus Female sample types
 ```{r Abundance, echo = FALSE}
-# use dplyr to add in boxplot/use tally function to quantify all counts 
+# use dplyr to add in boxplot/use tally function to quantify all counts
 melted_obj %>%
   filter(sex_s != "Not applicable") %>%
   ggplot(
@@ -392,7 +392,7 @@ pruned_phyloseq <- subset_samples(phyloseq_obj, sex_s != "Not applicable")
 set.seed(28)
 pruned_ord <- ordinate(pruned_phyloseq, "NMDS", "bray")
 # plot ordination without NA
-p1 = plot_ordination(pruned_phyloseq,
+p1 <- plot_ordination(pruned_phyloseq,
                      pruned_ord,
                      type = "samples",
                      color = "sex_s",
