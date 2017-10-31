@@ -182,6 +182,7 @@ This table and corresponding error models were built to showcase the read errors
 ``` r
 # check dada results
 dada_forward_reads
+invisible(capture.output(dereplicated_forward_reads <- derepFastq(filtered_reads_path)))
 ```
 
     ## The sequences being tabled vary in length.
@@ -231,45 +232,45 @@ This taxa table showcases information from each given sequence with the appropri
     ## Run 0 stress 4.418541e-05 
     ## Run 1 stress 0 
     ## ... New best solution
-    ## ... Procrustes: rmse 0.2820571  max resid 0.485768 
-    ## Run 2 stress 0 
-    ## ... Procrustes: rmse 0.3091672  max resid 0.5862336 
-    ## Run 3 stress 0 
-    ## ... Procrustes: rmse 0.2478633  max resid 0.4104827 
-    ## Run 4 stress 9.614782e-05 
-    ## ... Procrustes: rmse 0.2756815  max resid 0.4624499 
-    ## Run 5 stress 6.500191e-05 
-    ## ... Procrustes: rmse 0.294453  max resid 0.4617666 
-    ## Run 6 stress 6.92376e-05 
-    ## ... Procrustes: rmse 0.2650543  max resid 0.6498855 
+    ## ... Procrustes: rmse 0.2634771  max resid 0.3792856 
+    ## Run 2 stress 9.772361e-05 
+    ## ... Procrustes: rmse 0.2771217  max resid 0.6585472 
+    ## Run 3 stress 6.902679e-05 
+    ## ... Procrustes: rmse 0.2766592  max resid 0.4475167 
+    ## Run 4 stress 0 
+    ## ... Procrustes: rmse 0.2752799  max resid 0.557303 
+    ## Run 5 stress 8.403801e-05 
+    ## ... Procrustes: rmse 0.2848781  max resid 0.4078417 
+    ## Run 6 stress 0 
+    ## ... Procrustes: rmse 0.2094435  max resid 0.4373143 
     ## Run 7 stress 0 
-    ## ... Procrustes: rmse 0.2778478  max resid 0.4515167 
-    ## Run 8 stress 3.439974e-05 
-    ## ... Procrustes: rmse 0.2853802  max resid 0.6103784 
-    ## Run 9 stress 0 
-    ## ... Procrustes: rmse 0.2447329  max resid 0.4532574 
-    ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.2656861  max resid 0.5029355 
-    ## Run 11 stress 9.962156e-05 
-    ## ... Procrustes: rmse 0.2727105  max resid 0.4747381 
+    ## ... Procrustes: rmse 0.2279637  max resid 0.4471 
+    ## Run 8 stress 9.649206e-05 
+    ## ... Procrustes: rmse 0.2472986  max resid 0.3542727 
+    ## Run 9 stress 8.657841e-05 
+    ## ... Procrustes: rmse 0.2990178  max resid 0.530009 
+    ## Run 10 stress 3.389514e-05 
+    ## ... Procrustes: rmse 0.2266944  max resid 0.4571815 
+    ## Run 11 stress 0 
+    ## ... Procrustes: rmse 0.2733738  max resid 0.5612369 
     ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.2830869  max resid 0.5950296 
-    ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.2760896  max resid 0.6720581 
-    ## Run 14 stress 0 
-    ## ... Procrustes: rmse 0.2414972  max resid 0.4318616 
-    ## Run 15 stress 5.977615e-05 
-    ## ... Procrustes: rmse 0.2288947  max resid 0.3582486 
-    ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.2601182  max resid 0.6228836 
-    ## Run 17 stress 7.07239e-05 
-    ## ... Procrustes: rmse 0.2571979  max resid 0.3939474 
+    ## ... Procrustes: rmse 0.2353558  max resid 0.4878075 
+    ## Run 13 stress 7.590252e-05 
+    ## ... Procrustes: rmse 0.2851779  max resid 0.4474946 
+    ## Run 14 stress 3.328377e-05 
+    ## ... Procrustes: rmse 0.2120347  max resid 0.4290978 
+    ## Run 15 stress 0 
+    ## ... Procrustes: rmse 0.2748528  max resid 0.5549892 
+    ## Run 16 stress 7.326878e-05 
+    ## ... Procrustes: rmse 0.2786811  max resid 0.6087306 
+    ## Run 17 stress 9.455252e-05 
+    ## ... Procrustes: rmse 0.2399892  max resid 0.5404116 
     ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.2602965  max resid 0.3666285 
-    ## Run 19 stress 7.3857e-05 
-    ## ... Procrustes: rmse 0.2704077  max resid 0.4462751 
-    ## Run 20 stress 4.022264e-05 
-    ## ... Procrustes: rmse 0.2561326  max resid 0.5284633 
+    ## ... Procrustes: rmse 0.27624  max resid 0.5097404 
+    ## Run 19 stress 0 
+    ## ... Procrustes: rmse 0.2893887  max resid 0.5481524 
+    ## Run 20 stress 0 
+    ## ... Procrustes: rmse 0.2249313  max resid 0.3757603 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
