@@ -6,11 +6,11 @@ November 01, 2017
 Introduction
 ============
 
-Methodology to estimate microbial diversity has significantly increased with an effort to understand the distribution and diversity of microbes in their natural environments. Cultivation-dependent methodology work to mimic the natural environment of microbes in a laboratory setting, with enrichment cultures being particularly important for visualizing species that favor the selected media for growth (Nichols, 2007). Different ecological metrics have been used to categorize these cultivated colonies in order to deduce community data about known bacterial species and potentially deduce information about unknown species (Birtel *et al.*, 2015). Understanding the cultivation methodology to successfully grow microbial species lends information about the requirements imperative for bio diverse communities that can be beneficial in studying niche environments like the human gut which interact with pathogens and probiotics (Wu *et al.*, 2012). Beyond healthcare, general dispersal of bacterial communities increases biodiversity in water sources, soils, and all micro environments that effect the well being of the larger ecosystem, with this assumption also holding true for bacterial organisms which reside on a human host or human host environment (Fuhrman, 1999).
+Methodology to estimate microbial diversity has significantly increased with an effort to understand the distribution and diversity of microbes in their natural environments. Cultivation-dependent methodology works to mimic the natural environment of microbes in a laboratory setting, with enrichment cultures being particularly important for visualizing species that favor the selected media of growth (Nichols, 2007). Different ecological metrics have been used to categorize these cultivated colonies in order to deduce community data about known bacterial species, and potentially deduce information about unknown species (Birtel *et al.*, 2015). Understanding the cultivation methodology to successfully grow microbial species is imperative for gathering information abou bio diverse communities that can be beneficial in studying niche environments, like the human gut microbiota which interact with pathogens and probiotics (Wu *et al.*, 2012). Beyond healthcare, general dispersal of bacterial communities increases biodiversity in water sources, soils, and all micro environments that effect the well being of the larger ecosystem; with this assumption also holding true for bacterial organisms which reside on a human host or human host environment (Fuhrman, 1999).
 
-Within the paper, *Forensic identification using skin bacterial communities*, published in 2010 by Noah Fierer the diversity in human skin bacterial communities is explained to be “far higher than previously recognized, with a high degree of inter-individual variability in the composition of bacterial communities.” This discovery leads the paper to discuss that these individualized communities can be utilized as personal identifiers for criminal cases as forensic evidence. Fierer et al. (2010) specifically claims that “these skin bacteria may persist on touched surfaces for prolonged periods because many are highly resistant to environmental- mental stresses, including moisture, temperature, and UV radiation,” meaning the community samples can be collected long after the host has left (Fierer *et al.*, 2010). Though the implications for forensic research are still under scrutiny, the data can be more broadly analyzed to deduce if there are specific differences in bacterial communities between female and male participants. By analytically evaluating these communities separately to find patterns in abundance, richness, and diversity we deduce information about the specific community composition, which can yield information about the overall biodiversity of the niche the bacteria are a part of. The inference that human hosts hold their own unique sets of bacteria helps foster the notion of unique micro environments that endosymbiotically regulate the human body.
+Within the paper, *Forensic identification using skin bacterial communities*, published in 2010 by Noah Fierer the diversity in human skin bacterial communities is explained to be “far higher than previously recognized, with a high degree of inter-individual variability in the composition of bacterial communities.” This discovery leads the paper to discuss that these individualized communities can be utilized as personal identifiers for criminal cases as forensic evidence. Fierer et al. (2010) claims that “these skin bacteria may persist on touched surfaces for prolonged periods because many are highly resistant to environmental- mental stresses, including moisture, temperature, and UV radiation,” meaning the community samples can be collected long after the host has left (Fierer *et al.*, 2010). Though the implications for forensic research are still under scrutiny, the data can be more broadly analyzed to deduce if there are specific differences in bacterial communities between female and male participants. By analytically evaluating these communities separately -- to find patterns in abundance, richness, and diversity -- we deduce information about the specific community composition, which can yield information about the overall biodiversity. The inference that human hosts hold their own unique sets of bacteria helps foster the notion of unique micro environments that endosymbiotically regulate the human body.
 
-By explicitly looking at community differences between male and female participants, information can be gathered about the overall health and well-being of each participant sex in regard to the surrounding environment. In a study published in Science in 2013, it was discovered that the gut microbiota is extremely relevant in determining autoimmune disease susceptibility (Markle *et al.*, 2013). Markle et al. stated that when male cecal contents were transferred to female mice these mice received a higher level of protection against “pancreatic islet inflammation, autoantibody production, and the development of diabetes,” meaning this difference within the sexes microbiota was translational to inhibit the spread of disease (Markle *et al.*, 2013). Therefore, understanding the differences in the skin microbiota could also potentially pose interesting medical questions that could yield insight on diseases current to specific, sexually biased traits.
+By explicitly looking at community differences between male and female participants, information can be gathered about the overall health and well-being of each participant sex in regard to the surrounding environment. In a study published in Science in 2013, it was discovered that the gut microbiota are extremely relevant in determining autoimmune disease susceptibility (Markle *et al.*, 2013). Apparently, when male cecal contents were transferred to female mice these mice received a higher level of protection against “pancreatic islet inflammation, autoantibody production, and the development of diabetes,” meaning this difference within the sexes microbiota was translational to inhibit the spread of disease (Markle *et al.*, 2013). Therefore, understanding the differences in the skin microbiota could also potentially pose interesting medical questions that could yield insight on diseases current to specific, sexually biased traits.
 
 Overall, divulging community data analysis from female and male participants, from the sequenced data sets from the Fierer et. al (2010) paper, can provide useful information about the resident skin microbiota of sexually diverse humans. By using sex as the means of a comparison further hypotheses can be made that explain differences based on hormonal differences and social differences since the presiding environment remains constant for both sample sets. We can thereby infer that because of these differences a community the female and male sex of humans house a community of bacteria that are significantly different in regard to diversity, richness, and abundance on human hands. We test this hypothesis utilizing computational amplicon sequencing analyses that parse data particular to the bacterial communities found within Fierer et al (2010).
 
@@ -33,7 +33,7 @@ Computational
 
 To create a meta data set with all of the vectors of interest we initially utilized the raw data sets collected from the 454 Sequencer and published by Fierer et al. This was done using a Dada pipeline within R. We ordered the samples first, then extracted the sample names from their fastq format, which was initially done using a remote server and fastq-dump to download the list of files in the run table to the raw directory. QC reports were then created for each of the runs utilizing fastqc and outputted as HTML to be readable. We then plotted the quality of each of the twenty samples of interest into a readable format in order to deduce the length to trim. It was found that quality is reduced after 200 bases, so the maximum acceptable length was made to be 225 bases. Using the dada pipeline the sequences were filtered, trimmed, into a new output folder and allowed to have 3 expected errors ((McMurdie and Holmes, 2013). A table of read counts was formatted to visualize the reads before and after filters and then again to visualize error trends. Duplicated sequences were then removed and dada was run on the reads based on 454 data recommendations. The sequences were aligned to craft a site by species matrix and a histogram representation of sequence lengths from all samples. Chimeras were removed and a singular table to give all pipeline information of the sequences trimmed and edited was created. A taxa code was initiated to yield a table with the taxonomy of each individual sequence to create a phylogeny that expresses the overall relatedness of each sequence. All of these tables were crafted in the dada pipeline through the sex of both male and female sample sets to visualize relatedness among all samples tested.
 
-Once the data set was compiled by relatedness pyroseq organized all aspects of the data into a merged meta data set. This data set was parsed to remove any non-applicable data regarding the sex of participants (i.e. all samples which included swabs from electronic devices). The data was then melted to include all taxonomically related data sets that were coded for under the taxa file, separate from the metadata that was read in. This allowed for analysis via tables, figures, and ggplot graphs.
+Once the data set was compiled by relatedness phyloseq organized all aspects of the data into a merged meta data set. This data set was parsed to remove any non-applicable data regarding the sex of participants (i.e. all samples which included swabs from electronic devices). The data was then melted to include all taxonomically related data sets that were coded for under the taxa file, separate from the metadata that was read in. This allowed for analysis via tables, figures, and ggplot graphs.
 
 Dplyr and ggplot packages were used to analyze the data through representative figures and tables for the melted figure which was a compilation of the taxonomical data and pyrosequenced data. The pyrosequenced data set was also pruned in order to use pyroseq plot format on samples which include only males and females. The figures used look at abundance, richness, diversity metrics (applied through Shannon diversity), a phylogeny of the entire community set, and an ordination all of which are separated by the respective sex to divulge sex based community analysis on the bacterial species present.
 
@@ -137,27 +137,6 @@ This table and corresponding error models were built to showcase the read errors
 
 ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/visualize-errors-with-plots-1.png)
 
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-    ## Not all sequences were the same length.
-
     ## Sample 1 - 350 reads in 72 unique sequences.
     ## Sample 2 - 194 reads in 163 unique sequences.
     ## Sample 3 - 31 reads in 25 unique sequences.
@@ -178,12 +157,6 @@ This table and corresponding error models were built to showcase the read errors
     ## Sample 18 - 246 reads in 88 unique sequences.
     ## Sample 19 - 389 reads in 332 unique sequences.
     ## Sample 20 - 852 reads in 239 unique sequences.
-
-``` r
-# check dada results
-dada_forward_reads
-invisible(capture.output(dereplicated_forward_reads <- derepFastq(filtered_reads_path)))
-```
 
     ## The sequences being tabled vary in length.
 
@@ -225,52 +198,51 @@ unname(taxa)
 
 Taxonomy was assigned for each sequence to describe which bacterial community was present within the samples tested for.
 
-This taxa table showcases information from each given sequence with the appropriate Phylum to Genus information.
-
     ## Square root transformation
     ## Wisconsin double standardization
     ## Run 0 stress 4.418541e-05 
-    ## Run 1 stress 0 
+    ## Run 1 stress 1.774806e-05 
     ## ... New best solution
-    ## ... Procrustes: rmse 0.2634771  max resid 0.3792856 
-    ## Run 2 stress 9.772361e-05 
-    ## ... Procrustes: rmse 0.2771217  max resid 0.6585472 
-    ## Run 3 stress 6.902679e-05 
-    ## ... Procrustes: rmse 0.2766592  max resid 0.4475167 
+    ## ... Procrustes: rmse 0.2544192  max resid 0.4390854 
+    ## Run 2 stress 5.014041e-05 
+    ## ... Procrustes: rmse 0.2692191  max resid 0.4379943 
+    ## Run 3 stress 0 
+    ## ... New best solution
+    ## ... Procrustes: rmse 0.2558586  max resid 0.4358941 
     ## Run 4 stress 0 
-    ## ... Procrustes: rmse 0.2752799  max resid 0.557303 
-    ## Run 5 stress 8.403801e-05 
-    ## ... Procrustes: rmse 0.2848781  max resid 0.4078417 
-    ## Run 6 stress 0 
-    ## ... Procrustes: rmse 0.2094435  max resid 0.4373143 
-    ## Run 7 stress 0 
-    ## ... Procrustes: rmse 0.2279637  max resid 0.4471 
-    ## Run 8 stress 9.649206e-05 
-    ## ... Procrustes: rmse 0.2472986  max resid 0.3542727 
-    ## Run 9 stress 8.657841e-05 
-    ## ... Procrustes: rmse 0.2990178  max resid 0.530009 
-    ## Run 10 stress 3.389514e-05 
-    ## ... Procrustes: rmse 0.2266944  max resid 0.4571815 
+    ## ... Procrustes: rmse 0.2441357  max resid 0.5007867 
+    ## Run 5 stress 0 
+    ## ... Procrustes: rmse 0.2905999  max resid 0.4936811 
+    ## Run 6 stress 9.877069e-05 
+    ## ... Procrustes: rmse 0.2436431  max resid 0.4344127 
+    ## Run 7 stress 3.467413e-05 
+    ## ... Procrustes: rmse 0.1972544  max resid 0.3889932 
+    ## Run 8 stress 0 
+    ## ... Procrustes: rmse 0.304608  max resid 0.5900919 
+    ## Run 9 stress 0 
+    ## ... Procrustes: rmse 0.2720501  max resid 0.5174114 
+    ## Run 10 stress 0 
+    ## ... Procrustes: rmse 0.3116968  max resid 0.5266425 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.2733738  max resid 0.5612369 
+    ## ... Procrustes: rmse 0.2540389  max resid 0.4977575 
     ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.2353558  max resid 0.4878075 
-    ## Run 13 stress 7.590252e-05 
-    ## ... Procrustes: rmse 0.2851779  max resid 0.4474946 
-    ## Run 14 stress 3.328377e-05 
-    ## ... Procrustes: rmse 0.2120347  max resid 0.4290978 
-    ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.2748528  max resid 0.5549892 
-    ## Run 16 stress 7.326878e-05 
-    ## ... Procrustes: rmse 0.2786811  max resid 0.6087306 
-    ## Run 17 stress 9.455252e-05 
-    ## ... Procrustes: rmse 0.2399892  max resid 0.5404116 
-    ## Run 18 stress 0 
-    ## ... Procrustes: rmse 0.27624  max resid 0.5097404 
+    ## ... Procrustes: rmse 0.2988362  max resid 0.6950726 
+    ## Run 13 stress 0 
+    ## ... Procrustes: rmse 0.2037999  max resid 0.3889354 
+    ## Run 14 stress 0 
+    ## ... Procrustes: rmse 0.2920002  max resid 0.5300006 
+    ## Run 15 stress 9.103788e-05 
+    ## ... Procrustes: rmse 0.2943784  max resid 0.4245488 
+    ## Run 16 stress 0 
+    ## ... Procrustes: rmse 0.2177722  max resid 0.3423264 
+    ## Run 17 stress 6.708572e-05 
+    ## ... Procrustes: rmse 0.282094  max resid 0.4923372 
+    ## Run 18 stress 2.238904e-05 
+    ## ... Procrustes: rmse 0.2821432  max resid 0.5081279 
     ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.2893887  max resid 0.5481524 
-    ## Run 20 stress 0 
-    ## ... Procrustes: rmse 0.2249313  max resid 0.3757603 
+    ## ... Procrustes: rmse 0.2390064  max resid 0.4664535 
+    ## Run 20 stress 9.83126e-05 
+    ## ... Procrustes: rmse 0.2360405  max resid 0.4661816 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
