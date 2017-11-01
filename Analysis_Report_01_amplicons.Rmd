@@ -163,7 +163,7 @@ This table and corresponding error models were built to showcase the read errors
 
 ```{r dereplicate-sequences, echo = FALSE, error = FALSE, message = FALSE}
 # get rid of any duplicated sequences
-invisible(capture.output(dereplicated_forward_reads <- derepFastq(filtered_reads_path)))
+dereplicated_forward_reads <- derepFastq(filtered_reads_path)
 
 # Name the derep-class objects by the sample names
 names(dereplicated_forward_reads) <- sample_names
