@@ -137,6 +137,27 @@ This table and corresponding error models were built to showcase the read errors
 
 ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/visualize-errors-with-plots-1.png)
 
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+    ## Not all sequences were the same length.
+
     ## Sample 1 - 350 reads in 72 unique sequences.
     ## Sample 2 - 194 reads in 163 unique sequences.
     ## Sample 3 - 31 reads in 25 unique sequences.
@@ -201,48 +222,47 @@ Taxonomy was assigned for each sequence to describe which bacterial community wa
     ## Square root transformation
     ## Wisconsin double standardization
     ## Run 0 stress 4.418541e-05 
-    ## Run 1 stress 1.774806e-05 
+    ## Run 1 stress 0 
     ## ... New best solution
-    ## ... Procrustes: rmse 0.2544192  max resid 0.4390854 
-    ## Run 2 stress 5.014041e-05 
-    ## ... Procrustes: rmse 0.2692191  max resid 0.4379943 
+    ## ... Procrustes: rmse 0.2503605  max resid 0.3937541 
+    ## Run 2 stress 9.4848e-05 
+    ## ... Procrustes: rmse 0.274344  max resid 0.4919324 
     ## Run 3 stress 0 
-    ## ... New best solution
-    ## ... Procrustes: rmse 0.2558586  max resid 0.4358941 
-    ## Run 4 stress 0 
-    ## ... Procrustes: rmse 0.2441357  max resid 0.5007867 
-    ## Run 5 stress 0 
-    ## ... Procrustes: rmse 0.2905999  max resid 0.4936811 
-    ## Run 6 stress 9.877069e-05 
-    ## ... Procrustes: rmse 0.2436431  max resid 0.4344127 
-    ## Run 7 stress 3.467413e-05 
-    ## ... Procrustes: rmse 0.1972544  max resid 0.3889932 
-    ## Run 8 stress 0 
-    ## ... Procrustes: rmse 0.304608  max resid 0.5900919 
-    ## Run 9 stress 0 
-    ## ... Procrustes: rmse 0.2720501  max resid 0.5174114 
+    ## ... Procrustes: rmse 0.2467099  max resid 0.3615862 
+    ## Run 4 stress 6.496638e-05 
+    ## ... Procrustes: rmse 0.2715979  max resid 0.3993061 
+    ## Run 5 stress 3.408458e-05 
+    ## ... Procrustes: rmse 0.2661741  max resid 0.4694951 
+    ## Run 6 stress 0 
+    ## ... Procrustes: rmse 0.1874121  max resid 0.4149212 
+    ## Run 7 stress 8.56982e-05 
+    ## ... Procrustes: rmse 0.3092958  max resid 0.5516642 
+    ## Run 8 stress 9.388572e-05 
+    ## ... Procrustes: rmse 0.2254944  max resid 0.3150192 
+    ## Run 9 stress 4.835216e-05 
+    ## ... Procrustes: rmse 0.2571429  max resid 0.4897982 
     ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.3116968  max resid 0.5266425 
+    ## ... Procrustes: rmse 0.17153  max resid 0.3092111 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.2540389  max resid 0.4977575 
-    ## Run 12 stress 0 
-    ## ... Procrustes: rmse 0.2988362  max resid 0.6950726 
+    ## ... Procrustes: rmse 0.2727335  max resid 0.5467948 
+    ## Run 12 stress 9.477793e-05 
+    ## ... Procrustes: rmse 0.2812978  max resid 0.6012645 
     ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.2037999  max resid 0.3889354 
-    ## Run 14 stress 0 
-    ## ... Procrustes: rmse 0.2920002  max resid 0.5300006 
-    ## Run 15 stress 9.103788e-05 
-    ## ... Procrustes: rmse 0.2943784  max resid 0.4245488 
-    ## Run 16 stress 0 
-    ## ... Procrustes: rmse 0.2177722  max resid 0.3423264 
-    ## Run 17 stress 6.708572e-05 
-    ## ... Procrustes: rmse 0.282094  max resid 0.4923372 
-    ## Run 18 stress 2.238904e-05 
-    ## ... Procrustes: rmse 0.2821432  max resid 0.5081279 
-    ## Run 19 stress 0 
-    ## ... Procrustes: rmse 0.2390064  max resid 0.4664535 
-    ## Run 20 stress 9.83126e-05 
-    ## ... Procrustes: rmse 0.2360405  max resid 0.4661816 
+    ## ... Procrustes: rmse 0.2969349  max resid 0.5152367 
+    ## Run 14 stress 5.968682e-05 
+    ## ... Procrustes: rmse 0.3078262  max resid 0.512252 
+    ## Run 15 stress 0 
+    ## ... Procrustes: rmse 0.2872692  max resid 0.4966087 
+    ## Run 16 stress 9.764269e-05 
+    ## ... Procrustes: rmse 0.2680452  max resid 0.4627489 
+    ## Run 17 stress 9.766709e-05 
+    ## ... Procrustes: rmse 0.2450739  max resid 0.4410873 
+    ## Run 18 stress 7.244177e-05 
+    ## ... Procrustes: rmse 0.2741797  max resid 0.4901149 
+    ## Run 19 stress 8.827905e-05 
+    ## ... Procrustes: rmse 0.2997358  max resid 0.4773969 
+    ## Run 20 stress 0 
+    ## ... Procrustes: rmse 0.2970872  max resid 0.4142021 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
@@ -289,12 +309,7 @@ Analyitics
 
 ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/Shannon%20Diversity%20Plot-1.png)
 
-**Figure 5**: Male versus Female bar graph showcasing the phylum present within each bacterial community
-
-    ## Warning in RColorBrewer::brewer.pal(n, pal): n too large, allowed maximum for palette Blues is 9
-    ## Returning the palette you asked for with that many colors
-
-![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/Abundance%20Taxonomy%20Graph-1.png)
+**Figure 5**: Male versus Female bar graph showcasing the phylum present within each bacterial community ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/Abundance%20Taxonomy%20Graph-1.png)
 
 **Figure 6**: Inferred phylogeny of sequences, with points on tips representing samples within which each particular taxa occurred. Tree represents maximum likelihood phylogeny inferred using RAxML.
 
@@ -404,9 +419,9 @@ Plotting an ordination is a measure for quantifying richness and diversity simul
 
 ### Conclusion
 
-Overall, we utilize measures of abundance, richness, and diversity to prove male and female hands have different bacterial communities. We see that males house a community of more abundant bacteria that are more closely related overall, while females have less bacteria but of more diverse morphologies. We also explain that though the communities are overall different they do represent similarities in the phylum of bacteria seen for both sex samples (Proteobacteria), which is most likely from the overall similar environment the study participants live in (University of Colorado at Boulder). We can postulate that the microbiota on the male hand are less diverse because of the skin pH, which is nominally different between the two sexes due to sweat glands which produce a more acidic environment unfavorable to many microbiota and are stimulated by hormonal differences between the sexes {Fierer *et al.* (2008)}. These conditions would also account for differences observed in abundance and richness.
+Overall, we utilize measures of abundance, richness, and diversity to prove male and female hands have different bacterial communities. We see that males house a community of more abundant bacteria that are more closely related overall, while females have less bacteria but of more diverse morphologies. We also explain that though the communities are overall different they do represent similarities in the phylum of bacteria seen for both sex samples (Proteobacteria), which is most likely from the overall similar environment the study participants live in (University of Colorado at Boulder). We can postulate that the microbiota on the male hand are less diverse because of the skin pH, which is nominally different between the two sexes due to sweat glands which produce a more acidic environment unfavorable to many microbiota and are stimulated by hormonal differences between the sexes {Fierer *et al.* (2008)}. These conditions would also account for differences observed in abundance and richness. Testosterone production can effect sweat glands on the human skin, which are known for maintaining and regulated body temperature and expelling toxins to support immune responses (KUWAHARA *et al.*, 2006).
 
-Further studies need to be conducted to directly prove this association with pH, and simultaneously disprove these conclusions for the different bacterial communities are not from hygiene differences or social constructs which imply females using more cosmetic products. By understanding these differences between sexes we can develop a better understanding of how these differences can be responsible for changes in the health and well-being of individuals studied.
+Further studies need to be conducted to directly prove this association with pH, and simultaneously disprove these conclusions for the different bacterial communities are not from hygiene differences or social constructs which imply females using more cosmetic products. More information also needs to be found regarding the production of testosterone and it's correlation to sweat gland activity versus estrogen. By understanding these differences between sexes, we can develop a better understanding of how these differences can be responsible for changes in the health and well-being of individuals studied.
 
 Sources Cited
 =============
@@ -418,6 +433,8 @@ Fierer,N. *et al.* (2008) The influence of sex, handedness, and washing on the d
 Fierer,N. *et al.* (2010) Forensic identification using skin bacterial communities. *Proceedings of the National Academy of Sciences*, **107**, 6477–6481.
 
 Fuhrman,J.A. (1999) Marine viruses and their biogeochemical and ecological effects. *Nature*, **399**, 541–548.
+
+KUWAHARA,T. *et al.* (2006) Sex differences in effects of physical training on sweat gland function (proceedings of the 54th meeting of japan society of physiological anthropology). *Journal of physiological anthropology*, **25**, 200.
 
 Markle,J.G. *et al.* (2013) Sex differences in the gut microbiome drive hormone-dependent regulation of autoimmunity. *Science*, **339**, 1084–1088.
 
