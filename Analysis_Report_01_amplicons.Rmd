@@ -182,7 +182,8 @@ dada_forward_reads <- dada(dereplicated_forward_reads,
 ```{r, eval = FALSE, message = FALSE, echo = FALSE}
 # check dada results
 dada_forward_reads
-invisible(capture.output(dereplicated_forward_reads <- derepFastq(filtered_reads_path)))
+invisible(capture.output(dereplicated_forward_reads <-
+                           derepFastq(filtered_reads_path)))
 ```
 
 
