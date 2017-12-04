@@ -410,7 +410,7 @@ p1 <- plot_ordination(pruned_phyloseq,
 
 # Discussion
 
-Understanding the microbiota which live within our unique niche environments can yield information regarding medical advancements. Specifically, understanding how these microbiota differ within female and male populations can increase our understanding of hormone differences and gland production that can yield evidence towards how these microbes symbiotically interact with human host systems.
+Understanding the microbiota which live within our unique niche environment can yield information regarding medical advancements. Specifically, understanding how these microbiota differ within female and male populations can increase our understanding of hormone differences and gland production that can yield evidence towards how these microbes symbiotically interact with human host systems.
 
 Here we prove that differences between male and female bacterial communities within the hand are present, in regards to; abundance, diversity, and richness. We further our analysis to divulge if the similar environments constitute a similar makeup of bacteria present through taxonomical representation.
   

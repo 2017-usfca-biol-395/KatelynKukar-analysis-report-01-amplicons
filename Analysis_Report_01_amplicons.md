@@ -224,45 +224,45 @@ Taxonomy was assigned for each sequence to describe which bacterial community wa
     ## Run 0 stress 4.418541e-05 
     ## Run 1 stress 0 
     ## ... New best solution
-    ## ... Procrustes: rmse 0.2503605  max resid 0.3937541 
-    ## Run 2 stress 9.4848e-05 
-    ## ... Procrustes: rmse 0.274344  max resid 0.4919324 
+    ## ... Procrustes: rmse 0.3058362  max resid 0.4509789 
+    ## Run 2 stress 9.926953e-05 
+    ## ... Procrustes: rmse 0.263597  max resid 0.5558944 
     ## Run 3 stress 0 
-    ## ... Procrustes: rmse 0.2467099  max resid 0.3615862 
-    ## Run 4 stress 6.496638e-05 
-    ## ... Procrustes: rmse 0.2715979  max resid 0.3993061 
-    ## Run 5 stress 3.408458e-05 
-    ## ... Procrustes: rmse 0.2661741  max resid 0.4694951 
+    ## ... Procrustes: rmse 0.2920993  max resid 0.5059225 
+    ## Run 4 stress 1.515256e-05 
+    ## ... Procrustes: rmse 0.1880286  max resid 0.3670009 
+    ## Run 5 stress 0 
+    ## ... Procrustes: rmse 0.1922745  max resid 0.3549187 
     ## Run 6 stress 0 
-    ## ... Procrustes: rmse 0.1874121  max resid 0.4149212 
-    ## Run 7 stress 8.56982e-05 
-    ## ... Procrustes: rmse 0.3092958  max resid 0.5516642 
-    ## Run 8 stress 9.388572e-05 
-    ## ... Procrustes: rmse 0.2254944  max resid 0.3150192 
-    ## Run 9 stress 4.835216e-05 
-    ## ... Procrustes: rmse 0.2571429  max resid 0.4897982 
+    ## ... Procrustes: rmse 0.2803124  max resid 0.5766354 
+    ## Run 7 stress 0 
+    ## ... Procrustes: rmse 0.2151576  max resid 0.3370871 
+    ## Run 8 stress 0 
+    ## ... Procrustes: rmse 0.2372122  max resid 0.5602302 
+    ## Run 9 stress 1.350505e-06 
+    ## ... Procrustes: rmse 0.2398029  max resid 0.4142231 
     ## Run 10 stress 0 
-    ## ... Procrustes: rmse 0.17153  max resid 0.3092111 
+    ## ... Procrustes: rmse 0.2548552  max resid 0.5455213 
     ## Run 11 stress 0 
-    ## ... Procrustes: rmse 0.2727335  max resid 0.5467948 
-    ## Run 12 stress 9.477793e-05 
-    ## ... Procrustes: rmse 0.2812978  max resid 0.6012645 
-    ## Run 13 stress 0 
-    ## ... Procrustes: rmse 0.2969349  max resid 0.5152367 
-    ## Run 14 stress 5.968682e-05 
-    ## ... Procrustes: rmse 0.3078262  max resid 0.512252 
-    ## Run 15 stress 0 
-    ## ... Procrustes: rmse 0.2872692  max resid 0.4966087 
-    ## Run 16 stress 9.764269e-05 
-    ## ... Procrustes: rmse 0.2680452  max resid 0.4627489 
-    ## Run 17 stress 9.766709e-05 
-    ## ... Procrustes: rmse 0.2450739  max resid 0.4410873 
-    ## Run 18 stress 7.244177e-05 
-    ## ... Procrustes: rmse 0.2741797  max resid 0.4901149 
-    ## Run 19 stress 8.827905e-05 
-    ## ... Procrustes: rmse 0.2997358  max resid 0.4773969 
+    ## ... Procrustes: rmse 0.273221  max resid 0.5150405 
+    ## Run 12 stress 0 
+    ## ... Procrustes: rmse 0.234019  max resid 0.4589734 
+    ## Run 13 stress 5.583995e-05 
+    ## ... Procrustes: rmse 0.3111166  max resid 0.5267551 
+    ## Run 14 stress 2.816521e-05 
+    ## ... Procrustes: rmse 0.3078858  max resid 0.5048838 
+    ## Run 15 stress 9.760424e-05 
+    ## ... Procrustes: rmse 0.1952496  max resid 0.3609549 
+    ## Run 16 stress 0 
+    ## ... Procrustes: rmse 0.2912653  max resid 0.5318437 
+    ## Run 17 stress 9.911646e-05 
+    ## ... Procrustes: rmse 0.293495  max resid 0.5614027 
+    ## Run 18 stress 0 
+    ## ... Procrustes: rmse 0.194277  max resid 0.3538748 
+    ## Run 19 stress 0 
+    ## ... Procrustes: rmse 0.2725098  max resid 0.4636717 
     ## Run 20 stress 0 
-    ## ... Procrustes: rmse 0.2970872  max resid 0.4142021 
+    ## ... Procrustes: rmse 0.210379  max resid 0.4015364 
     ## *** No convergence -- monoMDS stopping criteria:
     ##     20: stress < smin
 
@@ -309,7 +309,12 @@ Analyitics
 
 ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/Shannon%20Diversity%20Plot-1.png)
 
-**Figure 5**: Male versus Female bar graph showcasing the phylum present within each bacterial community ![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/Abundance%20Taxonomy%20Graph-1.png)
+**Figure 5**: Male versus Female bar graph showcasing the phylum present within each bacterial community
+
+    ## Warning in RColorBrewer::brewer.pal(n, pal): n too large, allowed maximum for palette Blues is 9
+    ## Returning the palette you asked for with that many colors
+
+![](Analysis_Report_01_amplicons_files/figure-markdown_github-ascii_identifiers/Abundance%20Taxonomy%20Graph-1.png)
 
 **Figure 6**: Inferred phylogeny of sequences, with points on tips representing samples within which each particular taxa occurred. Tree represents maximum likelihood phylogeny inferred using RAxML.
 
